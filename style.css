@@ -1,0 +1,71 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+
+:root {
+    --mainBlue: #1f7ae0;
+    --landingPosterBackgroundColor: #f9fafb;
+    --lightGray : #d5d6d8;
+    --darkGray: #737a7f;
+    --btnBoxShadow:  0 1px 2px rgb(0 0 0 / 15%);
+    --headerHeight: 60px;
+    --btnBorderRadius: 4px;
+} 
+
+.header-div {
+    height: var(--headerHeight);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    max-width: 700px;
+    margin: auto;
+}
+
+header {
+    border-bottom: 1px solid var(--lightGray);
+}
+
+header a {
+    text-decoration: none;
+}
+
+header button {
+    cursor: pointer;
+    padding: 10px 12px;
+    background-color: white;
+    border: 1px solid var(--lightGray);
+    color: #535b62;
+    border-radius: var(--btnBorderRadius);
+}
+
+.discover-btn {
+    color: var(--darkGray);
+}
+
+.header-left {
+    display: flex;
+    margin: 0 56.8px;
+    padding: 0 16px;
+    align-items: center;
+    gap: 16px;
+    font-size:14px;
+}
+
+.header-right {
+    display: flex;
+}
+
+.login-div {
+    display: flex;
+    gap: 8px;
+}
+
+.login-p {
+    font-weight: 15px;
+    font-weight: 600;
+}
