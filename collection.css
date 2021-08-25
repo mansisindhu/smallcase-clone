@@ -207,7 +207,7 @@
     margin:auto;
     display: grid;
     grid-gap:3%;
-    grid-template-columns: 47% 47%;
+    grid-template-columns: 49% 49%;
     margin-top: 2%;
 }
 
@@ -238,6 +238,7 @@
  .box-4-flex-inner div{
      margin:10px;
      line-height: 1.618;
+  
    
  }
 
@@ -253,15 +254,15 @@
  }
 
 .box-4-2nd-image {
-    width:34%;
-    height:50%;
+    width:30%;
+    height:52%;
 }
 .inside-box-4-heading{
     color:#000000;
     font-size: 18px;
 }
 
- @media only screen and (max-width:600px) {
+ @media only screen and (max-width:768px) {
      #box-2{
          flex-direction: column;
          height:400px;
