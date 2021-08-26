@@ -1,5 +1,4 @@
 const product = JSON.parse(window.localStorage.getItem("smallcase-detail"));
-console.log(data.image);
 
 const mainDivElement = document.querySelector(".main");
 
@@ -22,9 +21,11 @@ function renderData() {
     aboutInfoEl.className = "about-info";
 
     const nameElement =  document.createElement("p");
+    nameElement.textContent = product.name;
     nameElement.className = "product-name";
 
     const shortInfoElement =  document.createElement("p");
+    shortInfoElement.textContent = product.shortDescription;
     shortInfoElement.className = "product-short-info";
 
     aboutInfoEl.appendChild(nameElement);
@@ -135,7 +136,36 @@ function renderData() {
     paymentSectionDivEl.appendChild(buttonEl);
 
     const paymentSectioneResponsiveDivEl = document.createElement("div");
-    paymentSectioneResponsiveDivEl.className = "payment-section-responsive"
+    paymentSectioneResponsiveDivEl.className = "payment-section-responsive";
 
+    const paymentInfoDivElement = document.createElement("div");
+    paymentInfoDivElement.className = "payment-info";
+
+    const minimumAmountElement = document.createElement("p");
+    minimumAmountElement.textContent = "Minimum Investment Amount";
+
+    const amountEl = document.createElement("p");
+    amountEl.textContent = `₹ ${product.minAmount}`;
+
+    paymentInfoDivElement.appendChild(minimumAmountElement);
+    paymentInfoDivElement.appendChild(amountEl);
+
+    const buttonElement = document.createElement("button");
+    buttonElement.textContent = "Invest Now";
+    buttonElement.className = "payment-section-btn";
+
+    paymentSectioneResponsiveDivEl.appendChild(paymentInfoDivElement);
+    paymentSectioneResponsiveDivEl.appendChild(buttonElement);
+
+
+    bottomDetailBoxEl.appendChild(longDescriptionDivEl);
+    bottomDetailBoxEl.appendChild(paymentSectionDivEl);
+    bottomDetailBoxEl.appendChild(paymentSectioneResponsiveDivEl);
+    
+
+    mainDivElement.appendChild(grayBoxEl);
+    mainDivElement.appendChild(bottomDetailBoxEl);
 
 }
+
+renderData();
