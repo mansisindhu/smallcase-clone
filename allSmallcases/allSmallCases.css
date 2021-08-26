@@ -3,6 +3,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: "Raleway", sans-serif;
+    line-height: 1.73;
   }
   
   /* ***************  css variables  ************ */
@@ -139,7 +140,8 @@
 
 
 .main {
-    margin: 10px 72px;
+    width: 472px;
+    margin: auto;
 }
 
 h1 {
@@ -314,6 +316,11 @@ h1 {
   /* media queries */
   
   @media (min-width: 989px) {
+
+    .main {
+      width: 1120px;
+      margin: auto;
+    }
     /* header */
     .header-div {
       margin: 0 40px;
