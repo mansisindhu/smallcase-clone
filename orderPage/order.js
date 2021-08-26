@@ -1,3 +1,5 @@
+// Orders data
+
 const data = JSON.parse(window.localStorage.getItem("orders"));
 
 const reverseDataArray = data.reverse();
