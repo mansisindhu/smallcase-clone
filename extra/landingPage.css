@@ -136,7 +136,6 @@ footer {
 .footer-bottom-part-right {
   display: none;
 }
-<<<<<<< HEAD
 
 /* media queries */
 
@@ -200,14 +199,6 @@ footer {
     display: unset;
     width: 138px;
   }
-=======
-/* santosh' css for main */
-.main{
-    margin-top: 57px;
-    background-color: #1f7ae0;
-}
-/* santosh' css for main end */
->>>>>>> 1f313220615f022926cc579c2bfcb91a22b51441
 
   .footer-bottom-part-right {
     display: unset;
