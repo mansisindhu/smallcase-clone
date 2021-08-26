@@ -176,18 +176,32 @@
         #p1 {
             color: #9b9b9b;
             font-size: 10px;
+         
         }
 
         .border {
             border-radius: 4px;
             /* border: none; */
-            border-color: lightgray;
+         
+            border:1px solid lightgray;
         }
 
         .footer {
-            margin-top: 10pxpx;
+            margin-top: 10px;
 
         }
+        .webkit-flex{
+           display:flex;
+           gap:10px;
+           margin-left:20px;
+           font-size: 12px;
+           color:#9b9b9b;
+            
+        }
+.login-webkit-text{
+    margin-bottom: 5px;
+}
+
     </style>
 </head>
 
@@ -212,11 +226,19 @@
             </div>
             <div class="details_box"><input id="password" class="border" type="password" placeholder="Password" />
             </div>
-            <div class="details_box"><input type="checkbox" /> <label id="p1">Log in to kit web also</label>
+            <!--
+            <div class="details_box webkit"><input type="checkbox" /> <label id="p1">Log in to kit web also</label>
                 <p id="p-text">Not recommended public system</p>
 
             </div>
-
+           -->
+           <div class="webkit-flex">
+            <div><input type="checkbox"/></div>
+            <div>
+                <div class="login-webkit-text">Log in to kit web also</div>
+                <div>Not recommended public system</div>
+            </div>
+           </div>
             <diV class="details_box"><button id="login" onclick="login()">Login</button></diV>
             <diV class="details_box">
                 <button id="forget">Forget Password?</button>
@@ -255,17 +277,20 @@
 
             for (var i = 0; i < signup_data.length; i++) {
                 if (user_id === signup_data[i].email && password == signup_data[i].password) {
+                
                     alert("login successfull");
+                   
                     return;
                 } else {
 
-                    alert("Invalid credentials")
+                    alert("Invalid credentials");
+                    
                     break;
 
                 }
 
             }
-
+        
         }
 
         let login_kart = document.getElementById('login_kart');
