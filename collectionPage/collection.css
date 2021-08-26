@@ -1,4 +1,4 @@
-
+ 
  #box-1{
   width:90%;
   margin:auto;
@@ -24,6 +24,7 @@
     font-size : 15px;
     margin-right: 10px;
     margin-top: 15px;
+    
 }
 .coll-margin{
     margin-top: 25px;
@@ -84,6 +85,7 @@
     border-radius: 5px;
     color: white;
     font-family: 'Graphik Web Medium', sans-serif;
+    border: none;
 }
 
 .blue-color{
@@ -249,7 +251,8 @@
      color: white;
      background-color: #1f8ceb;
      border-radius: 3px;
-     padding:5px
+     padding:5px;
+     border:none;
  }
 
 .box-4-2nd-image {

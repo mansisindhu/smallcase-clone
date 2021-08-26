@@ -136,78 +136,12 @@ footer {
 .footer-bottom-part-right {
   display: none;
 }
-<<<<<<< HEAD
-
-/* media queries */
-
-@media (min-width: 989px) {
-  /* header */
-  .header-div {
-    margin: 0 40px;
-  }
-
-  .img-2 {
-    height: 30px;
-    display: unset;
-  }
-
-  .img-1 {
-    display: none;
-  }
-
-  /* footer */
-
-  footer {
-    font-size: 14px;
-  }
-
-  .footer-top-part {
-    display: flex;
-    justify-content: space-between;
-    padding: 32px 0 24px;
-  }
-
-  .footer-top-part > p {
-    display: flex;
-
-    margin-left: 40px;
-  }
-
-  .footer-btns {
-    display: flex;
-    justify-content: space-between;
-    padding: 0;
-    gap: 10px;
-    margin: 0;
-    color: black;
-    margin-right: 40px;
-  }
-
-  .footer-bottom-part {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 32px 0 24px;
-  }
-
-  .footer-bottom-part-left {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .footer-bottom-part-left > img {
-    display: unset;
-    width: 138px;
-  }
-=======
 /* santosh' css for main */
 .main{
     margin-top: 57px;
     background-color: #1f7ae0;
 }
 /* santosh' css for main end */
->>>>>>> 1f313220615f022926cc579c2bfcb91a22b51441
 
   .footer-bottom-part-right {
     display: unset;
@@ -216,5 +150,5 @@ footer {
   .footer-bottom-part-right > img {
     margin-left: 10px;
   }
-}
+
 
