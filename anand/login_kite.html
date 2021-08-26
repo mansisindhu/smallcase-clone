@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login_page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+    <style>
+         * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Raleway", sans-serif;
+        }
+        body {
+            background-color: #f9f9f9;
+
+        }
+
+        .logo {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .logo img {
+            margin: auto;
+            margin-bottom: 10px;
+            width: 68px;
+            height: 68px;
+            padding: 10px;
+        }
+
+        .login_details {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+            padding-bottom: 30px;
+
+        }
+        .box1 {
+            border: 1px solid wheat;
+            border-radius: 10px;
+            background-color: white;
+            padding: 30px;
+            box-shadow: 1px 1px 4px var(--color-border-default);
+            margin-top: 20px;
+        }
+
+        .details_box {
+            margin-left: 20px;
+            margin-right: 20px;
+            height: 30px;
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+
+        .details_box p {
+            font-size: 10px;
+        }
+
+        .details_box label {
+            font-size: 15px;
+        }
+
+        .login_details img {
+            margin: auto;
+        }
+
+        .log>img {
+            align-items: center;
+        }
+
+        .log {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #login {
+            background-color: #FF5722;
+              width: 100%;
+            color: #FFFFFF;
+            font: 14.8px"open sans" sans-serif;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border: none;
+            border-radius: 4px;
+            width: 200px;
+            height: 30px;
+        }
+
+        #forget {
+            background-color: whitesmoke;
+            width: 100%;
+            text-align: center;
+            margin-top: 0px;
+            padding-top: 0px;
+            border: none;
+            color: #9B9B9B;
+            font-size: 12px;
+            font: 14.8px"open sans" sans-serif;
+            
+
+        }
+        .footer>div {
+            text-align: center;
+            margin-bottom: 10px;
+
+        }
+
+        .box1 img {
+            height: 30px;
+        }
+
+        .footer_para {
+            width: 20%;
+            text-align: center;
+            color: #9B9B9B;
+            font-size: 7px;
+
+        }
+        #signup {
+            color: #9B9B9B;
+            font-size: 10px;
+        }
+
+        #userid{
+            width: 200px;
+            height: 30px;
+            text-align: center;
+            margin-bottom: 40px;
+            border-color: lightgray;
+            margin-top: 0px;
+            border-radius: 4px;
+            /* border: none; */
+            border-color: lightgray;
+            
+            margin-bottom: 15px;
+        }
+        #password{
+            width: 200px;
+            height: 30px;
+            margin-bottom: 25px;
+            text-align: center;
+            border-color: lightgray;
+            border-radius: 4px;
+            /* border: none; */
+            border-color: lightgray;
+            /* border: 0.5px solid; */
+            /* border: none; */
+            /* border-radius: 8px; */
+            /* margin-top: 30px; */
+        }
+        .zerodha img{
+            /* background-color: blue; */
+              width: 70px;
+              height: 11px;
+        }
+        .logo p{
+            color: #444444;
+            font: 14.8px"open sans" sans-serif;
+        }
+        .p-text{
+            padding-left: 20px;
+            color: #9b9b9b;
+        }
+        .p1{
+            color: #9b9b9b;
+        }
+        .border{
+            border-radius: 4px;
+            /* border: none; */
+            border-color: lightgray;
+        }
+        .footer{
+            margin-top: 10pxpx;
+
+        }
+
+        .details_box h3{
+            padding-left: 50px;
+            color: #9b9b9b;
+            margin-bottom: 0px;
+        }
+
+        #kart {
+            color: #444444;
+            font: 14.8px"open sans"sans-serif;
+            font-size: 15px;
+            text-align: center;
+        }
+        
+
+    </style>
+</head>
+
+<body>
+
+    <!-- login detals div will take inforation of login -->
+
+    <div class="login_details">
+        <div class="box1">
+            <div class="log"> <img src="https://kite.zerodha.com/static/images/kite-logo.svg" />
+            </div>
+            <div class="details_box"><p id="kart">Login to kite</p></div>
+            <div class="details_box"><input  id="userid" class="border" type="text" placeholder="User id (eg: AB0001" /><br><br>
+            </div>
+            <div class="details_box"><input  id="password" class="border" type="password" placeholder="Password" />
+            </div>
+           
+
+            <diV class="details_box"><button id="login" onclick="login()">Login</button></diV>
+            <diV class="details_box">
+                <button id="forget">Forget Password?</button>
+            </diV>
+        </div>
+    </div>
+
+    <div class="footer">
+
+        <div class="zerodha"  style="text-align: center;"><a href="landingPage.html"><img src=" https://kite.zerodha.com/static/images/zerodha-logo.svg"/></a></div>
+        <div>
+            <a href="signup.html" id="signup">dont have account? sign up now</a>
+        </div>
+
+        <div style="display: flex; justify-content: center;">
+            <p class="footer_para">zerodha banking limited member of NSE, BSE & CDSL- SEBI! reg
+                No:-in12345 CDSL_SEBI refisteration number :-In zerodha pvt limited, registeration number:12345</p>
+        </div>
+
+
+
+    </div>
+
+    <script>
+        
+
+    let signup_data=localStorage.getItem('signup_det');
+    signup_data=JSON.parse(signup_data);
+    
+    console.log(signup_data);
+
+
+    function login(){
+        let user_id=document.getElementById('userid').value;
+        let password=document.getElementById('password').value;
+
+        for(var i=0; i <signup_data.length; i++){
+            if(user_id===signup_data[i].email && password == signup_data[i].password){
+                alert("login successfull");
+                return;
+            }else{
+
+                alert("Invalid credentials")
+                return;
+
+            }
+
+        }
+
+    }
+
+
+    </script>
+
+
+
+
+
+
+</body>
+
+</html>

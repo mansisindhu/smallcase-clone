@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login_page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700&display=swap"
+    rel="stylesheet">
+    <style>
+        * {
+            /* font-family: 'Alumni Sans', sans-serif; */
+        }
+
+        body {
+            background-color: #f9f9f9;
+
+
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Raleway", sans-serif;
+        }
+
+        .logo {
+            text-align: center;
+            margin-top: 0px;
+
+        }
+
+        .logo img {
+            margin: auto;
+            margin-bottom: 10px;
+        }
+
+        .signup_details {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+            padding-bottom: 40px;
+
+        }
+
+        .box1 {
+            border: 1px solid wheat;
+            border-radius: 10px;
+            background-color: white;
+            padding: 30px;
+            box-shadow: 1px 1px 4px var(--color-border-default);
+        }
+
+        .details_box {
+            margin-left: 20px;
+            margin-right: 20px;
+            height: 30px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .details_box p {
+            font-size: 10px;
+        }
+
+        .details_box label {
+            font-size: 15px;
+        }
+
+        .signup_details img {
+            margin: auto;
+        }
+
+        .log>img {
+            align-items: center;
+        }
+
+        .log {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #signup {
+            background-color: white;
+            width: 100%;
+            font: 14.8px"open sans"sans-serif;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            font: 20px;
+
+            width: 200px;
+            height: 30px;
+            text-align: center;
+            border-radius: 4px;
+            border-color: lightgray;
+            border: none;
+            background-color: #FF5722;
+            color: #FFFFFF;
+            color: #FFFFFF;
+            ;
+        }
+
+        #forget {
+            background-color: whitesmoke;
+            width: 100%;
+            text-align: center;
+            margin-top: 0px;
+
+        }
+
+        .footer>div {
+            text-align: center;
+            margin-bottom: 10px;
+
+        }
+
+        .box1 img {
+            height: 30px;
+        }
+
+        .footer_para {
+            width: 20%;
+            text-align: center;
+            color: #9B9B9B;
+            font-size: 7px;
+        }
+
+        .logo p {
+            font-size: 30px;
+            color: black
+        }
+
+        .top_heading {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 0px;
+            color: #8D6E63;
+        }
+
+        .size {
+            width: 200px;
+            height: 30px;
+            text-align: center;
+            border-radius: 4px;
+            border-color: lightgray;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- logo div containing logo and text of signup  -->
+    <div class="top_heading">
+        <h1>Welcome to Smallcase</h1>
+    </div>
+
+    <div class="logo"> <img src="https://developers.kite.trade/static/images/app-icons/12hpqpbfwnxyvud8.png" />
+        <p>Signup here</p>
+
+    </div>
+
+
+
+    <!-- login detals div will take inforation of signup -->
+
+    <div class="signup_details">
+        <div class="box1">
+            <div class="log"> <img src="https://kite.zerodha.com/static/images/kite-logo.svg" />
+            </div>
+            <div class="details_box"><input id="email_id" type="text" class="size"
+                    placeholder="Enter email id" /><br><br>
+            </div>
+            <div class="details_box" "><input id="mobile_num" type="number" class="size"
+                placeholder="Enter mobile number" />
+        </div>
+       
+        <div class="details_box"><input id="password_setup" type="password" class="size" placeholder="Set password" />
+        </div>
+        <div class="details_box"><input id="password_conf" type="password" class="size"
+                placeholder="Confirm password" />
+        </div>
+
+        <diV class="details_box" ><button id="signup" onclick="add_signup()">signup</button></diV>
+
+    </div>
+    </div>
+
+    </div>
+
+    <script>
+        let submit_details = JSON.parse(window.localStorage.getItem("signup_det")) || [];
+        let signup = document.getElementById('signup');
+
+
+
+        function add_signup() {
+            var obj = {
+                email: document.getElementById('email_id').value,
+                mobile: document.getElementById('mobile_num').value,
+                password: document.getElementById('password_setup').value,
+                password_conf: document.getElementById('password_conf').value,
+
+            }
+
+            
+
+            if (obj.email == "" || obj.mobile == "" || obj.password == "" || obj.password_conf == "") {
+                alert("Please fill all details")
+                return false;
+            } else {
+
+                if (obj.password != obj.password_conf) {
+                alert("Password  not matched");
+            }  else{
+            //   console.log(document.getElementById('email_id').value);
+            console.log(obj);
+
+            submit_details.push(obj);
+            let submit_details_local = JSON.stringify(submit_details);
+
+            localStorage.setItem('signup_det', submit_details_local);
+
+            window.location.href = "login_page.html"
+        }
+
+
+        }
+        //   document.getElementById('email_id').value;
+        console.log(submit_details);
+                
+            }
+            
+
+
+
+    </script>
+
+
+
+
+
+
+</body>
+
+</html>
