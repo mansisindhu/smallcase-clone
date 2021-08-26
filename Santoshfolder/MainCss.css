@@ -676,4 +676,88 @@ text-align: center;
 /* .saferight{
 
 } */
+
+/* accordian */
+.accordian{
+  display: flex;
+  flex-direction: column;
+}
+.accordianh2{
+  margin: auto;
+  font-size: 34px;
+  line-height: 1.33;
+  letter-spacing: -0.8px;
+  font-family: 'Graphik Web Semibold', sans-serif;
+  color: #2f363f;
+  text-align: center;
+}
+.accordian1{
+  padding: 30px;
+  margin:10px;
+}
+.secondbox1{
+  width: 300px;
+  justify-content: space-around;
+}
+.secondbox1 h2{
+  margin-bottom: 30px;
+margin: 4px 1.57px 16px 4px;
+font-size: 16px;
+font-family: 'Graphik Web Medium', sans-serif;
+color: #535b62;
+}
+.secondbox1 div{
+  margin-top:20px;
+}
+.first{
+  cursor: pointer;
+  border: none;
+  text-align: left;
+  outline: none;
+  color:#535b62;
+}
+.active, .first:hover{
+  color:blue;
+
+}
+.demo{
+  display: none;
+  overflow: hidden;
+  color: #81878c;
+  line-height: 1.38;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 8px;
+}
+.center{
+  margin: auto;
+}
+@media  only screen and (max-width:600px){
+  .secondbox{
+    display: flex;
+    flex-direction:column;
+  }
+  .secondbox1{
+    margin: 20px;
+  }
+}
+@media  only screen and (min-width:600px){
+  .secondbox{
+    display: flex;
+    flex-direction: column;
+  }
+  .secondbox1{
+    margin:20px;
+  }
+}
+@media only screen and (min-width:1200px){
+  .secondbox{
+    display: flex;
+    flex-direction: row;
+  }
+  .secondbox1{
+    margin: 50px;
+  }
+}
+/* accordian end */
 /* main css end */
