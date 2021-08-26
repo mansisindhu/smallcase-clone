@@ -1,4 +1,4 @@
-
+ 
  #box-1{
   width:90%;
   margin:auto;
@@ -24,6 +24,7 @@
     font-size : 15px;
     margin-right: 10px;
     margin-top: 15px;
+    
 }
 .coll-margin{
     margin-top: 25px;
@@ -84,6 +85,7 @@
     border-radius: 5px;
     color: white;
     font-family: 'Graphik Web Medium', sans-serif;
+    border: none;
 }
 
 .blue-color{
@@ -206,7 +208,7 @@
     margin:auto;
     display: grid;
     grid-gap:3%;
-    grid-template-columns: 47% 47%;
+    grid-template-columns: 49% 49%;
     margin-top: 2%;
 }
 
@@ -237,6 +239,7 @@
  .box-4-flex-inner div{
      margin:10px;
      line-height: 1.618;
+  
    
  }
 
@@ -248,19 +251,20 @@
      color: white;
      background-color: #1f8ceb;
      border-radius: 3px;
-     padding:5px
+     padding:5px;
+     border:none;
  }
 
 .box-4-2nd-image {
-    width:34%;
-    height:50%;
+    width:30%;
+    height:52%;
 }
 .inside-box-4-heading{
     color:#000000;
     font-size: 18px;
 }
 
- @media only screen and (max-width:600px) {
+ @media only screen and (max-width:768px) {
      #box-2{
          flex-direction: column;
          height:400px;

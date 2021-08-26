@@ -1,0 +1,90 @@
+*{
+    font-family: 'Raleway', 'sans-serif'
+}
+
+
+*{
+    margin :0px;
+    padding:0px;
+}
+
+#title{
+    width:600px;
+    margin: 20px auto;
+   
+  
+  
+}
+
+#title > h1{
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+#title > div{
+    color: gray;
+    font-size: 15px;
+}
+
+.box{
+    margin:auto;
+    width:600px;
+  
+}
+.flex{
+    display: flex;
+    gap:30px;
+    margin:auto;
+    
+}
+
+
+.inner-flex{
+    display:flex;
+    gap:100px;
+    color: gray;
+    font-size: 15px;
+ 
+}
+
+
+
+.horizontal-line{
+        width:600px;
+        background-color: rgb(133, 127, 127);
+        height:0.5px;
+       
+        margin: 20px auto;
+    
+}
+
+.box-inner-heading{
+    font: black;
+    font-weight:600;
+   
+ 
+}
+.box-inner-heading + div{
+    margin-bottom: 20px;
+    color: gray;
+    font-size: 15px;
+}
+
+.flex-direction-column{
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-direction-column  div:nth-child(2) {
+    font: black;
+    font-weight:600;
+    color: #000;
+    margin-top: 5px;
+}
+
+@media only screen and (max-width:768px) {
+    #title{
+       
+        margin:auto;
+}
+}
