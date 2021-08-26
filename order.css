@@ -1,5 +1,5 @@
 *{
-    font-family: 'Raleway'
+    font-family: 'Raleway', 'sans-serif'
 }
 
 
@@ -10,12 +10,23 @@
 
 #title{
     width:600px;
-    margin: 15px auto;
+    margin: 20px auto;
    
   
   
 }
-.box1{
+
+#title > h1{
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+#title > div{
+    color: gray;
+    font-size: 15px;
+}
+
+.box{
     margin:auto;
     width:600px;
   
@@ -31,16 +42,13 @@
 .inner-flex{
     display:flex;
     gap:100px;
+    color: gray;
+    font-size: 15px;
  
 }
 
 
-.box2{
-    margin:auto;
-    width:600px;
-    
-  
-}
+
 .horizontal-line{
         width:600px;
         background-color: rgb(133, 127, 127);
@@ -50,18 +58,28 @@
     
 }
 
-.margin-left{
-    margin-left:-10px;
-}
 .box-inner-heading{
     font: black;
     font-weight:600;
-    margin-bottom: 5px;
+   
  
 }
-
 .box-inner-heading + div{
-    margin-bottom: 5px;
+    margin-bottom: 20px;
+    color: gray;
+    font-size: 15px;
+}
+
+.flex-direction-column{
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-direction-column  div:nth-child(2) {
+    font: black;
+    font-weight:600;
+    color: #000;
+    margin-top: 5px;
 }
 
 @media only screen and (max-width:768px) {
