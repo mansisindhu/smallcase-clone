@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .modal-overlay {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.9);
+      }
+      .modal-container {
+        height: 400px;
+        width: 400px;
+        background: white;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid black;
+      }
+
+      .top-row {
+        background-color: rgb(211, 210, 210);
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 20px;
+        height: 60px;
+        padding: 20px;
+      }
+
+      .mid-row {
+        margin: 20px 0;
+        display: flex;
+        flex-direction: column;
+        padding: 0 20px;
+        gap: 8px;
+      }
+
+      img {
+        width: 30px;
+        height: 30px;
+      }
+
+      .amount-box {
+        border: 1px solid gray;
+        margin: 0 20px;
+        width: 200px;
+        padding: 16px 0;
+        text-align: center;
+      }
+
+      .increment-btns {
+        margin: 20px;
+        display: flex;
+        gap: 10px;
+      }
+
+      .increment-btns > button {
+        border: none;
+        padding: 10px 16px;
+        border-radius: 2px;
+        border: 1px solid grey;
+        background-color: white;
+      }
+
+      .payment-section-btn {
+        width: 120px;
+        font-size: 13px;
+        padding: 12px 13px;
+        box-shadow: var(--btnBoxShadow);
+        background-color: #27c59a;
+        color: white;
+        border: none;
+        font-weight: 500;
+        margin-bottom: 7px;
+        border-radius: var(--btnBorderRadius);
+        align-self: center;
+        margin-top: 28px;
+      }
+
+      .close-modal {
+          margin-left: 59px;
+      }
+
+      @media (min-width: 1024px) {
+        .modal-overlay {
+          background: rgba(255, 255, 255, 0.9);
+        }
+        .modal-container {
+          width: 500px;
+          height: 500px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="root">
+      <div class="modal-overlay">
+        <div class="modal-container">
+          <div class="top-row">
+            <img
+              src="https://assets.smallcase.com/images/smallcases/160/SCET_0005.png"
+              alt=""
+            />
+            <p>Investing in All weather investing</p>
+            <p class="close-modal">X</p>
+          </div>
+
+          <div class="mid-row">
+            <h3>Confirm investment amount</h3>
+            <p>Min. Investment amount : Rs 456.52</p>
+          </div>
+
+          <div class="amount-box">Rs 456.52</div>
+
+          <div class="increment-btns">
+            <button>+1000</button>
+            <button>+5000</button>
+            <button>+10000</button>
+          </div>
+
+          <button class="payment-section-btn">Invest Now</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
