@@ -17,14 +17,14 @@ function renderData() {
     imageElement.src = product.image;
 
 
-    const aboutInfoEl =  document.createElement("div");
+    const aboutInfoEl = document.createElement("div");
     aboutInfoEl.className = "about-info";
 
-    const nameElement =  document.createElement("p");
+    const nameElement = document.createElement("p");
     nameElement.textContent = product.name;
     nameElement.className = "product-name";
 
-    const shortInfoElement =  document.createElement("p");
+    const shortInfoElement = document.createElement("p");
     shortInfoElement.textContent = product.shortDescription;
     shortInfoElement.className = "product-short-info";
 
@@ -133,7 +133,7 @@ function renderData() {
     buttonEl.className = "payment-section-btn";
     buttonEl.textContent = "Invest Now";
 
-    buttonEl.addEventListener("click", function() {
+    buttonEl.addEventListener("click", function () {
         renderModal();
     })
 
@@ -165,7 +165,7 @@ function renderData() {
     bottomDetailBoxEl.appendChild(longDescriptionDivEl);
     bottomDetailBoxEl.appendChild(paymentSectionDivEl);
     bottomDetailBoxEl.appendChild(paymentSectioneResponsiveDivEl);
-    
+
 
     mainDivElement.appendChild(grayBoxEl);
     mainDivElement.appendChild(bottomDetailBoxEl);
@@ -178,6 +178,23 @@ function closeModal() {
     const modalOverlay = document.querySelector('.modal-overlay');
     modalOverlay.remove();
 }
+
+
+let totalPrice = product.minAmount;
+
+
+function incrementAmount(price) {
+    return function() {
+        const amountBoxEl = document.querySelector(".amount-box");
+        const minimumAmountElement = document.querySelector(".minimum-amt");
+
+        totalPrice += price;
+
+        amountBoxEl.textContent = `₹ ${totalPrice}`;
+        minimumAmountElement.textContent = `Min. Investment amount : ₹ ${totalPrice}`
+    }
+}
+
 
 
 const renderModal = () => {
@@ -200,7 +217,7 @@ const renderModal = () => {
     nameEl.textContent = `Investing in ${product.name}`;
 
     const closeButton = document.createElement('p');
-    closeButton.className  = "close-modal";
+    closeButton.className = "close-modal";
     closeButton.textContent = 'X';
 
     closeButton.addEventListener('click', closeModal)
@@ -217,6 +234,7 @@ const renderModal = () => {
     headingEl.textContent = "Confirm investment amount";
 
     const minimumAmountEl = document.createElement("p");
+    minimumAmountEl.className = "minimum-amt";
     minimumAmountEl.textContent = `Min. Investment amount : ₹ ${product.minAmount}`
 
     midRowEl.appendChild(headingEl);
@@ -232,11 +250,18 @@ const renderModal = () => {
     const oneKButton = document.createElement("button");
     oneKButton.textContent = "+1000";
 
+    oneKButton.addEventListener("click", incrementAmount(1000))
+
     const fiveKButton = document.createElement("button");
     fiveKButton.textContent = "+5000";
 
+    fiveKButton.addEventListener("click", incrementAmount(5000))
+
+
     const tenKButton = document.createElement("button");
     tenKButton.textContent = "+10000";
+
+    tenKButton.addEventListener("click", incrementAmount(10000))
 
 
     incrementBtnsEl.appendChild(oneKButton);
@@ -266,23 +291,86 @@ const renderModal = () => {
 
 
 function setToLocalStorage(product) {
-    return function() {
-        closeModal();
+    return function () {
+
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var yyyy = today.getFullYear();
+        today = mm + '/' + dd + '/' + yyyy;
+
+
         const orderData = JSON.parse(window.localStorage.getItem("orders")) || [];
-        orderData.push(product);
-        const orderDataJson = JSON.stringify(orderData);
-        window.localStorage.setItem("orders", orderDataJson);
+
+        let result = true;
+
+        orderData.forEach(function(el) {
+            if (product.name === el.name) {
+                result = false;
+            }
+        })
+
+
+        if (result) {
+            const productData = {
+                name: product.name,
+                date: today,
+                status: "Filled",
+                batch: "Invest",
+                image: product.image,
+            }
+    
+            
+            orderData.push(productData);
+    
+            const orderDataJson = JSON.stringify(orderData);
+            window.localStorage.setItem("orders", orderDataJson);
+    
+    
+            const modalContainer = document.querySelector(".modal-container");
+            modalContainer.innerHTML = "";
+    
+            const topRowEl = document.createElement("div");
+            topRowEl.className = "top-row";
+        
+            const imageEl = document.createElement("img");
+            imageEl.src = product.image;
+        
+            const nameEl = document.createElement("p");
+            nameEl.textContent = `Invested in ${product.name}`;
+        
+            const closeButton = document.createElement('p');
+            closeButton.className = "close-modal";
+            closeButton.textContent = 'X';
+        
+            closeButton.addEventListener('click', closeModal)
+        
+            topRowEl.appendChild(imageEl);
+            topRowEl.appendChild(nameEl);
+            topRowEl.appendChild(closeButton);
+    
+            const successfullMessage = document.createElement("h2");
+            successfullMessage.textContent = "Hey! Your order is successful. Thankyou for investing.";
+    
+    
+            const goToOrderPageBtn = document.createElement("button");
+            goToOrderPageBtn.textContent = "Go to your orders";
+            goToOrderPageBtn.className = "gotoOrders-btn";
+
+            goToOrderPageBtn.addEventListener("click", function() {
+                window.location.pathname = "orderPage/order.html";
+            })
+    
+            modalContainer.appendChild(topRowEl);
+            modalContainer.appendChild(successfullMessage);
+            modalContainer.appendChild(goToOrderPageBtn);
+        } else {
+
+            alert("You have alredy invested in this smallcase! Kindly choose other.");
+            window.location.pathname = "allSmallcases/allSmallCases.html";
+
+        }
+
     }
 }
 
-
-
-[
-    {
-        name: "",
-        date: "",
-        status: "",
-        batch: "",
-        image: "",
-    }
-]

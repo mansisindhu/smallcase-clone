@@ -313,7 +313,7 @@ ul {
 }
 
 .close-modal {
-  margin-left: 59px;
+  margin-left: 115px;
   cursor: pointer;
   font-weight: 500;
 }
@@ -365,7 +365,7 @@ ul {
   color: var(--mainBlue);
 }
 
-.payment-section-btn-modal {
+.payment-section-btn-modal, .gotoOrders-btn {
   width: 120px;
   font-size: 13px;
   padding: 12px 13px;
@@ -382,6 +382,14 @@ ul {
 }
 
 
+.modal-container > h2 {
+  margin: 55px 31px;
+}
+
+.gotoOrders-btn {
+  width: 170px;
+
+}
 
 
 
