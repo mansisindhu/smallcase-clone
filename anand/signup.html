@@ -209,12 +209,20 @@
             
 
             if (obj.email == "" || obj.mobile == "" || obj.password == "" || obj.password_conf == "") {
-                alert("Please fill all details")
+                alert("Please fill all details");
+                document.getElementById('email_id').value = null;
+                document.getElementById('mobile_num').value = null;
+                document.getElementById('password_setup').value = null;
+                document.getElementById('password_conf').value = null;
                 return false;
             } else {
 
                 if (obj.password != obj.password_conf) {
                 alert("Password  not matched");
+                document.getElementById('email_id').value = null;
+                document.getElementById('mobile_num').value = null;
+                document.getElementById('password_setup').value = null;
+                document.getElementById('password_conf').value = null;
             }  else{
             //   console.log(document.getElementById('email_id').value);
             console.log(obj);
