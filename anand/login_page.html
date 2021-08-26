@@ -14,17 +14,21 @@
             background-color: #f9f9f9;
 
         }
-
+      
         * {
             padding: 0;
             margin: 0;
             box-sizing: border-box;
             font-family: "Raleway", sans-serif;
         }
-
+   
+        #container{
+            margin:auto;
+        }
         .logo {
             text-align: center;
             margin-top: 10px;
+         
         }
 
         .logo img {
@@ -48,15 +52,17 @@
             border-radius: 10px;
             background-color: white;
             padding: 30px;
-            box-shadow: 1px 1px 4px var(--color-border-default);
+            box-shadow: 1px 1px 4px #b9b5b5;
+            width: 356px;
+            height: 460px;
         }
 
         .details_box {
-            margin-left: 20px;
-            margin-right: 20px;
+            margin-left:8px;
+          
             height: 30px;
             margin-top: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 50px;
         }
 
         .details_box p {
@@ -89,8 +95,11 @@
             padding-bottom: 5px;
             border: none;
             border-radius: 4px;
-            width: 200px;
-            height: 30px;
+            width: 276px;
+            height: 44px;
+            margin-top:10px;
+            margin-left:2px;
+            font-size: 14px;
         }
 
         #forget {
@@ -113,33 +122,39 @@
         }
 
         .box1 img {
-            height: 30px;
+            height: 50px;
+            margin:20px auto;
         }
 
         .footer_para {
             width: 20%;
             text-align: center;
             color: #9B9B9B;
-            font-size: 7px;
+            font-size: 10px;
+            line-height: 1.4;
 
         }
 
         #signup {
             color: #9B9B9B;
-            font-size: 10px;
+            font-size: 15px;
         }
+    
+      #signup:hover{
+          color:black;
+      }
 
         #userid {
-            width: 200px;
-            height: 30px;
+            width: 276px;
+            height: 44px;
             text-align: center;
-            margin-bottom: 40px;
+            font-size: 14px;
             border-color: lightgray;
         }
 
         #password {
-            width: 200px;
-            height: 30px;
+            width: 276px;
+            height: 44px;
             margin-bottom: 20px;
             text-align: center;
             border-color: lightgray;
@@ -147,6 +162,7 @@
             /* border: none; */
             /* border-radius: 8px; */
             /* margin-top: 30px; */
+            font-size: 14px;
         }
 
         .zerodha img {
@@ -158,8 +174,13 @@
         .logo p {
             color: #444444;
             font: 14.8px"open sans"sans-serif;
-            font-size: 12px;
+            font-size: 18px;
+            font-weight: 500;
         }
+      
+      span{
+         border-bottom:1px  dashed #7e7b7b;
+      }
 
         .logo button {
             color: #444444;
@@ -193,23 +214,27 @@
         .webkit-flex{
            display:flex;
            gap:10px;
-           margin-left:20px;
+           margin-left:10px;
            font-size: 12px;
            color:#9b9b9b;
+           margin-bottom: 25px;
             
         }
 .login-webkit-text{
     margin-bottom: 5px;
 }
 
+input:focus{
+    outline: none;
+}
     </style>
 </head>
 
 <body>
-
+    <div id="container">
     <!-- logo div containing logo and text of login  -->
     <div class="logo"> <img src="https://developers.kite.trade/static/images/app-icons/12hpqpbfwnxyvud8.png" />
-        <p id="login_kart">Login to small case</p>
+        <p id="login_kart">Login to <span>smallcase</span></p>
 
     </div>
 
@@ -222,7 +247,7 @@
             <div class="log"> <img src="https://kite.zerodha.com/static/images/kite-logo.svg" />
             </div>
             <div class="details_box"><input id="userid" class="border" type="text"
-                    placeholder="User id (eg: AB0001" /><br><br>
+                    placeholder="User id (eg: AB0001)" /><br><br>
             </div>
             <div class="details_box"><input id="password" class="border" type="password" placeholder="Password" />
             </div>
@@ -240,9 +265,7 @@
             </div>
            </div>
             <diV class="details_box"><button id="login" onclick="login()">Login</button></diV>
-            <diV class="details_box">
-                <button id="forget">Forget Password?</button>
-            </diV>
+           
         </div>
     </div>
 
@@ -251,16 +274,16 @@
         <div class="zerodha" style="text-align: center;"><a href="landingPage.html"><img
                     src=" https://kite.zerodha.com/static/images/zerodha-logo.svg" /></a></div>
         <div>
-            <a href="signup.html" id="signup">dont have account? sign up now</a>
+            <a href="signup.html" id="signup">Don't have account? Sign up now</a>
         </div>
 
         <div style="display: flex; justify-content: center;">
-            <p class="footer_para">zerodha banking limited member of NSE, BSE & CDSL- SEBI! reg
+            <p class="footer_para">Zerodha Broking limited member of NSE, BSE & CDSL- SEBI! reg
                 No:-in12345 CDSL_SEBI refisteration number :-In zerodha pvt limited, registeration number:12345</p>
         </div>
 
 
-
+    </div>
     </div>
 
     <script>
@@ -298,9 +321,7 @@
         let login_kart = document.getElementById('login_kart');
         login_kart.addEventListener('click', kart_login);
 
-        function kart_login() {
-            window.location.href = "login_kite.html"
-        }
+      
 
 
     </script>

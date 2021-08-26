@@ -47,15 +47,18 @@
             border-radius: 10px;
             background-color: white;
             padding: 30px;
-            box-shadow: 1px 1px 4px var(--color-border-default);
+            box-shadow: 1px 1px 4px rgb(206, 203, 203);
+            width:356px;
+            margin:auto;
+
         }
 
         .details_box {
-            margin-left: 20px;
+            margin-left: 15px;
             margin-right: 20px;
             height: 30px;
             margin-top: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 35px;
         }
 
         .details_box p {
@@ -76,7 +79,8 @@
 
         .log {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
+            margin-top:15px;
         }
 
         #signup {
@@ -87,8 +91,8 @@
             padding-bottom: 5px;
             font: 20px;
 
-            width: 200px;
-            height: 30px;
+            width: 276px;
+            height: 40px;
             text-align: center;
             border-radius: 4px;
             border-color: lightgray;
@@ -139,27 +143,40 @@
         }
 
         .size {
-            width: 200px;
-            height: 30px;
+            width: 276px;
+            height: 40px;
             text-align: center;
             border-radius: 4px;
      
             border:0.1px solid lightgray;
+            margin-bottom:20px;
+            font-size:15px;
         }
 
-  
+    input:focus{
+        outline:none;
+    }
+
+    #container {
+        margin:auto;
+     
+    }
+#signuptext{
+    color:black;
+}
+
     </style>
 </head>
 
 <body>
-
+    <div id="container">
     <!-- logo div containing logo and text of signup  -->
     <div class="top_heading">
-        <h1>Welcome to Smallcase</h1>
+     
     </div>
 
     <div class="logo"> <img src="https://developers.kite.trade/static/images/app-icons/12hpqpbfwnxyvud8.png" />
-        <p >Sign Up here</p>
+        <p id="signuptext">Sign Up here</p>
 
     </div>
 
@@ -171,10 +188,10 @@
         <div class="box1">
             <div class="log"> <img src="https://kite.zerodha.com/static/images/kite-logo.svg" />
             </div>
-            <div class="details_box"><input id="email_id" type="text" class="size"
+            <div class="details_box"><input id="email_id" type="email" class="size"
                     placeholder="Enter email id" /><br><br>
             </div>
-            <div class="details_box" ><input id="mobile_num" type="number" class="size"
+            <div class="details_box" ><input id="mobile_num" type="tel" class="size"
                 placeholder="Enter mobile number" />
         </div>
        
@@ -184,7 +201,7 @@
                 placeholder="Confirm password" />
         </div>
 
-        <diV class="details_box" ><button id="signup" onclick="add_signup()">signup</button></diV>
+        <diV class="details_box" ><button id="signup" onclick="add_signup()">Sign up</button></diV>
 
     </div>
     </div>
