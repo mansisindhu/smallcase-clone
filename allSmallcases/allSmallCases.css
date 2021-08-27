@@ -13,7 +13,7 @@
   --landingPosterBackgroundColor: #f9fafb;
   --lightGray: #d5d6d8;
   --darkGray: #737a7f;
-  --btnBoxShadow: 0 1px 2px rgb(0 0 0 / 15%);
+  --btnBoxShadow: 0 1px 5px rgb(0 0 0 / 20%);
   --headerHeight: 60px;
   --btnBorderRadius: 4px;
 }
@@ -190,7 +190,12 @@ h1 {
   flex-direction: column;
   border-bottom: 1px solid var(--lightGray);
   margin-bottom: 16px;
-  padding-bottom: 16px;
+  padding: 16px;
+}
+
+.product:hover {
+  border-radius: var(--btnBorderRadius);
+  box-shadow: var(--btnBoxShadow);
 }
 
 .product-main-info {

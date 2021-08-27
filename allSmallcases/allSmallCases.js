@@ -475,6 +475,6 @@ function setItem(product) {
     return function() {
         const smallCaseDetail = JSON.stringify(product);
         window.localStorage.setItem("smallcase-detail", smallCaseDetail);
-        window.location.pathname = "smallcaseDetail/smallcaseDetail.html"
+        window.location.pathname = "smallcaseDetail/smallcaseDetail.html";
     }
 }
