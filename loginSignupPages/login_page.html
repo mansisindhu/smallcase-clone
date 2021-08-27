@@ -230,46 +230,6 @@ input:focus{
     
 }
 
-/* input styling moving text*/
-
-input {
-    height:100%;
-    width:100%;
-    position:relative;
-}
-.moving_style{
-    border-bottom: none;
-    position: absolute;
-    top:285px;
-    left:650px;
-    pointer-events: none;
-    background-color: white;
-    font-size: 17px;
-    color: #797777
-}
-input:focus + .moving_style{
-    top:265px;
-    left:560px;
-    color: black;
-}
-
-/* password box */
-
-.moving_style_password{
-    border-bottom: none;
-    position: absolute;
-    top:365px;
-    left:640px;
-    pointer-events: none;
-    background-color: white;
-    font-size: 17px;
-    color: #797777
-}
-input:focus + .moving_style_password{
-    top:342px;
-    left:560px;
-    color: black;
-}
 
 
 
@@ -294,11 +254,11 @@ input:focus + .moving_style_password{
         <div class="box1">
             <div class="log"> <img src="https://kite.zerodha.com/static/images/kite-logo.svg" />
             </div>
-            <div class="details_box"><input id="userid" class="border" type="text"
-                  /><span class="moving_style">User id</span>
+            <div class="details_box"><input id="userid" class="border" type="text" placeholder="Email id"
+                  />
                     <br><br>
             </div>
-            <div class="details_box"><input id="password" class="border" type="password"  /> <span class="moving_style_password">Password</span>
+            <div class="details_box"><input id="password" class="border" type="password" placeholder="Password" /> 
             </div>
             <!--
             <div class="details_box webkit"><input type="checkbox" /> <label id="p1">Log in to kit web also</label>
@@ -309,8 +269,8 @@ input:focus + .moving_style_password{
            <div class="webkit-flex">
             <div><input type="checkbox"/></div>
             <div>
-                <div class="login-webkit-text">Log in to kit web also</div>
-                <div>Not recommended public system</div>
+                <div class="login-webkit-text">Log in to Kite Web also?</div>
+                <div>Not recommended on shared or public systems</div>
             </div>
            </div>
             <diV class="details_box"><button id="login" onclick="login()">Login</button></diV>
@@ -320,8 +280,8 @@ input:focus + .moving_style_password{
 
     <div class="footer">
 
-        <div class="zerodha" style="text-align: center;"><a href="landingPage.html"><img
-                    src=" https://kite.zerodha.com/static/images/zerodha-logo.svg" /></a></div>
+        <div class="zerodha" style="text-align: center;"><img
+                    src=" https://kite.zerodha.com/static/images/zerodha-logo.svg" /></div>
         <div>
             <a href="signup.html" id="signup">Don't have account? Sign up now</a>
         </div>
