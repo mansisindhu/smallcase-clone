@@ -29,3 +29,16 @@ smallcaseDivResponsiveElement.addEventListener("click", function () {
     window.localStorage.setItem("smallcase-detail", dataToBeSent);
     window.location.pathname = "smallcaseDetail/smallcaseDetail.html";
 })
+
+
+const loginStatus = window.localStorage.getItem("loginStatus");
+
+const loginBtnEl = document.querySelector(".login-p");
+
+console.log(loginBtnEl);
+
+if (loginStatus === "true") {
+    loginBtnEl.textContent = "Logout";
+} else {
+    loginBtnEl.textContent = "Login";
+}
