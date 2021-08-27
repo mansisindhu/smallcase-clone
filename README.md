@@ -4,7 +4,7 @@
     
 
 
-# Small Case (clone)
+# smallcase (clone)
 
 A smallcase is a basket of exchange traded securities (like stocks & ETFs) in a specified weighting scheme to reflect a certain
  objective (ideas, themes, strategies). A smallcase has a minimum of 2 securities and a maximum of 50 securities.
