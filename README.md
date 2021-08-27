@@ -1,1 +1,1 @@
-# smallcase-clone
+# smallcase Clone
