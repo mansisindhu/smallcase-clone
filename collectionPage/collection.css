@@ -32,7 +32,6 @@ header {
   border-bottom: 1px solid var(--lightGray);
 }
 
-
 header a {
   text-decoration: none;
   color: black;
@@ -155,6 +154,9 @@ h1 {
   text-align: center;
   font-weight: 500;
 }
+.top-box-responsive {
+  display: none;
+}
 
 .top-box-2 {
   padding: 16px 16px;
@@ -235,6 +237,12 @@ h1 {
   margin: 24px 0;
 }
 
+.all-collections-boxes {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
 .collection-box {
   padding: 16px;
   border: 1px solid var(--lightGray);
@@ -283,7 +291,7 @@ h1 {
 }
 
 .bottom-box {
-  margin: 16px 0;
+  margin: 32px 0;
   border: 1px solid var(--lightGray);
   border-radius: var(--btnBorderRadius);
   display: flex;
@@ -361,21 +369,113 @@ footer {
 }
 
 @media (min-width: 1024px) {
+  .main {
+    width: 1120px;
+  }
+
+  .top-boxes {
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+  }
+
+  .top-box-2 {
+    display: none;
+  }
+
+  .top-box-responsive {
+    display: flex;
+    flex-direction: column;
+    padding: 14px 24px 24px;
+    border-radius: var(--btnBorderRadius);
+    border: 1px solid var(--lightGray);
+    width: 542px;
+  }
+
+  .about-info-responsive {
+    display: flex;
+    gap: 16px;
+  }
+
+  .about-info-responsive > img {
+    width: 143px;
+    height: 143px;
+    border-radius: var(--btnBorderRadius);
+  }
+
+  .about-info-responsive-right {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about-info-responsive-right > p {
+    font-size: 14px;
+    color: var(--darkGray);
+    margin: 0 0 12px;
+  }
+
+  .top-box-responsive > p {
+    margin-bottom: 12px;
+    color: var(--darkGray);
+    font-weight: 500;
+  }
+
+  .about-info-responsive-right > h2 {
+    margin-top: -8px;
+  }
+
+  .blue-para {
+    color: #1f8ceb
+  }
+
+  .stats {
+    margin: 0;
+  }
+
+  .stat-1 > p:first-child,.stat-2 > p:first-child {
+    font-size: 14px;
+  }
+
+  .stat-3 {
+    margin-bottom: 8px;
+  }
+
+  .top-box-1 {
+    width: 544px;
+    padding: 32px 24px 24px;
+    background-position: calc(100% - -1px) -114px;
+    background-size: 249px;
+    margin: 0;
+  }
+
+  .top-box-1 > .blue-btn {
+    margin-top: 12px;
+  }
+
+  .all-collections-boxes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 24px;
+  }
 
 
+  .bottom-boxes {
+    display: flex;
+    gap: 32px;
+  }
 
+  .bottom-box-left > h3 {
+    font-size: 22px;
+  }
 
+  .bottom-box-left > p {
+    font-size: 14px;
+  }
 
-
-
-
-
-
-
-
-
-
-
+  .bottom-box > img {
+    width: 165px;
+    height: 195px;
+  }
 
 
 

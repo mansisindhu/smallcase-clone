@@ -7,28 +7,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login_page</title>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700&display=swap"
-    rel="stylesheet">
+        rel="stylesheet">
 
     <style>
         body {
             background-color: #f9f9f9;
 
         }
-      
+
         * {
             padding: 0;
             margin: 0;
             box-sizing: border-box;
             font-family: "Raleway", sans-serif;
         }
-   
-        #container{
-            margin:auto;
+
+        #container {
+            margin: auto;
         }
+
         .logo {
             text-align: center;
             margin-top: 10px;
-         
+
         }
 
         .logo img {
@@ -58,8 +59,8 @@
         }
 
         .details_box {
-            margin-left:8px;
-          
+            margin-left: 8px;
+
             height: 30px;
             margin-top: 10px;
             margin-bottom: 50px;
@@ -97,8 +98,8 @@
             border-radius: 4px;
             width: 276px;
             height: 44px;
-            margin-top:10px;
-            margin-left:2px;
+            margin-top: 10px;
+            margin-left: 2px;
             font-size: 14px;
         }
 
@@ -123,7 +124,7 @@
 
         .box1 img {
             height: 50px;
-            margin:20px auto;
+            margin: 20px auto;
         }
 
         .footer_para {
@@ -139,10 +140,10 @@
             color: #9B9B9B;
             font-size: 15px;
         }
-    
-      #signup:hover{
-          color:black;
-      }
+
+        #signup:hover {
+            color: black;
+        }
 
         #userid {
             width: 276px;
@@ -177,10 +178,10 @@
             font-size: 18px;
             font-weight: 500;
         }
-      
-      span{
-         border-bottom:1px  dashed #7e7b7b;
-      }
+
+        span {
+            border-bottom: 1px dashed #7e7b7b;
+        }
 
         .logo button {
             color: #444444;
@@ -197,108 +198,103 @@
         #p1 {
             color: #9b9b9b;
             font-size: 10px;
-         
+
         }
 
         .border {
             border-radius: 4px;
             /* border: none; */
-         
-            border:1px solid lightgray;
+
+            border: 1px solid lightgray;
         }
 
         .footer {
             margin-top: 10px;
 
         }
-        .webkit-flex{
-           display:flex;
-           gap:10px;
-           margin-left:10px;
-           font-size: 12px;
-           color:#9b9b9b;
-           margin-bottom: 25px;
-            
+
+        .webkit-flex {
+            display: flex;
+            gap: 10px;
+            margin-left: 10px;
+            font-size: 12px;
+            color: #9b9b9b;
+            margin-bottom: 25px;
+
         }
-.login-webkit-text{
-    margin-bottom: 5px;
-}
 
-input:focus{
-    outline: none;
+        .login-webkit-text {
+            margin-bottom: 5px;
+        }
 
-    
-}
+        input:focus {
+            outline: none;
 
 
-
-
-
-
+        }
     </style>
 </head>
 
 <body>
     <div id="container">
-    <!-- logo div containing logo and text of login  -->
-    <div class="logo"> <img src="https://developers.kite.trade/static/images/app-icons/12hpqpbfwnxyvud8.png" />
-        <p id="login_kart">Login to <span>smallcase</span></p>
+        <!-- logo div containing logo and text of login  -->
+        <div class="logo"> <img src="https://developers.kite.trade/static/images/app-icons/12hpqpbfwnxyvud8.png" />
+            <p id="login_kart">Login to <span>smallcase</span></p>
 
-    </div>
+        </div>
 
 
 
-    <!-- login detals div will take inforation of login -->
+        <!-- login detals div will take inforation of login -->
 
-    <div class=" login_details">
-        <div class="box1">
-            <div class="log"> <img src="https://kite.zerodha.com/static/images/kite-logo.svg" />
-            </div>
-            <div class="details_box"><input id="userid" class="border" type="text" placeholder="Email id"
-                  />
+        <div class=" login_details">
+            <div class="box1">
+                <div class="log"> <img src="https://kite.zerodha.com/static/images/kite-logo.svg" />
+                </div>
+                <div class="details_box"><input id="userid" class="border" type="email" pattern=".+@globex\.com"
+                        placeholder="Email id" />
                     <br><br>
-            </div>
-            <div class="details_box"><input id="password" class="border" type="password" placeholder="Password" /> 
-            </div>
-            <!--
+                </div>
+                <div class="details_box"><input id="password" class="border" type="password" placeholder="Password" />
+                </div>
+                <!--
             <div class="details_box webkit"><input type="checkbox" /> <label id="p1">Log in to kit web also</label>
                 <p id="p-text">Not recommended public system</p>
 
             </div>
            -->
-           <div class="webkit-flex">
-            <div><input type="checkbox"/></div>
-            <div>
-                <div class="login-webkit-text">Log in to Kite Web also?</div>
-                <div>Not recommended on shared or public systems</div>
+                <div class="webkit-flex">
+                    <div><input type="checkbox" /></div>
+                    <div>
+                        <div class="login-webkit-text">Log in to Kite Web also?</div>
+                        <div>Not recommended on shared or public systems</div>
+                    </div>
+                </div>
+                <diV class="details_box"><button id="login" onclick="login()">Login</button></diV>
+
             </div>
-           </div>
-            <diV class="details_box"><button id="login" onclick="login()">Login</button></diV>
-           
         </div>
-    </div>
 
-    <div class="footer">
+        <div class="footer">
 
-        <div class="zerodha" style="text-align: center;"><img
+            <div class="zerodha" style="text-align: center;"><img
                     src=" https://kite.zerodha.com/static/images/zerodha-logo.svg" /></div>
-        <div>
-            <a href="signup.html" id="signup">Don't have account? Sign up now</a>
+            <div>
+                <a href="signup.html" id="signup">Don't have account? Sign up now</a>
+            </div>
+
+            <div style="display: flex; justify-content: center;">
+                <p class="footer_para">Zerodha Broking limited member of NSE, BSE & CDSL- SEBI! reg
+                    No:-in12345 CDSL_SEBI refisteration number :-In zerodha pvt limited, registeration number:12345</p>
+            </div>
+
+
         </div>
-
-        <div style="display: flex; justify-content: center;">
-            <p class="footer_para">Zerodha Broking limited member of NSE, BSE & CDSL- SEBI! reg
-                No:-in12345 CDSL_SEBI refisteration number :-In zerodha pvt limited, registeration number:12345</p>
-        </div>
-
-
-    </div>
     </div>
 
     <script>
 
-        let signup_data = localStorage.getItem('signup_det');
-        signup_data = JSON.parse(signup_data);
+        let signup_data = JSON.parse(window.localStorage.getItem('signup_det'));
 
         console.log(signup_data);
 
@@ -309,28 +305,18 @@ input:focus{
 
             for (var i = 0; i < signup_data.length; i++) {
                 if (user_id === signup_data[i].email && password == signup_data[i].password) {
-                
-                    alert("login successfull");
-                   
-                    return;
-                } else {
-
-                    alert("Invalid credentials");
-                    
+                    window.location.pathname = "landingPage/MainHtml.html";
                     break;
-
+                } else {
+                    alert("Invalid credentials");
+                    break;
                 }
 
             }
             document.getElementById('userid').value = null;
             document.getElementById('password').value = null;
-           
+
         }
-
-        let login_kart = document.getElementById('login_kart');
-        login_kart.addEventListener('click', kart_login);
-
-      
 
 
     </script>
