@@ -289,13 +289,14 @@ ul {
 }
 
 .modal-container {
-  height: 400px;
+  height: 682px;
   width: 400px;
   background: white;
   display: flex;
   flex-direction: column;
   border: 1px solid var(--lightGray);
   box-shadow: var(--btnBoxShadow);
+  border-radius: var(--btnBorderRadius);
 }
 
 .top-row {
@@ -314,18 +315,19 @@ ul {
 }
 
 .close-modal {
-  margin-left: 59px;
+  margin-left: 66px;
   cursor: pointer;
   font-weight: 500;
 }
 
 .mid-row {
-  margin: 20px 0;
+  margin: 12px 0;
   display: flex;
   flex-direction: column;
   padding: 0 20px;
   gap: 8px;
 }
+
 .mid-row > p {
   color: var(--darkGray);
   font-size: 14px;
@@ -383,6 +385,24 @@ ul {
 }
 
 
+.payment {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 200;
+  margin: 0 20px;
+}
+
+.payment > input {
+  padding: 10px;
+  border: 1px solid var(--lightGray);
+  border-radius: var(--btnBorderRadius);
+}
+
+.modal-container > h2 {
+  margin: 55px 31px;
+}
+
 
 
 
@@ -393,6 +413,32 @@ ul {
   .long-description {
     width: 795px;
   } 
+
+  .modal-container {
+    width: 600px;
+  }
+
+  .close-modal {
+    margin-left: 254px;
+  }
+
+.payment {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 400px;
+  margin: 0 20px;
+}
+
+.payment > input {
+padding: 10px;
+}
+
+.modal-container > h2 {
+  margin: 55px 31px;
+}
+
+
 
   .top-detail-box {
     width: 1120px;

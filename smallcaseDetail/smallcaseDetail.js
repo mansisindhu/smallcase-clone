@@ -274,15 +274,3 @@ function setToLocalStorage(product) {
         window.localStorage.setItem("orders", orderDataJson);
     }
 }
-
-
-
-[
-    {
-        name: "",
-        date: "",
-        status: "",
-        batch: "",
-        image: "",
-    }
-]
