@@ -284,8 +284,8 @@
             </div>
 
             <div style="display: flex; justify-content: center;">
-                <p class="footer_para">Zerodha Broking limited member of NSE, BSE & CDSL- SEBI! reg
-                    No:-in12345 CDSL_SEBI refisteration number :-In zerodha pvt limited, registeration number:12345</p>
+                <p class="footer_para">Zerodha Broking Limited Member of NSE, BSE & CDSL- SEBI! reg
+                    No:-In12345 CDSL_SEBI registeration number :-In Zerodha pvt limited, registeration number:12345</p>
             </div>
 
 
@@ -297,21 +297,22 @@
         let signup_data = JSON.parse(window.localStorage.getItem('signup_det'));
 
         console.log(signup_data);
-
+        console.log(signup_data.length)
 
         function login() {
             let user_id = document.getElementById('userid').value;
             let password = document.getElementById('password').value;
 
             for (var i = 0; i < signup_data.length; i++) {
-                if (user_id === signup_data[i].email && password == signup_data[i].password) {
+                if (user_id == signup_data[i].email && password == signup_data[i].password) {
                     window.location.pathname = "landingPage/MainHtml.html";
                     break;
                 } else {
+                    if( i ==  signup_data.length-1) {
                     alert("Invalid credentials");
                     break;
                 }
-
+            }
             }
             document.getElementById('userid').value = null;
             document.getElementById('password').value = null;

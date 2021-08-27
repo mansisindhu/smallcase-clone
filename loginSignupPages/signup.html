@@ -122,12 +122,18 @@
         }
 
         .footer_para {
-            width: 20%;
+            width: 25%;
             text-align: center;
             color: #9B9B9B;
-            font-size: 7px;
+            font-size: 12px;
+           
+        }
+       
+        div > .footer_para{
+            margin-top:0px;
         }
 
+     
         .logo p {
             font-size: 20px;
             color:gray
@@ -176,7 +182,7 @@
     </div>
 
     <div class="logo"> <img src="https://developers.kite.trade/static/images/app-icons/12hpqpbfwnxyvud8.png" />
-        <p id="signuptext">Sign Up here</p>
+        <p id="signuptext"> Sign Up here</p>
 
     </div>
 
@@ -188,7 +194,7 @@
         <div class="box1">
             <div class="log"> <img src="https://kite.zerodha.com/static/images/kite-logo.svg" />
             </div>
-            <div class="details_box"><input id="email_id" type="email" class="size"
+            <div class="details_box"><input  type="email" id="email_id" class="size"  
                     placeholder="Enter email id" /><br><br>
             </div>
             <div class="details_box" ><input id="mobile_num" type="tel" class="size"
@@ -205,7 +211,17 @@
 
     </div>
     </div>
+    <div class="footer">
 
+        
+
+        <div style="display: flex; justify-content: center;">
+            <p class="footer_para">Zerodha Broking limited member of NSE, BSE & CDSL- SEBI! reg
+                No:-In12345 CDSL_SEBI refisteration number :-In zerodha pvt limited, registeration number:12345</p>
+        </div>
+
+
+    </div>
     </div>
 
     <script>
@@ -215,6 +231,13 @@
 
 
         function add_signup() {
+
+        // email validation  code .
+        var regx = /^([a-zA-Z0-9\.-]+)\@([a-zA-Z0-9\-]+)\.([a-z]{2,20})$/;
+         var email_id = document.getElementById("email_id").value
+if(regx.test(email_id))  {
+ 
+
             var obj = {
                 email: document.getElementById('email_id').value,
                 mobile: document.getElementById('mobile_num').value,
@@ -256,6 +279,10 @@
         }
         //   document.getElementById('email_id').value;
         console.log(submit_details);
+    }
+        else{
+     alert ("Enter a valid Email id")
+}
                 
             }
             
