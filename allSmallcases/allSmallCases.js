@@ -10,7 +10,7 @@ const smallcasesData = [
         longDescription2: "This smallcase is ideal for all types of market conditions. It will ensure that neither will your investment ship sink, nor will the investment flight soar to scary heights. What you will get here is a steady ride to help you meet your long-term investment goals.",
         votalityType: "Low Volatility",
         image: "https://assets.smallcase.com/images/smallcases/200/SCAW_0001.png",
-        cagr: 12.87,
+        cagr: 13.87,
         cagrYear: "3Y CAGR"
     },
     {
@@ -23,7 +23,7 @@ const smallcasesData = [
         longDescription2: "Historically gold has maintained its value and is the best form of hedge against inflation and geo-political uncertainties. Since price of gold is negatively correlated with price of stock, the former is a very effective portfolio diversifier.",
         votalityType: "Low Volatility",
         image: "https://assets.smallcase.com/images/smallcases/160/SCET_0005.png",
-        cagr: 12.87,
+        cagr: 19.93,
         cagrYear: "3Y CAGR"
     },
     {
@@ -438,7 +438,7 @@ function renderSmallcases(arr) {
         cagrRateElement.textContent = `${product.cagr}%`;
 
         if (product.cagr > 0) {
-            cagrRateElement.style.color = "green";
+            cagrRateElement.style.color = "#19af55";
         } else {
             cagrRateElement.style.color = "red";
         }
@@ -478,3 +478,24 @@ function setItem(product) {
         window.location.pathname = "smallcaseDetail/smallcaseDetail.html";
     }
 }
+
+
+
+
+// Login and logout functionality
+
+const loginStatus = window.localStorage.getItem("loginStatus");
+
+const loginBtnEl = document.querySelector(".login-p");
+
+if (loginStatus === "true") {
+    loginBtnEl.textContent = "Logout";
+}
+
+
+loginBtnEl.addEventListener("click", function() {
+    if (loginStatus === "true") {
+        loginBtnEl.href = "";
+        window.localStorage.setItem("loginStatus", "false");
+    }
+})

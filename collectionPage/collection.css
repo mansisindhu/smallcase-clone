@@ -18,7 +18,9 @@
   --btnBorderRadius: 4px;
 }
 
-
+a {
+  cursor: pointer;
+}
 
 /* ********************  header   *************** */
 

@@ -61,7 +61,7 @@ function renderData() {
     cagrRateElement.textContent = `${product.cagr}%`;
 
     if (product.cagr > 0) {
-        cagrRateElement.style.color = "green";
+        cagrRateElement.style.color = "#19af55";
     } else {
         cagrRateElement.style.color = "red";
     }
@@ -419,3 +419,23 @@ function setToLocalStorage(product) {
     }
 }
 
+
+
+// Login and logout functionality
+
+const loginStatus = window.localStorage.getItem("loginStatus");
+
+const loginBtnEl = document.querySelector(".login-p");
+
+if (loginStatus === "true") {
+    loginBtnEl.textContent = "Logout";
+}
+
+
+loginBtnEl.addEventListener("click", function() {
+    if (loginStatus === "true") {
+        alert("You have successfully logged out.")
+        loginBtnEl.href = "";
+        window.localStorage.setItem("loginStatus", "false");
+    }
+})

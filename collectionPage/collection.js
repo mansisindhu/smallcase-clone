@@ -31,15 +31,34 @@ smallcaseDivResponsiveElement.addEventListener("click", function () {
 })
 
 
+
+
+// Login and logout functionality
+
 const loginStatus = window.localStorage.getItem("loginStatus");
 
 const loginBtnEl = document.querySelector(".login-p");
 
-console.log(loginBtnEl);
-
 if (loginStatus === "true") {
     loginBtnEl.textContent = "Logout";
-} else {
-    loginBtnEl.textContent = "Login";
 }
 
+
+loginBtnEl.addEventListener("click", function() {
+    if (loginStatus === "true") {
+        alert("You have successfully logged out.")
+        loginBtnEl.href = "";
+        window.localStorage.setItem("loginStatus", "false");
+    }
+})
+
+
+
+// Order page rendering logic
+function renderOrders() {
+    if (loginStatus === "true") {
+        window.location.pathname = "orderPage/order.html";
+    } else {
+        window.location.pathname = "loginSignupPages/login_page.html";
+    }
+}
