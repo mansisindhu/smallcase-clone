@@ -300,6 +300,10 @@
 
     <script>
 
+        let loginStatus = window.localStorage.getItem("loginStatus");
+
+
+
         let signup_data = JSON.parse(window.localStorage.getItem('signup_det'));
 
         console.log(signup_data);
@@ -323,6 +327,7 @@
             document.getElementById('userid').value = null;
             document.getElementById('password').value = null;
 
+            window.localStorage.setItem("loginStatus", "true");
         }
 
 

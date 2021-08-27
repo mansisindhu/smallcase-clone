@@ -299,7 +299,6 @@ function setToLocalStorage(product) {
         var yyyy = today.getFullYear();
         today = mm + '/' + dd + '/' + yyyy;
 
-
         const orderData = JSON.parse(window.localStorage.getItem("orders")) || [];
 
         let result = true;
