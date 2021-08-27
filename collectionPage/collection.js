@@ -42,3 +42,4 @@ if (loginStatus === "true") {
 } else {
     loginBtnEl.textContent = "Login";
 }
+

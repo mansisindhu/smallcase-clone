@@ -134,7 +134,17 @@ function renderData() {
     buttonEl.textContent = "Invest Now";
 
     buttonEl.addEventListener("click", function () {
-        renderModal();
+
+        const loginStatus = window.localStorage.getItem("loginStatus");
+
+        const loginBtnEl = document.querySelector(".login-p");
+
+        if (loginStatus === "true") {
+            renderModal();
+        } else {
+            window.location.pathname = "loginSignupPages/login_page.html"
+        }
+        
     })
 
     paymentSectionDivEl.appendChild(buttonEl);
@@ -184,7 +194,7 @@ let totalPrice = product.minAmount;
 
 
 function incrementAmount(price) {
-    return function() {
+    return function () {
         const amountBoxEl = document.querySelector(".amount-box");
         const minimumAmountElement = document.querySelector(".minimum-amt");
 
@@ -269,6 +279,41 @@ const renderModal = () => {
     incrementBtnsEl.appendChild(tenKButton);
 
 
+    const paymentDiv = document.createElement("div");
+    paymentDiv.className = "payment";
+
+    const addHeadingEl = document.createElement("h3");
+    addHeadingEl.textContent = "Add card details";
+
+    const cardHolderNameInput = document.createElement("input");
+    cardHolderNameInput.type = "text";
+    cardHolderNameInput.placeholder = "Enter Card Holder Name";
+
+    const cardNumberInput = document.createElement("input");
+    cardNumberInput.type = "number";
+    cardNumberInput.placeholder = "Enter Card Number";
+
+    const cardCVVInput = document.createElement("input");
+    cardCVVInput.type = "number";
+    cardCVVInput.placeholder = "Enter CVV";
+
+    const expirationMonthInput = document.createElement("input");
+    expirationMonthInput.type = "number";
+    expirationMonthInput.placeholder = "Enter Expiration Month";
+
+    const yearInput = document.createElement("input");
+    yearInput.type = "number";
+    yearInput.placeholder = "Enter Year"
+
+
+    paymentDiv.appendChild(addHeadingEl);
+    paymentDiv.appendChild(cardHolderNameInput);
+    paymentDiv.appendChild(cardNumberInput);
+    paymentDiv.appendChild(cardCVVInput);
+    paymentDiv.appendChild(expirationMonthInput);
+    paymentDiv.appendChild(yearInput);
+
+
     const paymentBtnElement = document.createElement("button");
     paymentBtnElement.textContent = "Invest Now";
     paymentBtnElement.className = "payment-section-btn-modal";
@@ -280,6 +325,7 @@ const renderModal = () => {
     modalContainer.appendChild(midRowEl);
     modalContainer.appendChild(amountBoxEl);
     modalContainer.appendChild(incrementBtnsEl);
+    modalContainer.appendChild(paymentDiv);
     modalContainer.appendChild(paymentBtnElement);
 
 
@@ -303,7 +349,7 @@ function setToLocalStorage(product) {
 
         let result = true;
 
-        orderData.forEach(function(el) {
+        orderData.forEach(function (el) {
             if (product.name === el.name) {
                 result = false;
             }
@@ -318,48 +364,48 @@ function setToLocalStorage(product) {
                 batch: "Invest",
                 image: product.image,
             }
-    
-            
+
+
             orderData.push(productData);
-    
+
             const orderDataJson = JSON.stringify(orderData);
             window.localStorage.setItem("orders", orderDataJson);
-    
-    
+
+
             const modalContainer = document.querySelector(".modal-container");
             modalContainer.innerHTML = "";
-    
+
             const topRowEl = document.createElement("div");
             topRowEl.className = "top-row";
-        
+
             const imageEl = document.createElement("img");
             imageEl.src = product.image;
-        
+
             const nameEl = document.createElement("p");
             nameEl.textContent = `Invested in ${product.name}`;
-        
+
             const closeButton = document.createElement('p');
             closeButton.className = "close-modal";
             closeButton.textContent = 'X';
-        
+
             closeButton.addEventListener('click', closeModal)
-        
+
             topRowEl.appendChild(imageEl);
             topRowEl.appendChild(nameEl);
             topRowEl.appendChild(closeButton);
-    
+
             const successfullMessage = document.createElement("h2");
             successfullMessage.textContent = "Hey! Your order is successful. Thankyou for investing.";
-    
-    
+
+
             const goToOrderPageBtn = document.createElement("button");
             goToOrderPageBtn.textContent = "Go to your orders";
             goToOrderPageBtn.className = "gotoOrders-btn";
 
-            goToOrderPageBtn.addEventListener("click", function() {
+            goToOrderPageBtn.addEventListener("click", function () {
                 window.location.pathname = "orderPage/order.html";
             })
-    
+
             modalContainer.appendChild(topRowEl);
             modalContainer.appendChild(successfullMessage);
             modalContainer.appendChild(goToOrderPageBtn);
