@@ -226,7 +226,55 @@
 
 input:focus{
     outline: none;
+
+    
 }
+
+/* input styling moving text*/
+
+input {
+    height:100%;
+    width:100%;
+    position:relative;
+}
+.moving_style{
+    border-bottom: none;
+    position: absolute;
+    top:285px;
+    left:650px;
+    pointer-events: none;
+    background-color: white;
+    font-size: 17px;
+    color: #797777
+}
+input:focus + .moving_style{
+    top:265px;
+    left:560px;
+    color: black;
+}
+
+/* password box */
+
+.moving_style_password{
+    border-bottom: none;
+    position: absolute;
+    top:365px;
+    left:640px;
+    pointer-events: none;
+    background-color: white;
+    font-size: 17px;
+    color: #797777
+}
+input:focus + .moving_style_password{
+    top:342px;
+    left:560px;
+    color: black;
+}
+
+
+
+
+
     </style>
 </head>
 
@@ -247,9 +295,10 @@ input:focus{
             <div class="log"> <img src="https://kite.zerodha.com/static/images/kite-logo.svg" />
             </div>
             <div class="details_box"><input id="userid" class="border" type="text"
-                    placeholder="User id (eg: AB0001)" /><br><br>
+                  /><span class="moving_style">User id</span>
+                    <br><br>
             </div>
-            <div class="details_box"><input id="password" class="border" type="password" placeholder="Password" />
+            <div class="details_box"><input id="password" class="border" type="password"  /> <span class="moving_style_password">Password</span>
             </div>
             <!--
             <div class="details_box webkit"><input type="checkbox" /> <label id="p1">Log in to kit web also</label>
