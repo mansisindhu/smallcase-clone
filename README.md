@@ -8,7 +8,7 @@ A smallcase is a basket of exchange traded securities (like stocks & ETFs) in a 
  
  In this project we have cloned the smallcase website and given some functionality as it is present in the original website.
  
- ***
+ 
   
 # Tech Stack
 
@@ -18,7 +18,7 @@ A smallcase is a basket of exchange traded securities (like stocks & ETFs) in a 
 
 **Server:** Javascript and Local Storage
 
-***
+
 
 
   
@@ -30,7 +30,6 @@ A smallcase is a basket of exchange traded securities (like stocks & ETFs) in a 
 -  Storing the users data in local storage.
   
 
-***
 
 
 ## Screenshots
@@ -131,13 +130,12 @@ _A Glimpse of our cloned website_
 
 
 
-***
+
   
 ## Demo
 
 Insert gif or link to demo
 
-***
 
   
 ## Authors
@@ -151,7 +149,6 @@ Insert gif or link to demo
 #### Anand Kumar Sharma
 - Github  - [@anandKmrSharma](https://github.com/anandKmrSharma)
 
-***
 
 
 
