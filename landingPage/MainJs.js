@@ -9,5 +9,4 @@ for(var i=0;i<acc.length;i++){
           demo.style.display = "block";
         }
     });
-    
 }
