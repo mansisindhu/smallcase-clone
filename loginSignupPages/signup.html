@@ -5,7 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up page</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="https://developers.kite.trade/static/images/app-icons/12hpqpbfwnxyvud8.png"
+        type="image/x-icon">
+
+        
+    <title>Signup to smallcase</title>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700&display=swap"
     rel="stylesheet">
     <style>
@@ -43,19 +49,22 @@
         }
 
         .box1 {
-            border: 1px solid wheat;
+            border: 1px solid rgb(206, 203, 203);
             border-radius: 10px;
             background-color: white;
             padding: 30px;
-            box-shadow: 1px 1px 4px var(--color-border-default);
+            box-shadow: 1px 1px 4px rgb(206, 203, 203);
+            width:356px;
+            margin:auto;
+
         }
 
         .details_box {
-            margin-left: 20px;
+            margin-left: 15px;
             margin-right: 20px;
             height: 30px;
             margin-top: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 35px;
         }
 
         .details_box p {
@@ -76,7 +85,8 @@
 
         .log {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
+            margin-top:15px;
         }
 
         #signup {
@@ -87,8 +97,8 @@
             padding-bottom: 5px;
             font: 20px;
 
-            width: 200px;
-            height: 30px;
+            width: 276px;
+            height: 40px;
             text-align: center;
             border-radius: 4px;
             border-color: lightgray;
@@ -118,12 +128,18 @@
         }
 
         .footer_para {
-            width: 20%;
+            width: 25%;
             text-align: center;
             color: #9B9B9B;
-            font-size: 7px;
+            font-size: 12px;
+           
+        }
+       
+        div > .footer_para{
+            margin-top:0px;
         }
 
+     
         .logo p {
             font-size: 20px;
             color:gray
@@ -139,27 +155,40 @@
         }
 
         .size {
-            width: 200px;
-            height: 30px;
+            width: 276px;
+            height: 40px;
             text-align: center;
             border-radius: 4px;
      
             border:0.1px solid lightgray;
+            margin-bottom:20px;
+            font-size:15px;
         }
 
-  
+    input:focus{
+        outline:none;
+    }
+
+    #container {
+        margin:auto;
+     
+    }
+#signuptext{
+    color:black;
+}
+
     </style>
 </head>
 
 <body>
-
+    <div id="container">
     <!-- logo div containing logo and text of signup  -->
     <div class="top_heading">
-        <h1>Welcome to Smallcase</h1>
+     
     </div>
 
-    <div class="logo"> <img src="https://developers.kite.trade/static/images/app-icons/12hpqpbfwnxyvud8.png" />
-        <p >Sign Up here</p>
+    <div class="logo"> <a href="/landingPage/MainHtml.html"><img src="https://developers.kite.trade/static/images/app-icons/12hpqpbfwnxyvud8.png" /></a> 
+        <p id="signuptext"> Sign Up here</p>
 
     </div>
 
@@ -169,12 +198,12 @@
 
     <div class="signup_details">
         <div class="box1">
-            <div class="log"> <img src="https://kite.zerodha.com/static/images/kite-logo.svg" />
+            <div class="log"><img src="https://kite.zerodha.com/static/images/kite-logo.svg" />
             </div>
-            <div class="details_box"><input id="email_id" type="text" class="size"
+            <div class="details_box"><input  type="email" id="email_id" class="size"  
                     placeholder="Enter email id" /><br><br>
             </div>
-            <div class="details_box" ><input id="mobile_num" type="number" class="size"
+            <div class="details_box" ><input id="mobile_num" type="tel" class="size"
                 placeholder="Enter mobile number" />
         </div>
        
@@ -184,11 +213,21 @@
                 placeholder="Confirm password" />
         </div>
 
-        <diV class="details_box" ><button id="signup" onclick="add_signup()">signup</button></diV>
+        <diV class="details_box" ><button id="signup" onclick="add_signup()">Sign up</button></diV>
 
     </div>
     </div>
+    <div class="footer">
 
+        
+
+        <div style="display: flex; justify-content: center;">
+            <p class="footer_para">Zerodha Broking limited member of NSE, BSE & CDSL- SEBI! reg
+                No:-In12345 CDSL_SEBI refisteration number :-In zerodha pvt limited, registeration number:12345</p>
+        </div>
+
+
+    </div>
     </div>
 
     <script>
@@ -198,6 +237,13 @@
 
 
         function add_signup() {
+
+        // email validation  code .
+        var regx = /^([a-zA-Z0-9\.-]+)\@([a-zA-Z0-9\-]+)\.([a-z]{2,20})$/;
+         var email_id = document.getElementById("email_id").value
+if(regx.test(email_id))  {
+ 
+
             var obj = {
                 email: document.getElementById('email_id').value,
                 mobile: document.getElementById('mobile_num').value,
@@ -239,6 +285,10 @@
         }
         //   document.getElementById('email_id').value;
         console.log(submit_details);
+    }
+        else{
+     alert ("Enter a valid Email id")
+}
                 
             }
             
