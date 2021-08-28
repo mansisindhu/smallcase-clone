@@ -310,23 +310,24 @@ footer {
 }
   /*main css  */
   /* Invest in ideas with smallcases end */
- 
+ .margin1120{
+   background-color: whitesmoke;
+ }
 .paragraph{
+  width: 1120px;
+  margin: auto;
   text-align: center;
-  background-color: whitesmoke;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 .para {
-  margin: 30px;
   margin: auto;
 }
 .para_h1 {
   color: #2f363f;
-  font-size: 48px;
   line-height: 1.1;
-  margin-bottom: 16px;
+  font-weight: bold;
 }
 .para1 {
   font-size: 18px;
@@ -347,26 +348,18 @@ footer {
   grid-template-rows: auto;
   margin-top: 30px;
 }
-.box1:hover {
-  transform: translateY(-20px);
-  box-shadow: 0 3px 10px 0 rgb(0 0 0 / 30%);
-}
-.startedbox1.hover {
-  overflow-x: scroll;
-}
+
 .box1 {
   background-color: white;
-  border-radius: 4px solid var(--lightGray);
   text-align: left;
   padding-left: 10px;
   padding-top: 10px;
   text-decoration: none;
-  box-shadow: 0 3px 10px 0 rgb(0 0 0 / 30%);
+  border: 1px solid var(--lightGray)
 }
 
 .startedflex {
   display: flex;
-
   margin: auto;
 }
 .no {
@@ -376,6 +369,7 @@ footer {
   font-family: "Graphik Web Medium", sans-serif;
   text-align: center;
   margin: 10px;
+  font-weight: bold;
 }
 .started:hover {
   transform: translateY(-1px);
@@ -384,20 +378,22 @@ footer {
   border-color: #2685ef;
 }
 .smallcase:hover {
-  color: blue;
+  color: var(--mainBlue)
 }
 .smallcase {
-  color: #1f8ceb;
+  color: var(--mainBlue);
+  font-weight: bolder;
 }
 .started {
-  border: 1px solid #1f7ae0;
+  border: 1px solid var(--mainBlue);
   background-color: #1f7ae0;
   color: white;
   box-shadow: 0 1px 2px rgb(0 0 0 / 15%);
   margin-right: 32px;
   font-size: 15px;
-  min-height: 32px;
+  min-height: 100%;
   flex-wrap: nowrap;
+
 }
 .image {
   height: 80px;
@@ -432,39 +428,92 @@ footer {
   font-family: "Graphik Web Medium", sans-serif;
   font-size: 14px;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px){
+  .paragraph{
+    width: 472px;
+    margin: auto;
+  }
   .mine {
     max-width: 600px;
-    margin: auto;
     margin-bottom: 10px;
   }
   .para_2 {
     text-align: center;
   }
+  .para_h1{
+    font-size: 35px;
+    width: 330px;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 25px;
+    }
+}
+@media screen and (max-width: 786px){
+  .paragraph{
+    width: 472px;
+    margin: auto;
+  }
+  .mine {
+    max-width: 500px;
+   margin-bottom: 20px;
+  }
+  .para_2 {
+    text-align:center;
+  }
+  .para_h1{
+  font-size: 35px;
+  width: 330px;
+  margin: auto;
+  margin-bottom: 25px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .paragraph{
+    width: 1120px;
+    margin: auto;
+  }
+  .para_h1{
+    font-size: 48px;
+    width: 600px;
+    margin-bottom: 25px;
+    }
+  .mine {
+    max-width: 600px;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+  .para_2 {
+    text-align: center;
+  }
+  .box1:hover {
+    overflow:hidden;
+    margin-bottom:-50px;
+    transform: translateY(-20px);
+    box-shadow: 0 3px 10px 0 rgb(0 0 0 / 30%);
+  }
 }
 /* Invest in ideas with smallcases end */
 /* video part start */
 .video {
-  padding-top: 60px;
-}
-.videolink {
-  max-width: 660px;
-  text-align: center;
+  /* padding-top: 60px; */
   margin: auto;
 }
+.videolink {
+  text-align: center;
+  margin: auto;
+  margin-top: 80px;
+  margin-bottom: 50px;
+}
 .video_p1 {
-  margin-bottom: 10px;
   font-size: 18px;
   line-height: 1.57;
   color: #535b62;
   margin: auto;
 }
 .video_h2 {
-  font-size: 40px;
   line-height: 1.3;
   letter-spacing: -0.8;
   font-family: "Graphik Web Semibold", sans-serif;
-  margin-bottom: 8px;
   color: #2f363f;
 }
 .video_para2 {
@@ -472,12 +521,12 @@ footer {
   margin: auto;
   line-height: 1.57;
   font-size: 16px;
-  margin-bottom: 8px;
+  margin-bottom: 30px;
   color: #535b62;
 }
 .video_button {
   display: flex;
-  margin-top: 30px;
+  margin-top: 40px;
 }
 .video_figure {
   display: flex;
@@ -510,22 +559,38 @@ footer {
 }
 @media screen and (min-width: 768px) {
   .video_button {
-    max-width: 400px;
+    max-width: 500px;
   }
   .figure1 {
     width: 50px;
     height: 50px;
-    margin-right: 390px;
+    margin-right: 460px;
+  }
+  .videolink{
+    width: 472px;
+  }
+  .video_h2{
+    max-width: 700px;
+    margin: auto;
+    font-size:25px;
   }
 }
 @media screen and (max-width: 786px) {
   .video_button {
-    max-width: 400px;
+    max-width: 500px;
   }
   .figure1 {
     width: 50px;
     height: 50px;
-    margin-right: 390px;
+    margin-right: 460px;
+  }
+  .videolink{
+    width: 472px;
+  }
+  .video_h2{
+    max-width: 700px;
+    font-size: 25px;
+    margin: auto;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -537,19 +602,32 @@ footer {
     height: 50px;
     margin-right: 620px;
   }
+  .videolink{
+    width: 1120px;
+  }
+  .video_h2{
+    max-width: 700px;
+    margin: auto;
+    font-size: 35px;
+    margin-bottom: 15px;
+    margin-top:15px;
+  }
 }
 /* video part end */
 
 /* Portfolio investing, done right start */
 
 .flex {
+  margin: auto;
   display: flex;
   flex-direction: column;
   border: 1px solid lightgray;
   justify-content: space-between;
+  
 }
 .div_para {
   margin: 10px;
+  margin: auto;
 }
 .div_para1 {
   margin-top: 70px;
@@ -570,8 +648,7 @@ footer {
   justify-content: space-between;
 }
 .div_flex1 {
-  width: 300px;
-  margin: 50px;
+  margin: 10px;
 }
 
 .image2 {
@@ -599,6 +676,10 @@ footer {
   .flexd {
     text-align: center;
   }
+  .div_para{
+    /* width: 472px; */
+    text-align: center;
+  }
 }
 @media screen and (min-width: 768px) {
   .div_flex {
@@ -606,7 +687,11 @@ footer {
     margin: auto;
   }
   .flexd {
-    text-align: center;
+  text-align: center;
+  }
+  .div_para{
+    width: 472px;
+   margin: auto;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -616,17 +701,28 @@ footer {
   .flexd {
     text-align: center;
   }
+  .div_flex1{
+    width: 300px;
+  }
+  .div_para{
+    width: 1120px;
+    margin: auto;
+  }
 }
 /* Portfolio investing, done right end */
 
 /* Build your long term portfolio with smallcases start */
 .finalsection {
+  margin: auto;
   display: flex;
   flex-direction: column;
+
+  margin-top: 30px;
+  margin-bottom: 50px;
 }
-.finaldiv1 {
-  margin: 20px;
-  text-align: left;
+.finalsection1{
+
+  margin: 50px;
 }
 .finalselectionh2 {
   text-align: center;
@@ -650,14 +746,7 @@ footer {
   display: flex;
   justify-content: space-between;
 }
-.firstbox1 {
-  border: 1px solid #dde0e4;
-  border-radius: 4px;
-  padding: 24px 16px 24px 16px;
-  margin: 15px;
-  width: 400px;
-  height: 270px;
-}
+
 .firstbox1image {
   width: 50px;
   height: 50px;
@@ -680,11 +769,12 @@ footer {
   display: inline-block;
   color: #535b62;
 }
-.firstboxinnerh3 {
+.firstbox1innerh3 {
   margin-bottom: 4px;
   font-size: 16px;
   font-family: "Graphik Web Medium", sans-serif;
   color: #2f363f;
+  margin-top: -5px;
 }
 .firstbox1innerp {
   line-height: 1.57;
@@ -707,50 +797,85 @@ footer {
 }
 .firstbox1a {
   width: 75px;
-  background-color: #1f7ae0;
+  height: 40px;
+  background-color: var(--mainBlue);
   color: white;
   width: 100% !important;
   display: inline-block;
   box-shadow: 0 0px 2px rgb(0 0 0 / 15%);
   white-space: nowrap;
   font-family: "Graphik Web Medium", sans-serif;
-  font-size: 13px;
+  font-size: 16px;
   text-align: center;
   padding: 9px 13px;
   text-decoration: none;
+  font-weight: bold;
 }
 .firstbox1a:hover {
-  border: 2px solid var(--mainBlue);
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px 0 rgb(0 0 0 / 12%);
+    background-color: #2685ef;
+    border-color: var(--mainBlue)
 }
-.finalsection2 {
-  width: 400px;
-  height: 50px;
-  text-align: center;
-  margin: auto;
+.finalsection2{
+  margin-top: -20px !important;
 }
 .finalsection2a {
   width: 400px;
   text-decoration: none;
-  padding: 9px 13px;
+  padding-top: 5px;
   background-color: white;
-  color: #1f7ae0;
+  color: var(--mainBlue);
   display: inline-block;
   white-space: nowrap;
   font-family: "Graphik Web Medium", sans-serif;
-  font-size: 13px;
+  font-size: 16px;
   text-align: center;
   border-radius: 4px;
-  border: 1px solid lightskyblue;
+  border: 1px solid var(--mainBlue);
+  font-weight: bolder;
+  text-align: center;
 }
 .active,
 .finalsection2a:hover {
-  border: 2px solid lightgray;
-  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 20%);
+  transform: translateY(-3px);
+  box-shadow: 0 3px 10px 0 rgb(0 0 0 / 12%);
+  background-color:white;
+  border-color: lightgrey;
+  
 }
 @media screen and (max-width: 768px) {
   .finaldiv1 {
     flex-direction: column;
     margin: auto;
+  }
+  .finalsection{
+    width: 472px;
+  }
+  .finalsection2a{
+    width: 340px;
+    height: 40px;
+    text-align: center;
+    margin: auto;
+  }
+  .finalsection2 {
+    width: 350px;
+    height: 50px;
+    text-align: center;
+    margin: auto;
+  }
+  .firstbox1{
+    margin: 20px;
+    width: 350px;
+    height: 290px;
+    padding: 10px;
+    border: 1px solid lightgray;
+  }
+  
+  .finalselectionh2{
+    margin: auto;
+    width: 400px;
+    font-size: 30px;
   }
 }
 @media screen and (min-width: 786px) {
@@ -758,10 +883,57 @@ footer {
     flex-direction: column;
     margin: auto;
   }
+  .finalsection2a{
+    width: 340px;
+    height: 40px;
+    text-align: center;
+    margin: auto;
+  }
+  .finalsection{
+    width: 472px;
+  }
+  .finalsection2 {
+    width: 350px;
+    height: 50px;
+    text-align: center;
+    margin: auto;
+  }
+  .firstbox1{
+    margin: 20px;
+    width: 350px;
+    height: 290px;
+    padding: 10px;
+    border: 1px solid lightgray;
+  }
+  .finalselectionh2{
+    margin: auto;
+    width: 400px;
+    font-size: 30px;
+  }
 }
 @media screen and (min-width: 1024px) {
   .finaldiv1 {
     flex-direction: row;
+  }
+  .finalsection2 {
+    width: 340px;
+    height: 40px;
+    text-align: center;
+    margin: auto;
+  }
+  .finalsection{
+    width: 1120px;
+  }
+  .firstbox1{
+    width: 350px;
+    height: 290px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid lightgray;
+  }
+  .finalselectionh2{
+    margin: auto;
+    width: 550px;
   }
 }
 /* build your lomng term goal end */
@@ -790,8 +962,15 @@ footer {
   font-family: "Graphik Web Semibold", sans-serif;
   margin-bottom: 16px;
 }
-.becameinvestora {
-  min-width: 75px;
+.becameinvestora:hover{
+  transform: translateX(-1px);
+  box-shadow: 0 3px 10px 0 rgb(0 0 0 / 12%);
+  border-color: #2685ef;
+ 
+  
+}
+.becameinvestora{
+  min-width: 200px;
   background-color: #1f7ae0;
   border: 1px solid #1f7ae0;
   color: white;
@@ -799,6 +978,7 @@ footer {
   white-space: nowrap;
   font-family: "Graphik Web Medium", sans-serif;
   font-size: 13px;
+  font-weight: bold;
   text-align: center;
   border-radius: 4px;
   padding: 9px 13px;
@@ -832,28 +1012,28 @@ footer {
   .safeleft {
     border-radius: 10px;
     display: inline-block;
+    width: 280px;
   }
   .becomeinvestor {
-    width: 1180px;
+    width: 1000px;
     height: 310px;
+    
+  }
+  .becameinvestorh2{
+    width: 400px;
   }
 }
 /*   <!-- became investor start --> */
 
 /* accordian start*/
+.accordianbox{
+margin-top: 80px;
+}
 .accordian {
   display: flex;
   flex-direction: column;
 }
-.accordianh2 {
-  margin: auto;
-  font-size: 34px;
-  line-height: 1.33;
-  letter-spacing: -0.8px;
-  font-family: "Graphik Web Semibold", sans-serif;
-  color: #2f363f;
-  text-align: center;
-}
+
 .accordian1 {
   padding: 30px;
   margin: 10px;
@@ -868,13 +1048,14 @@ footer {
   font-size: 16px;
   font-family: "Graphik Web Medium", sans-serif;
   color: #535b62;
+  font-weight: bolder;
 }
 .secondbox1 div {
   margin-top: 20px;
 }
 .first {
   cursor: pointer;
-  border: none;
+  border:hidden;
   text-align: left;
   outline: none;
   color: #535b62;
@@ -882,6 +1063,10 @@ footer {
 .active,
 .first:hover {
   color: blue;
+}
+.maxwidth{
+  text-align: left;
+  margin-left: -15px;
 }
 .demo {
   display: none;
@@ -904,6 +1089,10 @@ footer {
   .secondbox1 {
     margin: 20px;
   }
+  .accordian{
+    width: 472px;
+    margin: auto;
+  }
 }
 @media only screen and (min-width: 786px) {
   .secondbox {
@@ -913,6 +1102,10 @@ footer {
   .secondbox1 {
     margin: 20px;
   }
+  .accordian{
+    width: 472px;
+    margin: auto;
+  }
 }
 @media only screen and (min-width: 1024px) {
   .secondbox {
@@ -921,6 +1114,19 @@ footer {
   }
   .secondbox1 {
     margin: 25px;
+  }
+  .accordian{
+    width: 1120px;
+    margin: auto;
+  }
+  .accordianh2 {
+    margin: auto;
+    font-size: 34px;
+    line-height: 1.33;
+    letter-spacing: -0.8px;
+    font-family: "Graphik Web Semibold", sans-serif;
+    color: #2f363f;
+    text-align: center;
   }
 }
 /* accordian end */

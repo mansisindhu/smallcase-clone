@@ -8,17 +8,17 @@ A smallcase is a basket of exchange traded securities (like stocks & ETFs) in a 
  
  In this project we have cloned the smallcase website and given some functionality as it is present in the original website.
  
- ***
+ 
   
-# Tech Stack
+# Technology We Used
 
 ### In this project we have used the following Tech.
 
-**Client:** HTML and CSS
+**Client:** HTML5 and CSS
 
 **Server:** Javascript and Local Storage
 
-***
+
 
 
   
@@ -26,39 +26,24 @@ A smallcase is a basket of exchange traded securities (like stocks & ETFs) in a 
 
 -  There is login and logout functionality.
 -  Provide easy navigation to jump from one page to another.
--  Users can see variety of stocks and can select which stocks to buy.
+-  User can see variety of smallcases and can select which smallcases to buy.
 -  Storing the users data in local storage.
   
 
-***
 
 
 ## Screenshots
 
 _A Glimpse of our cloned website_
 
-   1. This is a landing page where users have a facility to see top stocks.
+   1. This is a landing page where users have a facility to see top smallcases.
     
      
    ![Screenshot (792)](https://user-images.githubusercontent.com/87422058/131204162-6b422999-be21-462e-8ffa-a955f8731c9b.png)
    
-   
-   
-   
+ 
 
-   2. This is a signup page where users can enter their all details, which is necessary for this website. Once user filled all the details,it will redirect to the login page 
-    
-    
-    
-   ![Screenshot (796)](https://user-images.githubusercontent.com/87422058/131204211-afd57464-f3a6-4f17-854c-107355f45a0b.png)
-
-
-
-
-
-
-
-   3. This is a login page where users can enter their credentials and it will be matched by the credentials provided in the signup page. If it is correct it will redirect to the home page. Else it will show the alert to enter the valid credentials. 
+   3. This is a login page where user can enter their credentials and it will be matched by the credentials provided in the signup page. If it is correct it will redirect to the home page. Else it will show the alert to enter the valid credentials. 
     
     
     
@@ -69,7 +54,7 @@ _A Glimpse of our cloned website_
 
 
 
-   4.In this page users can click on top 250 stocks to see all the details. By clicking on it will redirect to the top stocks page. 
+   4.On this page user can click on top 250 stocks to see all the details. By clicking on it will redirect to the top smallcases page. 
    
    
    
@@ -79,7 +64,7 @@ _A Glimpse of our cloned website_
 
 
     
-   5. In this page users will get facility to sort the products on the basis of prices, popularity and volatility. 
+   5. On this page user will get facility to sort the smallcases on the basis of prices, popularity and volatility. 
    
    
     
@@ -89,7 +74,7 @@ _A Glimpse of our cloned website_
 
 
 
-   6. In this page users can click on invest for buying the stocks and it will redirecte to the payment page.
+   6. On this page user can click on invest for buying the smallcase and it will redirecte to the payment page.
 
 
 
@@ -100,7 +85,7 @@ _A Glimpse of our cloned website_
  
 
 
-   7. This is a payment page where users can enter their bank details for the payment.
+   7. This is a payment page where user can enter their bank details for the payment.
 
 
 
@@ -111,7 +96,7 @@ _A Glimpse of our cloned website_
    
    
    
-   8. This is a page where users can check their ordered products.
+   8. This is a page where user can check their invested smallcases.
 
 
     
@@ -121,23 +106,14 @@ _A Glimpse of our cloned website_
 
 
 
-   9. Further pages cloned from the same website.
-    
-    
-
-   ![Screenshot (790)](https://user-images.githubusercontent.com/87422058/131207147-675dcde2-967e-4642-aae7-2ac456e91a0f.png)
-   ![Screenshot (797)](https://user-images.githubusercontent.com/87422058/131207199-68d4eae9-96db-4f89-bd2a-976875ae820d.png)
 
 
 
-
-***
   
 ## Demo
 
 Insert gif or link to demo
 
-***
 
   
 ## Authors
@@ -151,7 +127,6 @@ Insert gif or link to demo
 #### Anand Kumar Sharma
 - Github  - [@anandKmrSharma](https://github.com/anandKmrSharma)
 
-***
 
 
 
