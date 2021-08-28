@@ -41,21 +41,7 @@ _A Glimpse of our cloned website_
      
    ![Screenshot (792)](https://user-images.githubusercontent.com/87422058/131204162-6b422999-be21-462e-8ffa-a955f8731c9b.png)
    
-   
-   
-   
-
-   2. This is a signup page where users can enter their all details, which is necessary for this website. Once user filled all the details,it will redirect to the login page 
-    
-    
-    
-   ![Screenshot (796)](https://user-images.githubusercontent.com/87422058/131204211-afd57464-f3a6-4f17-854c-107355f45a0b.png)
-
-
-
-
-
-
+ 
 
    3. This is a login page where users can enter their credentials and it will be matched by the credentials provided in the signup page. If it is correct it will redirect to the home page. Else it will show the alert to enter the valid credentials. 
     
@@ -68,7 +54,7 @@ _A Glimpse of our cloned website_
 
 
 
-   4.In this page users can click on top 250 stocks to see all the details. By clicking on it will redirect to the top stocks page. 
+   4.On this page users can click on top 250 stocks to see all the details. By clicking on it will redirect to the top stocks page. 
    
    
    
@@ -78,7 +64,7 @@ _A Glimpse of our cloned website_
 
 
     
-   5. In this page users will get facility to sort the products on the basis of prices, popularity and volatility. 
+   5. On this page users will get facility to sort the smallcase on the basis of prices, popularity and volatility. 
    
    
     
@@ -88,7 +74,7 @@ _A Glimpse of our cloned website_
 
 
 
-   6. In this page users can click on invest for buying the stocks and it will redirecte to the payment page.
+   6. On this page users can click on invest for buying the smallcase and it will redirecte to the payment page.
 
 
 
