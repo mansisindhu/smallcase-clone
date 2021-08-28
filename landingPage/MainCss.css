@@ -292,10 +292,6 @@
     display: none;
   }
   
-  .main {
-    height: 100vh;
-  }
-  
   /******************* footer style ****************/
   
   footer {
@@ -421,6 +417,7 @@
   }
   /*main css  */
   /* Invest in ideas with smallcases end */
+ 
 .paragraph{
   text-align: center;
   background-color:whitesmoke;
