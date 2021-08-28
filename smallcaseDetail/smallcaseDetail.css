@@ -89,6 +89,19 @@ header button {
 .img-2 > img {
   width: 100%;
 }
+
+
+.active-header {
+  color: #2f363f!important;
+  border-bottom: 1px solid #2f363f;
+  margin-bottom: -19px;
+  padding-bottom: 17px;
+}
+
+.discover-btn:hover {
+color: #2f363f;
+}
+
 /******************* footer style ****************/
 
 footer {
@@ -429,9 +442,15 @@ ul {
   border-radius: var(--btnBorderRadius);
 }
 
+
 .modal-container > h2 {
   margin: 55px 31px;
 }
+
+.gotoOrders-btn {
+  width: 180px;
+}
+
 
 /* media queries */
 
@@ -492,6 +511,10 @@ ul {
     font-size: 14px;
   }
 
+  .stat-1 {
+    display: none;
+  }
+
   .product-main-info > img {
     height: 80px;
     width: 80px;
@@ -505,16 +528,47 @@ ul {
     border-radius: var(--btnBorderRadius);
   }
 
+  .payment-section {
+    display: none;
+  }
+
+  .long-description {
+    width: 885px;
+    margin: 0;
+  }
+
+  .bottom-detail-box {
+    display: flex;
+    width: 1120px;
+    margin: auto;
+    justify-content: space-between;
+  }
+
+  .payment-section-responsive {
+    display: unset;
+    margin-top: 53px;
+  }
+
+  .payment-info > p {
+    font-size: 14px;
+    color: var(--darkGray);
+  }
+
+  .payment-info > p:last-child {
+    font-size: 20px;
+    color: black;
+    margin-bottom: 24px;
+  }
+
+  .payment-section-btn {
+    padding: 16px 24px;
+    width: 100%;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
   /* header */
-
-  .root {
-    height: 100vh;
-  }
-
-  .app-container {
-    height: calc(100vh - var(--headerHeight));
-    overflow-y: scroll;
-  }
 
   .header-div {
     width: 1120px;
@@ -529,6 +583,7 @@ ul {
   .img-1 {
     display: none;
   }
+
 
   /* footer */
 

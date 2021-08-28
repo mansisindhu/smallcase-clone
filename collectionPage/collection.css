@@ -25,7 +25,6 @@ a {
 /* ********************  header   *************** */
 
 .header-div {
-  height: var(--headerHeight);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -36,6 +35,9 @@ a {
 
 header {
   border-bottom: 1px solid var(--lightGray);
+  height: var(--headerHeight);
+  display: flex;
+  align-items: center;
 }
 
 header a {
@@ -45,11 +47,16 @@ header a {
 
 header button {
   cursor: pointer;
-  padding: 10px 12px;
+  padding: 8px 12px;
   background-color: white;
   border: 1px solid var(--lightGray);
   color: #535b62;
   border-radius: var(--btnBorderRadius);
+}
+
+header button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px 0 rgb(0 0 0 / 7%);
 }
 
 .discover-btn {
@@ -76,6 +83,19 @@ header button {
 .login-p {
   font-weight: 15px;
   font-weight: 600;
+}
+
+
+.active-header {
+  color: #2f363f!important;
+  border-bottom: 1px solid #2f363f;
+  margin-bottom: -18px;
+  padding-bottom: 18px;
+}
+
+
+.discover-btn:hover {
+  color: #2f363f;
 }
 
 /* changes in header */
@@ -114,6 +134,15 @@ h1 {
   text-decoration: none;
   color: black;
 }
+
+
+.collection-btn {
+  color: var(--mainBlue) !important;
+    border-bottom: 1px solid;
+    margin-bottom: -9px;
+}
+
+
 /* 
 .top-links > a {
   position: relative;
@@ -547,15 +576,6 @@ footer {
   }
 
   /* header */
-
-  .root {
-    height: 100vh;
-  }
-
-  .app-container {
-    height: calc(100vh - var(--headerHeight));
-    overflow-y: scroll;
-  }
 
   .header-div {
     width: 1120px;

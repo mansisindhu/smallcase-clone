@@ -1,4 +1,3 @@
-  
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,6 +9,9 @@
     <!-- favicon -->
     <link rel="shortcut icon" href="https://developers.kite.trade/static/images/app-icons/12hpqpbfwnxyvud8.png"
         type="image/x-icon">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/common.css">
 
     <title>Login to smallcase</title>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700&display=swap"
@@ -238,66 +240,72 @@
 
 
         }
-        div > #login:hover {
-             background-color: #f38a6a;
+
+        div>#login:hover {
+            background-color: #f38a6a;
         }
     </style>
 </head>
 
 <body>
-    <div id="container">
-        <!-- logo div containing logo and text of login  -->
-        <div class="logo"> 
-            <a href="/landingPage/MainHtml.html"><img src="https://developers.kite.trade/static/images/app-icons/12hpqpbfwnxyvud8.png" /></a>
-            <p id="login_kart">Login to <span>smallcase</span></p>
+    <div class="app-container">
+        <div id="container">
+            <!-- logo div containing logo and text of login  -->
+            <div class="logo">
+                <a href="/landingPage/MainHtml.html"><img
+                        src="https://developers.kite.trade/static/images/app-icons/12hpqpbfwnxyvud8.png" /></a>
+                <p id="login_kart">Login to <span>smallcase</span></p>
 
-        </div>
+            </div>
 
 
 
-        <!-- login detals div will take inforation of login -->
+            <!-- login detals div will take inforation of login -->
 
-        <div class=" login_details">
-            <div class="box1">
-                <div class="log"> <img src="https://kite.zerodha.com/static/images/kite-logo.svg" />
-                </div>
-                <div class="details_box"><input id="userid" class="border" type="email" pattern=".+@globex\.com"
-                        placeholder="Email id" />
-                    <br><br>
-                </div>
-                <div class="details_box"><input id="password" class="border" type="password" placeholder="Password" />
-                </div>
-                <!--
+            <div class=" login_details">
+                <div class="box1">
+                    <div class="log"> <img src="https://kite.zerodha.com/static/images/kite-logo.svg" />
+                    </div>
+                    <div class="details_box"><input id="userid" class="border" type="email" pattern=".+@globex\.com"
+                            placeholder="Email id" />
+                        <br><br>
+                    </div>
+                    <div class="details_box"><input id="password" class="border" type="password"
+                            placeholder="Password" />
+                    </div>
+                    <!--
             <div class="details_box webkit"><input type="checkbox" /> <label id="p1">Log in to kit web also</label>
                 <p id="p-text">Not recommended public system</p>
             </div>
            -->
-                <div class="webkit-flex">
-                    <div><input type="checkbox" /></div>
-                    <div>
-                        <div class="login-webkit-text">Log in to Kite Web also?</div>
-                        <div>Not recommended on shared or public systems</div>
+                    <div class="webkit-flex">
+                        <div><input type="checkbox" /></div>
+                        <div>
+                            <div class="login-webkit-text">Log in to Kite Web also?</div>
+                            <div>Not recommended on shared or public systems</div>
+                        </div>
                     </div>
+                    <diV class="details_box"><button id="login" onclick="login()">Login</button></diV>
+
                 </div>
-                <diV class="details_box"><button id="login" onclick="login()">Login</button></diV>
-
-            </div>
-        </div>
-
-        <div class="footer">
-
-            <div class="zerodha" style="text-align: center;"><img
-                    src=" https://kite.zerodha.com/static/images/zerodha-logo.svg" /></div>
-            <div>
-                <a href="signup.html" id="signup">Don't have account? Sign up now</a>
             </div>
 
-            <div style="display: flex; justify-content: center;">
-                <p class="footer_para">Zerodha Broking Limited Member of NSE, BSE & CDSL- SEBI! reg
-                    No:-In12345 CDSL_SEBI registeration number :-In Zerodha pvt limited, registeration number:12345</p>
+            <div class="footer">
+
+                <div class="zerodha" style="text-align: center;"><img
+                        src=" https://kite.zerodha.com/static/images/zerodha-logo.svg" /></div>
+                <div>
+                    <a href="signup.html" id="signup">Don't have account? Sign up now</a>
+                </div>
+
+                <div style="display: flex; justify-content: center;">
+                    <p class="footer_para">Zerodha Broking Limited Member of NSE, BSE & CDSL- SEBI! reg
+                        No:-In12345 CDSL_SEBI registeration number :-In Zerodha pvt limited, registeration number:12345
+                    </p>
+                </div>
+
+
             </div>
-
-
         </div>
     </div>
 
@@ -306,6 +314,7 @@
         let loginStatus = window.localStorage.getItem("loginStatus");
 
 
+        const ordersData = JSON.parse(window.localStorage.getItem("userOrders")) || {};
 
         let signup_data = JSON.parse(window.localStorage.getItem('signup_det'));
 
@@ -318,19 +327,26 @@
 
             for (var i = 0; i < signup_data.length; i++) {
                 if (user_id == signup_data[i].email && password == signup_data[i].password) {
+                    if (!(ordersData[user_id])) {
+                        ordersData[user_id] = [];
+                    }
+                    const jsonOrdersData = JSON.stringify(ordersData);
+
+                    window.localStorage.setItem("userOrders", jsonOrdersData);
+                    window.localStorage.setItem("loginStatus", JSON.stringify(user_id));
                     window.location.pathname = "landingPage/MainHtml.html";
                     break;
                 } else {
-                    if( i ==  signup_data.length-1) {
-                    alert("Invalid credentials");
-                    break;
+                    if (i == signup_data.length - 1) {
+                        alert("Invalid credentials");
+                        break;
+                    }
                 }
-            }
             }
             document.getElementById('userid').value = null;
             document.getElementById('password').value = null;
 
-            window.localStorage.setItem("loginStatus", "true");
+
         }
 
 

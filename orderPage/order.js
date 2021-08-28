@@ -1,8 +1,11 @@
 // Orders data
 
-const data = JSON.parse(window.localStorage.getItem("orders"));
+const data = JSON.parse(window.localStorage.getItem("userOrders"));
 
-const reverseDataArray = data.reverse();
+const loginS = JSON.parse(window.localStorage.getItem("loginStatus"));
+
+
+const reverseDataArray = data[loginS].reverse();
 const ordersDivEl = document.querySelector(".orders");
 
 function renderOrders() {
@@ -100,24 +103,3 @@ function renderOrders() {
 renderOrders();
 
 
-
-
-// Login and logout functionality
-
-const loginStatus = window.localStorage.getItem("loginStatus");
-
-const loginBtnEl = document.querySelector(".login-p");
-
-if (loginStatus === "true") {
-    loginBtnEl.textContent = "Logout";
-}
-
-
-loginBtnEl.addEventListener("click", function() {
-    if (loginStatus === "true") {
-        alert("You have successfully logged out.")
-        loginBtnEl.href = "";
-        window.localStorage.setItem("loginStatus", "false");
-        window.location.pathname = "landingPage/MainHtml.html";
-    }
-})

@@ -479,23 +479,3 @@ function setItem(product) {
     }
 }
 
-
-
-
-// Login and logout functionality
-
-const loginStatus = window.localStorage.getItem("loginStatus");
-
-const loginBtnEl = document.querySelector(".login-p");
-
-if (loginStatus === "true") {
-    loginBtnEl.textContent = "Logout";
-}
-
-
-loginBtnEl.addEventListener("click", function() {
-    if (loginStatus === "true") {
-        loginBtnEl.href = "";
-        window.localStorage.setItem("loginStatus", "false");
-    }
-})

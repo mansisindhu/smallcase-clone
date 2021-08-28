@@ -22,7 +22,7 @@
 /* ********************  header   *************** */
 
 .header-div {
-  height: var(--headerHeight);
+ 
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -33,6 +33,9 @@
 
 header {
   border-bottom: 1px solid var(--lightGray);
+  height: var(--headerHeight);
+  display: flex;
+  align-items: center;
 }
 
 header a {
@@ -90,6 +93,23 @@ header button {
   width: 100%;
 }
 
+
+header button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px 0 rgb(0 0 0 / 7%);
+}
+
+
+.active-header {
+  color: #2f363f!important;
+  border-bottom: 1px solid #2f363f;
+  margin-bottom: -19px;
+  padding-bottom: 17px;
+}
+
+.discover-btn:hover {
+  color: #2f363f!important;
+}
 
 /******************* footer style ****************/
 
@@ -169,7 +189,6 @@ footer {
   display: flex;
   flex-direction: column;
   margin-top: 40px;
-  gap: 20px;
 }
 
 .order {
@@ -180,7 +199,6 @@ footer {
 }
 
 .order:hover {
-  border: 1px solid var(--lightGray);
   border-radius: var(--btnBorderRadius);
   box-shadow: var(--btnBoxShadow);
 }
@@ -265,15 +283,6 @@ footer {
   }
 
   /* header */
-
-  .root {
-    height: 100vh;
-  }
-
-  .app-container {
-    height: calc(100vh - var(--headerHeight));
-    overflow-y: scroll;
-  }
 
   .header-div {
     width: 1120px;

@@ -21,7 +21,6 @@
 /* ********************  header   *************** */
 
 .header-div {
-  height: var(--headerHeight);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -31,6 +30,9 @@
 }
 
 header {
+  display: flex;
+  align-items: center;
+  height: var(--headerHeight);
   border-bottom: 1px solid var(--lightGray);
 }
 
@@ -41,12 +43,18 @@ header a {
 
 header button {
   cursor: pointer;
-  padding: 10px 12px;
+  padding: 8px 12px;
   background-color: white;
   border: 1px solid var(--lightGray);
   color: #535b62;
   border-radius: var(--btnBorderRadius);
 }
+
+header button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px 0 rgb(0 0 0 / 7%);
+}
+
 
 .discover-btn {
   color: var(--darkGray);
@@ -89,6 +97,18 @@ header button {
 .img-2 > img {
   width: 100%;
 }
+
+.active-header {
+  color: #2f363f!important;
+  border-bottom: 1px solid #2f363f;
+  margin-bottom: -18px;
+  padding-bottom: 18px;
+}
+
+.discover-btn:hover {
+  color: #2f363f;
+}
+
 
 /******************* footer style ****************/
 
@@ -179,6 +199,13 @@ h1 {
   margin-bottom: 8px;
 }
 
+.collection-btn {
+  color: var(--mainBlue) !important;
+    border-bottom: 1px solid;
+    margin-bottom: -9px;
+}
+
+
 /* products */
 
 .smallcases {
@@ -211,7 +238,7 @@ h1 {
 }
 
 .product-short-info {
-  height: 44px;
+  height: 63px;
   margin-top: 8px;
   color: #4f5153;
   font-size: 14px;
@@ -374,15 +401,6 @@ h1 {
     margin: auto;
   }
   /* header */
-
-  .root {
-    height: 100vh;
-  }
-
-  .app-container {
-    height: calc(100vh - var(--headerHeight));
-    overflow-y: scroll;
-  }
 
   .header-div {
     width: 1120px;

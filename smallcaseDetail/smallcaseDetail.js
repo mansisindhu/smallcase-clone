@@ -139,7 +139,7 @@ function renderData() {
 
         const loginBtnEl = document.querySelector(".login-p");
 
-        if (loginStatus === "true") {
+        if (loginStatus !== "") {
             renderModal();
         } else {
             window.location.pathname = "loginSignupPages/login_page.html"
@@ -167,6 +167,18 @@ function renderData() {
     const buttonElement = document.createElement("button");
     buttonElement.textContent = "Invest Now";
     buttonElement.className = "payment-section-btn";
+
+    buttonElement.addEventListener("click", function () {
+
+        const loginStatus = window.localStorage.getItem("loginStatus");
+
+        if (loginStatus !== "") {
+            renderModal();
+        } else {
+            window.location.pathname = "loginSignupPages/login_page.html"
+        }
+        
+    })
 
     paymentSectioneResponsiveDivEl.appendChild(paymentInfoDivElement);
     paymentSectioneResponsiveDivEl.appendChild(buttonElement);
@@ -345,11 +357,15 @@ function setToLocalStorage(product) {
         var yyyy = today.getFullYear();
         today = mm + '/' + dd + '/' + yyyy;
 
-        const orderData = JSON.parse(window.localStorage.getItem("orders")) || [];
+        
+        const orderData = JSON.parse(window.localStorage.getItem("userOrders"));
+
+        const loginStatus = JSON.parse(window.localStorage.getItem("loginStatus"));
+
 
         let result = true;
 
-        orderData.forEach(function (el) {
+        orderData[loginStatus].forEach(function (el) {
             if (product.name === el.name) {
                 result = false;
             }
@@ -365,11 +381,10 @@ function setToLocalStorage(product) {
                 image: product.image,
             }
 
-
-            orderData.push(productData);
+            orderData[loginStatus].push(productData);
 
             const orderDataJson = JSON.stringify(orderData);
-            window.localStorage.setItem("orders", orderDataJson);
+            window.localStorage.setItem("userOrders", orderDataJson);
 
 
             const modalContainer = document.querySelector(".modal-container");
@@ -388,7 +403,7 @@ function setToLocalStorage(product) {
             closeButton.className = "close-modal";
             closeButton.textContent = 'X';
 
-            closeButton.addEventListener('click', closeModal)
+            closeButton.addEventListener('click', closeModal);
 
             topRowEl.appendChild(imageEl);
             topRowEl.appendChild(nameEl);
@@ -420,22 +435,3 @@ function setToLocalStorage(product) {
 }
 
 
-
-// Login and logout functionality
-
-const loginStatus = window.localStorage.getItem("loginStatus");
-
-const loginBtnEl = document.querySelector(".login-p");
-
-if (loginStatus === "true") {
-    loginBtnEl.textContent = "Logout";
-}
-
-
-loginBtnEl.addEventListener("click", function() {
-    if (loginStatus === "true") {
-        alert("You have successfully logged out.")
-        loginBtnEl.href = "";
-        window.localStorage.setItem("loginStatus", "false");
-    }
-})

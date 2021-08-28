@@ -32,32 +32,19 @@ smallcaseDivResponsiveElement.addEventListener("click", function () {
 
 
 
-
-// Login and logout functionality
-
-const loginStatus = window.localStorage.getItem("loginStatus");
-
-const loginBtnEl = document.querySelector(".login-p");
-
-if (loginStatus === "true") {
-    loginBtnEl.textContent = "Logout";
+// Order page rendering logic
+function renderOrders() {
+    if (loginStatus !== "") {
+        window.location.pathname = "orderPage/order.html";
+    } else {
+        window.location.pathname = "loginSignupPages/login_page.html";
+    }
 }
 
 
-loginBtnEl.addEventListener("click", function() {
-    if (loginStatus === "true") {
-        alert("You have successfully logged out.")
-        loginBtnEl.href = "";
-        window.localStorage.setItem("loginStatus", "false");
-    }
-})
-
-
-
-// Order page rendering logic
-function renderOrders() {
-    if (loginStatus === "true") {
-        window.location.pathname = "orderPage/order.html";
+function startHere() {
+    if (loginStatus !== "") {
+        window.location.pathname = "allSmallcases/allSmallCases.html";
     } else {
         window.location.pathname = "loginSignupPages/login_page.html";
     }
