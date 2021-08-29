@@ -92,7 +92,7 @@
   
 ## Demo
 
->Link - [smallcase clone](smallcase.netlify.app)
+>Link - [smallcase clone](https://smallcase.netlify.app/)
 
 
   
