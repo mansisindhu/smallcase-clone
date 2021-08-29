@@ -208,6 +208,10 @@ footer {
   flex-direction: column;
 }
 
+.about-info > p:first-child {
+  font-weight: 600;
+}
+
 .top-section {
   display: flex;
   justify-content: space-between;
