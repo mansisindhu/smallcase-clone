@@ -92,7 +92,7 @@
   
 ## Demo
 
-Insert gif or link to demo
+>Link - [smallcase clone](smallcase.netlify.app)
 
 
   
