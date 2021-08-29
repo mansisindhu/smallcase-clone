@@ -1,22 +1,17 @@
-![image](https://user-images.githubusercontent.com/76626095/131105690-5c1eff46-f075-4555-bd97-16b98bf4503f.png)
+![image](https://www.smallcase.com/static/svgs/logo-full.svg)
 
-    
-# smallcase (Clone)
 
-A smallcase is a basket of exchange traded securities (like stocks & ETFs) in a specified weighting scheme to reflect a certain
- objective (ideas, themes, strategies). A smallcase has a minimum of 2 securities and a maximum of 50 securities. You will find here different types of stocks in which you can invest easily and safely
+> A smallcase is a basket of exchange traded securities (like stocks & ETFs) in a specified weighting scheme to reflect a certain objective (ideas, themes, strategies). A smallcase has a minimum of 2 securities and a maximum of 50 securities. You will find here different types of stocks in which you can invest easily and safely.
  
- In this project we have cloned the smallcase website and given some functionality as it is present in the original website.
- 
+> We have cloned the smallcase website, tried to implement all the functionalities and design.
  
   
-# Technology We Used
+# Technology
 
-### In this project we have used the following Tech.
 
-**Client:** HTML5 and CSS
+- **Client:** HTML5 and CSS
 
-**Server:** Javascript and Local Storage
+- **Server:** Javascript and Local Storage
 
 
 
@@ -24,22 +19,20 @@ A smallcase is a basket of exchange traded securities (like stocks & ETFs) in a 
   
 ## Features
 
--  There is login and logout functionality.
--  Provide easy navigation to jump from one page to another.
--  User can see variety of smallcases and can select which smallcases to buy.
--  Storing the users data in local storage.
-  
+-  User can see variety of smallcases and can select which smallcase to invest in
+-  Storing the users data in local storage
+-  Used keyframes for sliding effect
+-  Responsive design
+-  User can filter the smallcases by minimimum amount, highest returns, etc.
 
 
 
-## Screenshots
+## A Glimpse of our cloned website
 
-_A Glimpse of our cloned website_
-
-   1. This is a landing page where users have a facility to see top smallcases.
+   1. This is a landing page where user have a facility to see top smallcases.
     
      
-   ![Screenshot (792)](https://user-images.githubusercontent.com/87422058/131204162-6b422999-be21-462e-8ffa-a955f8731c9b.png)
+   
    
  
 
