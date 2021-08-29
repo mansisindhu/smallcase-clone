@@ -20,7 +20,7 @@ loginBtnEl.addEventListener("click", function() {
 
 // Order page rendering logic
 function renderOrders() {
-    if (loginStatus !== "") {
+    if (loginStatus !== "" && typeof loginStatus === "string") {
         window.location.pathname = "orderPage/order.html";
     } else {
         window.location.pathname = "loginSignupPages/login_page.html";
