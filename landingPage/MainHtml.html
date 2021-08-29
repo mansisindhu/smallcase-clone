@@ -10,6 +10,7 @@
         type="image/x-icon">
 
     <!-- Stylesheet -->
+    <link rel="stylesheet" href="/common.css">
     <link rel="stylesheet" href="./MainCss.css">
 
     <!-- Fonts -->
@@ -124,16 +125,16 @@
                         </div>
                         <!-- 1 -->
                         <!-- 2 -->
-                        <div class="startedflex para mine">
-                            <a class="started no" href="" style="text-decoration: none;">Get Started</a>
-                            <a class="smallcase no" href="" style="text-decoration: none;">What is smallcase</a>
+                        <div class="startedflex para mine margin-bottom">
+                            <a class="started no" onclick="renderGetStarted(event)" style="text-decoration: none; cursor: pointer;">Get Started</a>
+                            <a class="smallcase no" href="https://youtu.be/7kYHuOYl5MQ" style="text-decoration: none;">What is smallcase</a>
                         </div>
                         <!-- 2 -->
                         <!-- 3 -->
 
                         <div class="startedbox1 para">
                             <!-- 1 -->
-                            <a class="box1 "  href="">
+                            <a class="box1 " onclick="smallcaseDetail(1, event)"  href="">
                                 <div class="innerbox">
                                     <div class="content">
                                         <img src="  https://assets.smallcase.com/images/smallcases/100/SCET_0015.png"
@@ -151,7 +152,7 @@
                                 </div>
                             </a>
                             <!-- 2 -->
-                            <a href="" class="box1">
+                            <a href=""  onclick="smallcaseDetail(2, event)" class="box1">
                                 <div class="innerbox">
                                     <div class="content">
                                         <img src="https://assets.smallcase.com/images/smallcases/100/SCAW_0001.png"
@@ -169,7 +170,7 @@
                                 </div>
                             </a>
                             <!-- 3 -->
-                            <a href="" class="box1">
+                            <a href=""  onclick="smallcaseDetail(3, event)" class="box1">
                                 <div class="innerbox">
                                     <div class="content">
                                         <img src="https://assets.smallcase.com/images/smallcases/100/SCET_0004.png"
@@ -187,7 +188,7 @@
                                 </div>
                             </a>
                             <!-- 4 -->
-                            <a href="" class="box1">
+                            <a href="" onclick="smallcaseDetail(4, event)" class="box1">
                                 <div class="innerbox">
                                     <div class="content">
                                         <img src="https://assets.smallcase.com/images/smallcases/100/SCET_0005.png"
@@ -283,7 +284,7 @@
                 <!-- Build your long term portfolio with smallcases start -->
                 <section class="finalsection ">
 
-                    <div class="finalsection1">
+                    <div class="">
                         <p class="finalselectionp">Ideas you won’t find anywhere else</p>
                         <h2 class="finalselectionh2">Build your long term portfolio with smallcases</h2>
                     </div>
@@ -304,7 +305,7 @@
                             <h3 class="firstbox1h3">A stable core for your portfolio</h3>
                             <p class="firstbox1p">A recession proof smallcase with stable returns, making All Weather
                                 the right way to get started</p>
-                            <a class="firstbox1a" href="">Get Started</a>
+                            <a style="cursor: pointer;" class="firstbox1a">Get Started</a>
                         </div>
                         <div class="firstbox1">
                             <div class="firstbox2">
@@ -336,14 +337,14 @@
                                 </div>
                             </div>
                             <h3 class="firstbox1h3">High risk, high return</h3>
-                            <p class="firstbox1p">Invest in ideas around you or strategies of celebrated investors based
+                            <p class="firstbox1p hack">Invest in ideas around you or strategies of celebrated investors based
                                 on fundamental or technical models</p>
                             <a class="firstbox1a" href="">Get Started</a>
                         </div>
                     </div>
-                    <div class="finalsection1">
+                    <div class="">
                         <div class="finalsection2">
-                            <a class="finalsection2a" href="">Discover all smallcases</a>
+                            <a class="finalsection2a discover-link" href="/allSmallcases/allSmallCases.html">Discover all smallcases</a>
                         </div>
                     </div>
 
@@ -363,7 +364,7 @@
                                     <div class="center">
                                         <h2 class="becameinvestorh2">Become a better investor</h2>
                                         <div class="becameinvestorabtn">
-                                            <a class="becameinvestora" href="">Start Investing Today</a>
+                                            <a style="cursor: pointer;" class="becameinvestora" onclick="renderGetStarted(event)">Start Investing Today</a>
                                         </div>
                                     </div>
                                 </div>
@@ -383,7 +384,7 @@
                             <h2 class="accordianh2">Frequently Asked Questions</h2>
                         </div>
                         <div class="center">
-                            <div class="accordian1 secondbox">
+                            <div class=" secondbox">
                                 <div class="secondbox1">
                                     <h2>Understanding smallcases</h2>
                                     <div class="first">What is a smallcase</div>
@@ -521,6 +522,7 @@
         </div>
     </div>
     <script src="./MainJs.js"></script>
+    <script src="/common.js"></script>
     <!-- js -->
 </body>
 
