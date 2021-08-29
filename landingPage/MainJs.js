@@ -86,3 +86,4 @@ function renderGetStarted(e) {
         window.location.pathname = "loginSignupPages/login_page.html";
     }
 }
+

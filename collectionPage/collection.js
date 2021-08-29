@@ -31,17 +31,6 @@ smallcaseDivResponsiveElement.addEventListener("click", function () {
 })
 
 
-
-// Order page rendering logic
-function renderOrders() {
-    if (loginStatus !== "") {
-        window.location.pathname = "orderPage/order.html";
-    } else {
-        window.location.pathname = "loginSignupPages/login_page.html";
-    }
-}
-
-
 function startHere() {
     if (loginStatus !== "") {
         window.location.pathname = "allSmallcases/allSmallCases.html";

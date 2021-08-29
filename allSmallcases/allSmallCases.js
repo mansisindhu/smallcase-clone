@@ -27,6 +27,19 @@ const smallcasesData = [
         cagrYear: "3Y CAGR"
     },
     {
+        name: "Banking Privately",
+        minAmount: 31127,
+        shortDescription: "Profitable NBFCs and private banks with low NPAs that are giving PSU banks a run for their money",
+        longDescription1: "Private sector banks and NBFCs have been growing rapidly and are seen as an integral part of the Indian financial system.",
+        listElement1: "Since the initiation of banking reforms in 1993, old and new private sector banks have been giving tough competition to government banks",
+        listElement2: "Private sector banks have outperformed their public sector peers in multiple parameters like growth of bank network, productivity measures like profit per employee, management efficiency, capital adequacy, asset quality and liquidity",
+        longDescription2: "This smallcase comprises private banks and NBFCs that are an advantageous position compared to government banks, which have been suffering from low profitability and high amount of bad loans.",
+        votalityType: "High Volatility",
+        image: "https://assets.smallcase.com/images/smallcases/160/SCNM_0008.png",
+        cagr: 12.22,
+        cagrYear: "5Y CAGR"
+    },
+    {
         name: "Dividend Aristocrats",
         minAmount: 56284,
         longDescription1: "For long-term investors, dividend returns are very important as they are an additional income that is earned over and above the capital gains earned by holding onto the stock.",
@@ -40,7 +53,20 @@ const smallcasesData = [
         cagrYear: "5Y CAGR"
     },
     {
-        name: "The Great Indian Middle Class - Low-Cost Version",
+        name: "Affordable Housing",
+        minAmount: 37589,
+        shortDescription: "Companies participating in and benefiting from affordable housing projects",
+        longDescription1: "Affordable housing refers to existing and future housing units that come under the Pradhan Mantri Awas Yojana (PMAY), which was launched in 2015.",
+        listElement1: "The scheme was launched with the aim of building 2 crore affordable houses over a period of 7 years for the lower income segment",
+        listElement2: "Affordable housing projects were granted ‘infrastructure status’ earlier in Budget 2017, which ensured lower cost of borrowing for developers, thus encouraging them to take such projects",
+        longDescription2: "This smallcase consists of stocks from segments like housing finance companies focused on financing low and middle income segments, real estate developers constructing affordable houses and cement & building products companies.",
+        votalityType: "Med. Volatility",
+        image: "https://assets.smallcase.com/images/smallcases/160/SCNM_0024.png",
+        cagr: 17.62,
+        cagrYear: "5Y CAGR"
+    },
+    {
+        name: "The Great Indian Middle Class",
         minAmount: 53864,
         longDescription1: "India is an emerging economy with a growing middle class with 45 crore people expected to be added to this category in the next 15 years.",
         shortDescription: "Companies focused on the growing middle class. Running India's consumption engine",
@@ -115,6 +141,19 @@ const smallcasesData = [
         votalityType: "High Volatility",
         image: "https://assets.smallcase.com/images/smallcases/160/SCMO_0016.png",
         cagr: 29.37,
+        cagrYear: "5Y CAGR"
+    },
+    {
+        name: "Growth & Income",
+        minAmount: 36293,
+        longDescription1: "This smallcase is based on the investment criterion set out by Kevin Matras, a US based investment expert, in his book \"Finding #1 Stocks: Screening, Backtesting and Time-Proven Strategies\"",
+        shortDescription: "Efficiently managed dividend paying companies screened using Kevin Matras' criteria",
+        listElement1: "For better suitability, all the criteria have been adapted for the Indian markets",
+        listElement2: "Companies which utilize their investments efficiently will be able to manage consistent earnings growth. This smallcase selects companies having better ROE and earnings growth compared to their respective sector averages",
+        longDescription2: "This smallcase comprises IT & ITeS and online services companies to allow investors to efficiently track and invest in the information technology sector.",
+        votalityType: "Med. Volatility",
+        image: "https://assets.smallcase.com/images/smallcases/160/SCMO_0026.png",
+        cagr: 24.01,
         cagrYear: "5Y CAGR"
     }
 ]

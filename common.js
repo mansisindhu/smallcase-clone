@@ -12,8 +12,18 @@ if (loginStatus !== "") {
 
 loginBtnEl.addEventListener("click", function() {
     if (loginStatus !== "") {
-        alert("You have successfully logged out.")
         loginBtnEl.href = "";
         window.localStorage.setItem("loginStatus", "");
     }
 })
+
+
+
+// Order page rendering logic
+function renderOrders() {
+    if (loginStatus !== "") {
+        window.location.pathname = "orderPage/order.html";
+    } else {
+        window.location.pathname = "loginSignupPages/login_page.html";
+    }
+}
