@@ -3,7 +3,8 @@
 
 > A smallcase is a basket of exchange traded securities (like stocks & ETFs) in a specified weighting scheme to reflect a certain objective (ideas, themes, strategies). A smallcase has a minimum of 2 securities and a maximum of 50 securities. You will find here different types of stocks in which you can invest easily and safely.
  
-> We have cloned the smallcase website, tried to implement all the functionalities and design.
+> We have cloned the smallcase website as project of our construct week at **Masai School**.
+> We built this website fully responsive and implemented maximum design.
  
   
 # Technology
