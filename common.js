@@ -5,7 +5,7 @@ const loginStatus = window.localStorage.getItem("loginStatus");
 
 const loginBtnEl = document.querySelector(".login-p");
 
-if (loginStatus !== "") {
+if (typeof loginStatus === "string" && loginStatus !== "") {
     loginBtnEl.textContent = "Logout";
 }
 
@@ -16,7 +16,6 @@ loginBtnEl.addEventListener("click", function() {
         window.localStorage.setItem("loginStatus", "");
     }
 })
-
 
 
 // Order page rendering logic

@@ -31,7 +31,7 @@
 
    1. This is a landing page where user have a facility to see top smallcases.
     
-     
+   ![landingPage](C:\Users\mansi\Desktop\smallcase-clone\images\Smallcase - Google Chrome 2021-08-29 17-06-45.gif)
    
    
  

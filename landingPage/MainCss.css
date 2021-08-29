@@ -544,7 +544,7 @@ footer {
   display: flex;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -9%);
   font-size: 100%;
 }
 .figure1 {
@@ -1166,4 +1166,18 @@ header {
   .finaldiv1 {
     margin-bottom: 20px;
   }
+}
+
+.video_button > img {
+  border-radius: 4px;
+}
+
+.becameinvestora:hover {
+  background-color: #2685ef;
+}
+
+
+header button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px 0 rgb(0 0 0 / 7%);
 }

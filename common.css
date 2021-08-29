@@ -15,6 +15,10 @@
     animation: slideup 0.7s ease-out;
 }
 
+.modal-container {
+    animation: slideup 0.7s ease-out;
+}
+
 header {
     background-color: white;
 }

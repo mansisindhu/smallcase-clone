@@ -291,39 +291,39 @@ const renderModal = () => {
     incrementBtnsEl.appendChild(tenKButton);
 
 
-    const paymentDiv = document.createElement("div");
-    paymentDiv.className = "payment";
+    // const paymentDiv = document.createElement("div");
+    // paymentDiv.className = "payment";
 
-    const addHeadingEl = document.createElement("h3");
-    addHeadingEl.textContent = "Add card details";
+    // const addHeadingEl = document.createElement("h3");
+    // addHeadingEl.textContent = "Add card details";
 
-    const cardHolderNameInput = document.createElement("input");
-    cardHolderNameInput.type = "text";
-    cardHolderNameInput.placeholder = "Enter Card Holder Name";
+    // const cardHolderNameInput = document.createElement("input");
+    // cardHolderNameInput.type = "text";
+    // cardHolderNameInput.placeholder = "Enter Card Holder Name";
 
-    const cardNumberInput = document.createElement("input");
-    cardNumberInput.type = "number";
-    cardNumberInput.placeholder = "Enter Card Number";
+    // const cardNumberInput = document.createElement("input");
+    // cardNumberInput.type = "number";
+    // cardNumberInput.placeholder = "Enter Card Number";
 
-    const cardCVVInput = document.createElement("input");
-    cardCVVInput.type = "number";
-    cardCVVInput.placeholder = "Enter CVV";
+    // const cardCVVInput = document.createElement("input");
+    // cardCVVInput.type = "number";
+    // cardCVVInput.placeholder = "Enter CVV";
 
-    const expirationMonthInput = document.createElement("input");
-    expirationMonthInput.type = "number";
-    expirationMonthInput.placeholder = "Enter Expiration Month";
+    // const expirationMonthInput = document.createElement("input");
+    // expirationMonthInput.type = "number";
+    // expirationMonthInput.placeholder = "Enter Expiration Month";
 
-    const yearInput = document.createElement("input");
-    yearInput.type = "number";
-    yearInput.placeholder = "Enter Year"
+    // const yearInput = document.createElement("input");
+    // yearInput.type = "number";
+    // yearInput.placeholder = "Enter Year"
 
 
-    paymentDiv.appendChild(addHeadingEl);
-    paymentDiv.appendChild(cardHolderNameInput);
-    paymentDiv.appendChild(cardNumberInput);
-    paymentDiv.appendChild(cardCVVInput);
-    paymentDiv.appendChild(expirationMonthInput);
-    paymentDiv.appendChild(yearInput);
+    // paymentDiv.appendChild(addHeadingEl);
+    // paymentDiv.appendChild(cardHolderNameInput);
+    // paymentDiv.appendChild(cardNumberInput);
+    // paymentDiv.appendChild(cardCVVInput);
+    // paymentDiv.appendChild(expirationMonthInput);
+    // paymentDiv.appendChild(yearInput);
 
 
     const paymentBtnElement = document.createElement("button");
@@ -337,7 +337,7 @@ const renderModal = () => {
     modalContainer.appendChild(midRowEl);
     modalContainer.appendChild(amountBoxEl);
     modalContainer.appendChild(incrementBtnsEl);
-    modalContainer.appendChild(paymentDiv);
+    // modalContainer.appendChild(paymentDiv);
     modalContainer.appendChild(paymentBtnElement);
 
 

@@ -314,7 +314,7 @@ ul {
 }
 
 .modal-container {
-  height: 682px;
+  height: 400px;
   width: 400px;
   background: white;
   display: flex;
@@ -340,7 +340,7 @@ ul {
 }
 
 .close-modal {
-  margin-left: 66px;
+  margin-left: 100px;
   cursor: pointer;
   font-weight: 500;
 }
@@ -460,11 +460,11 @@ ul {
   }
 
   .modal-container {
-    width: 600px;
+    width: 400px;
   }
 
   .close-modal {
-    margin-left: 302px;
+    margin-left: 100px;
   }
 
   .payment {
