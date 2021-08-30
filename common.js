@@ -11,7 +11,7 @@ if (typeof loginStatus === "string" && loginStatus !== "") {
 
 
 loginBtnEl.addEventListener("click", function() {
-    if (loginStatus !== "") {
+    if (loginStatus !== "" && typeof loginStatus === "string") {
         loginBtnEl.href = "";
         window.localStorage.setItem("loginStatus", "");
     }

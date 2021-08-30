@@ -139,7 +139,7 @@ function renderData() {
 
         const loginBtnEl = document.querySelector(".login-p");
 
-        if (loginStatus !== "") {
+        if (loginStatus !== ""  && typeof loginStatus === "string") {
             renderModal();
         } else {
             window.location.pathname = "loginSignupPages/login_page.html"
@@ -172,7 +172,7 @@ function renderData() {
 
         const loginStatus = window.localStorage.getItem("loginStatus");
 
-        if (loginStatus !== "") {
+        if (loginStatus !== "" && typeof loginStatus === "string") {
             renderModal();
         } else {
             window.location.pathname = "loginSignupPages/login_page.html"

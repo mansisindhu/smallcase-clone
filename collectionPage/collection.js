@@ -32,7 +32,7 @@ smallcaseDivResponsiveElement.addEventListener("click", function () {
 
 
 function startHere() {
-    if (loginStatus !== "") {
+    if (loginStatus !== ""  && typeof loginStatus === "string") {
         window.location.pathname = "allSmallcases/allSmallCases.html";
     } else {
         window.location.pathname = "loginSignupPages/login_page.html";
