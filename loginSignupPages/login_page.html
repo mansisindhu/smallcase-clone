@@ -316,7 +316,7 @@
 
         const ordersData = JSON.parse(window.localStorage.getItem("userOrders")) || {};
 
-        let signup_data = JSON.parse(window.localStorage.getItem('signup_det'));
+        let signup_data = JSON.parse(window.localStorage.getItem('signup_det')) || [];
 
         console.log(signup_data);
         console.log(signup_data.length)
@@ -325,6 +325,7 @@
             let user_id = document.getElementById('userid').value;
             let password = document.getElementById('password').value;
 
+            if (signup_data.length !== 0) {
             for (var i = 0; i < signup_data.length; i++) {
                 if (user_id == signup_data[i].email && password == signup_data[i].password) {
                     if (!(ordersData[user_id])) {
@@ -342,7 +343,11 @@
                         break;
                     }
                 }
-            }
+            } 
+        } else {
+            alert("Please create account first");
+            window.location.pathname = "loginSignupPages/signup.html";
+        }
             document.getElementById('userid').value = null;
             document.getElementById('password').value = null;
 
