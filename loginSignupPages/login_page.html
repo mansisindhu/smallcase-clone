@@ -63,7 +63,7 @@
             padding: 30px;
             box-shadow: 1px 1px 4px #b9b5b5;
             width: 356px;
-            height: 460px;
+            height: 470px;
         }
 
         .details_box {
@@ -244,6 +244,13 @@
         div>#login:hover {
             background-color: #f38a6a;
         }
+
+        .alert {
+            font-size: 12px !important;
+            color: red;
+            margin-left: 2px !important;
+            visibility: hidden;
+        }
     </style>
 </head>
 
@@ -285,8 +292,9 @@
                             <div>Not recommended on shared or public systems</div>
                         </div>
                     </div>
-                    <diV class="details_box"><button id="login" onclick="login()">Login</button></diV>
-
+                    <div class="details_box">
+                        <p class="alert">Please create account first</p>
+                        <button id="login" onclick="login()">Login</button></div>
                 </div>
             </div>
 
@@ -342,13 +350,13 @@
                 }
             } 
         } else {
-            alert("Please create account first");
-            window.location.pathname = "loginSignupPages/signup.html";
+            const alertEl = document.querySelector(".alert");
+            alertEl.style.visibility = "unset";
+            //alert("Please create account first");
+            // window.location.pathname = "loginSignupPages/signup.html";
         }
             document.getElementById('userid').value = null;
             document.getElementById('password').value = null;
-
-
         }
 
 

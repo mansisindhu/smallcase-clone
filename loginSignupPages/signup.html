@@ -183,6 +183,14 @@
         #signup:hover {
             background-color: #f38a6a;
         }
+
+        .alert {
+            font-size: 12px !important;
+            color: red;
+            margin-left: 2px !important;
+            margin-bottom: 8px;
+            visibility: hidden;
+        }
     </style>
 </head>
 
@@ -222,7 +230,9 @@
                             placeholder="Confirm password" />
                     </div>
 
-                    <diV class="details_box"><button id="signup" onclick="add_signup()">Sign up</button></diV>
+                    <diV class="details_box">
+                        <p class="alert">Please fill all details</p>
+                        <button id="signup" onclick="add_signup()">Sign up</button></diV>
 
                 </div>
             </div>
@@ -253,58 +263,42 @@
             var regx = /^([a-zA-Z0-9\.-]+)\@([a-zA-Z0-9\-]+)\.([a-z]{2,20})$/;
             var email_id = document.getElementById("email_id").value
             if (regx.test(email_id)) {
-
-
                 var obj = {
                     email: document.getElementById('email_id').value,
                     mobile: document.getElementById('mobile_num').value,
                     password: document.getElementById('password_setup').value,
                     password_conf: document.getElementById('password_conf').value,
-
                 }
 
 
 
                 if (obj.email == "" || obj.mobile == "" || obj.password == "" || obj.password_conf == "") {
-                    alert("Please fill all details");
-                    document.getElementById('email_id').value = null;
-                    document.getElementById('mobile_num').value = null;
-                    document.getElementById('password_setup').value = null;
-                    document.getElementById('password_conf').value = null;
+                    const alertEl = document.querySelector(".alert");
+                    alertEl.textContent = "Please fill all the details!";
+                    alertEl.style.visibility = "unset";
                     return false;
                 } else {
 
                     if (obj.password != obj.password_conf) {
-                        alert("Password  not matched");
-                        document.getElementById('email_id').value = null;
-                        document.getElementById('mobile_num').value = null;
-                        document.getElementById('password_setup').value = null;
-                        document.getElementById('password_conf').value = null;
+                        const alertEl = document.querySelector(".alert");
+                        alertEl.textContent = "Password  not matched!";
+                        alertEl.style.visibility = "unset";
                     } else {
-                        //   console.log(document.getElementById('email_id').value);
-                        console.log(obj);
-
                         submit_details.push(obj);
                         let submit_details_local = JSON.stringify(submit_details);
-
                         localStorage.setItem('signup_det', submit_details_local);
-
                         window.location.href = "login_page.html"
                     }
 
 
                 }
-                //   document.getElementById('email_id').value;
-                console.log(submit_details);
             }
             else {
-                alert("Enter a valid Email id")
+                const alertEl = document.querySelector(".alert");
+                alertEl.textContent = "Enter a valid Email id";
+                alertEl.style.visibility = "unset";
             }
-
         }
-
-
-
 
     </script>
 
