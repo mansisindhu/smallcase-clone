@@ -425,7 +425,7 @@ function setToLocalStorage(product) {
             modalContainer.appendChild(successfullMessage);
             modalContainer.appendChild(goToOrderPageBtn);
         } else {
-
+            
             alert("You have alredy invested in this smallcase! Kindly choose other.");
             window.location.pathname = "allSmallcases/allSmallCases.html";
 

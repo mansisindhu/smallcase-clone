@@ -207,8 +207,13 @@ popularityBtnElement.addEventListener("click", function () {
 
     count++;
 
-    filterHeadingElement.textContent = `Filters(${count})`
-    renderSmallcases(current_array);
+    if (count > 3) {
+        filterHeadingElement.textContent = `Filters(${3})`
+    } else {
+        filterHeadingElement.textContent = `Filters(${count})`
+    }
+
+    renderSmallcases(current_array.reverse());
 })
 
 const minimumAmountBtnElement = document.querySelector(".minimum-amount");
@@ -226,7 +231,11 @@ minimumAmountBtnElement.addEventListener("click", function () {
     renderSmallcases(current_array);
     count++;
 
-    filterHeadingElement.textContent = `Filters(${count})`
+    if (count > 3) {
+        filterHeadingElement.textContent = `Filters(${3})`
+    } else {
+        filterHeadingElement.textContent = `Filters(${count})`
+    }
 })
 
 const returnsBtnElement = document.querySelector(".returns");
@@ -245,7 +254,11 @@ returnsBtnElement.addEventListener("click", function () {
     renderSmallcases(current_array);
     count++;
 
-    filterHeadingElement.textContent = `Filters(${count})`
+    if (count > 3) {
+        filterHeadingElement.textContent = `Filters(${3})`
+    } else {
+        filterHeadingElement.textContent = `Filters(${count})`
+    }
 })
 
 
@@ -264,7 +277,11 @@ anyFilterBtnElement.addEventListener("click", function () {
     renderSmallcases(current_array);
     count++;
 
-    filterHeadingElement.textContent = `Filters(${count})`
+    if (count > 3) {
+        filterHeadingElement.textContent = `Filters(${3})`
+    } else {
+        filterHeadingElement.textContent = `Filters(${count})`
+    }
 })
 
 
@@ -290,7 +307,11 @@ under5kFilterBtnElement.addEventListener("click", function () {
     renderSmallcases(current_array);
     count++;
 
-    filterHeadingElement.textContent = `Filters(${count})`
+    if (count > 3) {
+        filterHeadingElement.textContent = `Filters(${3})`
+    } else {
+        filterHeadingElement.textContent = `Filters(${count})`
+    }
 })
 
 
@@ -316,7 +337,11 @@ under25kFilterBtnElement.addEventListener("click", function () {
     renderSmallcases(current_array);
     count++;
 
-    filterHeadingElement.textContent = `Filters(${count})`
+    if (count > 3) {
+        filterHeadingElement.textContent = `Filters(${3})`
+    } else {
+        filterHeadingElement.textContent = `Filters(${count})`
+    }
 })
 
 
@@ -342,7 +367,11 @@ under50kFilterBtnElement.addEventListener("click", function () {
     renderSmallcases(current_array);
     count++;
 
-    filterHeadingElement.textContent = `Filters(${count})`
+    if (count > 3) {
+        filterHeadingElement.textContent = `Filters(${3})`
+    } else {
+        filterHeadingElement.textContent = `Filters(${count})`
+    }
 })
 
 
@@ -368,7 +397,11 @@ lowVolatilityBtnElement.addEventListener("click", function () {
     renderSmallcases(current_array);
     count++;
 
-    filterHeadingElement.textContent = `Filters(${count})`
+    if (count > 3) {
+        filterHeadingElement.textContent = `Filters(${3})`
+    } else {
+        filterHeadingElement.textContent = `Filters(${count})`
+    }
 })
 
 
@@ -392,7 +425,11 @@ mediumVolatilityBtnElement.addEventListener("click", function () {
     renderSmallcases(current_array);
     count++;
 
-    filterHeadingElement.textContent = `Filters(${count})`
+    if (count > 3) {
+        filterHeadingElement.textContent = `Filters(${3})`
+    } else {
+        filterHeadingElement.textContent = `Filters(${count})`
+    }
 })
 
 
@@ -416,7 +453,11 @@ highVolatilityBtnElement.addEventListener("click", function () {
     renderSmallcases(current_array);
     count++;
 
-    filterHeadingElement.textContent = `Filters(${count})`
+    if (count > 3) {
+        filterHeadingElement.textContent = `Filters(${3})`
+    } else {
+        filterHeadingElement.textContent = `Filters(${count})`
+    }
 })
 
 
