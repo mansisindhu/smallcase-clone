@@ -7,9 +7,13 @@ app.use(express.json());
 const connect = require("./src/config/dbconfig");
 
 // controllers
-const smallCaseController = require("./src/controllers/smallcase.controller");
+const smallCaseController = require("./src/controllers/landingPage.controller");
+const allSmallcasesController = require("./src/controllers/allSmallcases.controller")
 
 app.use("/", smallCaseController);
+app.use("/discover/all", allSmallcasesController)
+// app.use("/discover/explore", "")
+
 
 // public 
 app.use(express.static("public"));
@@ -17,20 +21,18 @@ app.use(express.static("public"));
 // view engine
 app.set("view engine", "ejs");
 
-// // landing page api
-// app.get("/", async (req, res) => {
-//   res.render("index");
-// });
 
 // collection page api
-app.get("/discover", async (req, res) => {
+app.get("/discover/explore", async (req, res) => {
   res.render("collection");
 })
 
-// all smallcases page api
-app.get("/allSmallcases", async (req, res) => {
-  res.render("allSmallcases");
-})
+// // all smallcases page api
+// app.get("", async (req, res) => {
+//   res.render("allSmallcases", {
+
+//   });
+// })
 
 // login page api
 app.get("/login", async (req, res) => {
@@ -45,6 +47,11 @@ app.get("/signup", async (req, res) => {
 // orders page api
 app.get("/orders", async (req, res) => {
   res.render("orders")
+})
+
+app.get("/smallcase/:id", async (req, res) => {
+  console.log("bla bla", req.params.id);
+  res.render("smallcaseDetail")
 })
 
 // server
