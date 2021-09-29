@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const smallcaseSchema = new mongoose.Schema({
+    id: {type: String, required: true},
     title: { type: String, required: true },
     shortDescription: { type: String, required: true },
     img: { type: String, required: true },
