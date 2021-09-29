@@ -23,21 +23,74 @@
 <body>
     <div class="root">
         <!-- header -->
-        <%- include("../components/header") %> 
-        <!-- header ends -->
+        <%- include("../components/header") %>
+            <!-- header ends -->
 
-        <!-- App container -->
-        <div class="app-container">
+            <!-- App container -->
+            <div class="app-container">
 
-            <!-- main div -->
-            <div class="main"></div>
-            <!-- main div ends -->
+                <!-- main div -->
+                <div class="main">
+                    <% data.forEach(el => { %>
+                        <div class="gray-box">
+                            <div class="top-detail-box">
+                                <div class="product-main-info"><img
+                                        src="<%= el.img %> ">
+                                    <div class="about-info">
+                                        <p class="product-name"><%= el.title %></p>
+                                        <p class="product-short-info"><%= el.shortDescription %></p>
+                                    </div>
+                                </div>
+                                <div class="stats">
+                                    <div class="stat-1">
+                                        <p>Min Amount</p>
+                                        <p>&#x20B9 <%= el.minAmount %></p>
+                                    </div>
+                                    <div class="stat-2">
+                                        <p><%= el.cagYear %>Y CAGR</p>
+                                        <p style="color: rgb(25, 175, 85);"><%= el.cagRate %>%</p>
+                                    </div>
+                                    <div class="stat-3">
+                                        <p><%= el.volatility %> Volatility</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom-detail-box">
+                            <div class="long-description">
+                                <p class="overview">Overview</p>
+                                <p class="question"><%= el.ques_title %></p>
+                                <p>All Weather Investing is a popular strategy that ensures your investments do well in good
+                                    as well as bad times. This is a long-term investment strategy that you can use to build
+                                    wealth over the years to come.</p>
+                                <ul>
+                                    <% el.discription.forEach(item => { %>
+                                        <li><%= item %> </li>
+                                    <% }) %> 
+                                </ul>
+                                <!-- <p>This smallcase is ideal for all types of market conditions. It will ensure that neither
+                                    will your investment ship sink, nor will the investment flight soar to scary heights.
+                                    What you will get here is a steady ride to help you meet your long-term investment
+                                    goals.</p> -->
+                            </div>
+                            <div class="payment-section"><button class="payment-section-btn">Invest Now</button></div>
+                            <div class="payment-section-responsive">
+                                <div class="payment-info">
+                                    <p>Minimum Investment Amount</p>
+                                    <p>&#x20B9 <%= el.minAmount %></p>
+                                </div><button class="payment-section-btn">Invest Now</button>
+                            </div>
+                        </div>
+                    <% }) %> 
+                    
+                </div>
+                <!-- main div ends -->
 
 
-            <!-- footer -->
-            <%- include("../components/footer") %> 
-            <!-- footer ends -->
-        </div>
+                <!-- footer -->
+                <%- include("../components/footer") %>
+                    <!-- footer ends -->
+            </div>
     </div>
 </body>
 
