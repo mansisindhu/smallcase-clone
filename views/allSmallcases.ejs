@@ -10,8 +10,8 @@
         type="image/x-icon" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="common.css" />
-    <link rel="stylesheet" href="allSmallcases.css" />
+    <link rel="stylesheet" href="/common.css" />
+    <link rel="stylesheet" href="/allSmallcases.css" />
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700&display=swap"
@@ -22,87 +22,106 @@
 <body>
     <div class="root">
         <!-- header -->
-        <%- include("../components/header") %> 
-        <!-- header ends -->
+        <%- include("../components/header") %>
+            <!-- header ends -->
 
-        <!-- App container -->
-        <div class="app-container">
-            <!-- main div -->
-            <div class="main">
-                <div class="main-top">
-                    <h1>Discover</h1>
-                    <div class="top-links">
-                        <a href="/discover">Collection</a>
-                        <a class="collection-btn" href="/allSmallcases">All Smallcases</a>
+            <!-- App container -->
+            <div class="app-container">
+                <!-- main div -->
+                <div class="main">
+                    <div class="main-top">
+                        <h1>Discover</h1>
+                        <div class="top-links">
+                            <a href="/discover/explore">Collection</a>
+                            <a class="collection-btn" href="/discover/all">All Smallcases</a>
+                        </div>
+                    </div>
+
+                    <div class="smallcase-page">
+                        <div class="filters">
+                            <div class="filter-heading">
+                                <p id="filter-content">Filters</p>
+                                <a href="/allSmallcases">
+                                    <p id="clearFilters">Clear All</p>
+                                </a>
+                            </div>
+                            <div class="investment-amount-filter">
+                                <p>Investment Amount</p>
+                                <div class="amount-filter">
+                                    <div id="filter-icon-blue" class="filter-icon any"></div>
+                                    <p>Any</p>
+                                </div>
+                                <div class="amount-filter">
+                                    <div class="filter-icon under5k"></div>
+                                    <p>Under ₹ 5,000</p>
+                                </div>
+                                <div class="amount-filter">
+                                    <div class="filter-icon under25k"></div>
+                                    <p>Under ₹ 25,000</p>
+                                </div>
+                                <div class="amount-filter">
+                                    <div class="under50k filter-icon"></div>
+                                    <p>Under ₹ 50,000</p>
+                                </div>
+                            </div>
+
+                            <div class="volatility-filter">
+                                <p>Volatility</p>
+                                <div class="volatility-btns">
+                                    <div class="low volatility-btn">Low</div>
+                                    <div class="medium volatility-btn">Medium</div>
+                                    <div class="high volatility-btn">High</div>
+                                </div>
+                            </div>
+
+                            <div class="sorting-filters">
+                                <p>Sort by</p>
+                                <div class="sort-filter">
+                                    <div id="filter-icon-blue" class="filter-icon popularity"></div>
+                                    <p>Popularity</p>
+                                </div>
+                                <div class="sort-filter">
+                                    <div class="filter-icon minimum-amount"></div>
+                                    <p>Minimum Amount</p>
+                                </div>
+                                <div class="sort-filter">
+                                    <div class="filter-icon returns"></div>
+                                    <p>Returns</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="smallcases">
+                            <div class="product">
+                                <div class="product-main-info"><img
+                                        src="https://assets.smallcase.com/images/smallcases/200/SCAW_0001.png">
+                                    <p>All Weather Investing</p>
+                                </div>
+                                <p class="product-short-info">One investment for all market conditions. Works for
+                                    everyone</p>
+                                <div class="stats">
+                                    <div class="stat-1">
+                                        <p>Min Amount</p>
+                                        <p>₹ 4417</p>
+                                    </div>
+                                    <div class="stat-2">
+                                        <p>3Y CAGR</p>
+                                        <p style="color: rgb(25, 175, 85);">13.87%</p>
+                                    </div>
+                                    <div class="stat-3">
+                                        <p>Low Volatility</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <!-- main div ends -->
 
-                <div class="smallcase-page">
-                    <div class="filters">
-                        <div class="filter-heading">
-                            <p id="filter-content">Filters</p>
-                            <a href="/allSmallcases"><p id="clearFilters">Clear All</p></a>
-                        </div>
-                        <div class="investment-amount-filter">
-                            <p>Investment Amount</p>
-                            <div class="amount-filter">
-                                <div id="filter-icon-blue" class="filter-icon any"></div>
-                                <p>Any</p>
-                            </div>
-                            <div class="amount-filter">
-                                <div class="filter-icon under5k"></div>
-                                <p>Under ₹ 5,000</p>
-                            </div>
-                            <div class="amount-filter">
-                                <div class="filter-icon under25k"></div>
-                                <p>Under ₹ 25,000</p>
-                            </div>
-                            <div class="amount-filter">
-                                <div class="under50k filter-icon"></div>
-                                <p>Under ₹ 50,000</p>
-                            </div>
-                        </div>
-
-                        <div class="volatility-filter">
-                            <p>Volatility</p>
-                            <div class="volatility-btns">
-                                <div class="low volatility-btn">Low</div>
-                                <div class="medium volatility-btn">Medium</div>
-                                <div class="high volatility-btn">High</div>
-                            </div>
-                        </div>
-
-                        <div class="sorting-filters">
-                            <p>Sort by</p>
-                            <div class="sort-filter">
-                                <div id="filter-icon-blue" class="filter-icon popularity"></div>
-                                <p>Popularity</p>
-                            </div>
-                            <div class="sort-filter">
-                                <div class="filter-icon minimum-amount"></div>
-                                <p>Minimum Amount</p>
-                            </div>
-                            <div class="sort-filter">
-                                <div class="filter-icon returns"></div>
-                                <p>Returns</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="smallcases">
-                        
-                    </div>
-                </div>
+                <!-- footer -->
+                <%- include("../components/footer") %>
+                    <!-- footer ends -->
             </div>
-            <!-- main div ends -->
-
-            <!-- footer -->
-            <%- include("../components/footer") %> 
-            <!-- footer ends -->
-        </div>
     </div>
-
-    <script src="./allSmallCases.js"></script>
-    <script src="/common.js"></script>
 </body>
 
 </html>
