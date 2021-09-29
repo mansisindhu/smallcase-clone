@@ -4,9 +4,9 @@ const SmallCase = require("../models/smallcase.model.js");
 const router = express.Router();
 
 router.get("/", async function (req, res) {
-    const smallData = await SmallCase.find({}).lean().exec();
+    const smallcaseData = await SmallCase.find({}).lean().exec();
     res.render("allSmallcases", {
-        smallData,
+        data : smallcaseData
     });
 });
 
