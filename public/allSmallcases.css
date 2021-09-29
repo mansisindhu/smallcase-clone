@@ -248,6 +248,7 @@
     font-size: 18px;
     font-weight: 600;
     margin: 0 0 8px;
+    color: black;
   }
   
   .stats {
@@ -270,6 +271,10 @@
   .stat-2 > p:first-child {
     color: #81878c;
     font-size: 12px;
+  }
+
+  .stat-1 > p:last-child {
+    color: black;
   }
   
   .stat-3 > p {
@@ -475,4 +480,8 @@
     .footer-bottom-part-right > img {
       margin-left: 10px;
     }
+  }
+
+  a {
+    text-decoration: none;
   }
