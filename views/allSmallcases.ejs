@@ -47,53 +47,72 @@
                             </div>
                             <div class="investment-amount-filter">
                                 <p>Investment Amount</p>
-                                <div class="amount-filter">
-                                    <div id="filter-icon-blue" class="filter-icon any"></div>
-                                    <p>Any</p>
-                                </div>
-                                <div class="amount-filter">
-                                    <div class="filter-icon under5k"></div>
-                                    <p>Under ₹ 5,000</p>
-                                </div>
-                                <div class="amount-filter">
-                                    <div class="filter-icon under25k"></div>
-                                    <p>Under ₹ 25,000</p>
-                                </div>
-                                <div class="amount-filter">
-                                    <div class="under50k filter-icon"></div>
-                                    <p>Under ₹ 50,000</p>
-                                </div>
+                                <label class="container">Any
+                                    <input value="100000000000" type="radio" checked="checked" name="investment-amount">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">Under ₹ 5,000
+                                    <input value="5000" type="radio" name="investment-amount">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">
+                                    Under ₹ 25,000
+                                    <input value="25000" type="radio" name="investment-amount">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">
+                                    Under ₹ 50,000
+                                    <input value="50000" type="radio" name="investment-amount">
+                                    <span class="checkmark"></span>
+                                </label>
                             </div>
-
+    
                             <div class="volatility-filter">
                                 <p>Volatility</p>
                                 <div class="volatility-btns">
-                                    <div class="low volatility-btn">Low</div>
-                                    <div class="medium volatility-btn">Medium</div>
-                                    <div class="high volatility-btn">High</div>
+                                    <div class="cat">
+                                        <label>
+                                            <input name="volatility" type="checkbox" value="Low"><span class="volatility-btn">Low</span>
+                                        </label>
+                                    </div>
+    
+                                    <div class="cat">
+                                        <label>
+                                            <input name="volatility" type="checkbox" value="Med."><span class="volatility-btn">Medium</span>
+                                        </label>
+                                    </div>
+    
+                                    <div class="cat">
+                                        <label>
+                                            <input name="volatility" type="checkbox" value="High"><span class="volatility-btn">High</span>
+                                        </label>
+                                    </div>
+    
                                 </div>
                             </div>
-
+    
                             <div class="sorting-filters">
                                 <p>Sort by</p>
-                                <div class="sort-filter">
-                                    <div id="filter-icon-blue" class="filter-icon popularity"></div>
-                                    <p>Popularity</p>
-                                </div>
-                                <div class="sort-filter">
-                                    <div class="filter-icon minimum-amount"></div>
-                                    <p>Minimum Amount</p>
-                                </div>
-                                <div class="sort-filter">
-                                    <div class="filter-icon returns"></div>
-                                    <p>Returns</p>
-                                </div>
+                                <label class="container">Popularity
+                                    <input value="popularity" type="radio" checked="checked" name="sorting-filters">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">
+                                    Minimum Amount
+                                    <input value="minAmount" type="radio" name="sorting-filters">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">
+                                    Returns
+                                    <input value="returns" type="radio" name="sorting-filters">
+                                    <span class="checkmark"></span>
+                                </label>
                             </div>
                         </div>
 
                         <!-- all smallcases -->
                         <div class="smallcases">
-                            <% data.forEach(el=> { %>
+                            <!-- <% data.forEach(el=> { %>
                                 <a href="/smallcase/<%= el.id %> ">
                                     <div class="product">
                                         <div class="product-main-info"><img
@@ -116,7 +135,7 @@
                                         </div>
                                     </div>
                                 </a>
-                                <% }) %>
+                                <% }) %> -->
                         </div>
                     </div>
                 </div>
@@ -126,6 +145,12 @@
                     <!-- footer ends -->
             </div>
     </div>
+
+    <script id="__EJS_DATA__" type="application/json">
+        <%- JSON.stringify(data) %>
+    </script>
+
+    <script src="/allSmallcasesFilters.js"></script>
 </body>
 
 </html>
