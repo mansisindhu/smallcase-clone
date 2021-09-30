@@ -21,6 +21,7 @@
 
 header {
     background-color: white;
+    z-index: 999;
 }
 
 @media (min-width: 1120px) {
