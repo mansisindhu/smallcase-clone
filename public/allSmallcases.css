@@ -377,6 +377,85 @@
     color: var(--mainBlue);
   }
   
+
+  .container {
+    display: block;
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+    position: absolute;
+    top: 4px;
+    left: 0px;
+    height: 16px;
+    width: 16px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked~.checkmark {
+    background-color: #1f7ae0;
+    ;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked~.checkmark:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+    border-radius: 50%;
+    background: white;
+    top: 4px;
+    left: 4px;
+    width: 8px;
+    height: 8px;
+}
+
+
+.cat label input {
+position: absolute;
+display: none;
+color: gray;
+}
+
+.cat input:checked + span{
+border: 2px solid var(--mainBlue);
+color: var(--mainBlue);
+padding: 7px 7px;
+}
+
+@media (min-width: 1120px) {
+.volatility-btn {
+padding: 11px 23px;
+}
+.cat input:checked + span{
+border: 2px solid var(--mainBlue);
+color: var(--mainBlue);
+padding: 10px 22px;
+}
+}
+
   /* media queries */
   
   @media (min-width: 1120px) {
