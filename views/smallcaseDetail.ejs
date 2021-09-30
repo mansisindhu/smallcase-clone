@@ -25,7 +25,6 @@
         <!-- header -->
         <%- include("../components/header") %>
             <!-- header ends -->
-
             <!-- App container -->
             <div class="app-container">
 
@@ -60,25 +59,20 @@
                             <div class="long-description">
                                 <p class="overview">Overview</p>
                                 <p class="question"><%= el.ques_title %></p>
-                                <p>All Weather Investing is a popular strategy that ensures your investments do well in good
-                                    as well as bad times. This is a long-term investment strategy that you can use to build
-                                    wealth over the years to come.</p>
+                                <p><%= el.discription_p1 %> </p>
                                 <ul>
                                     <% el.discription.forEach(item => { %>
                                         <li><%= item %> </li>
                                     <% }) %> 
                                 </ul>
-                                <!-- <p>This smallcase is ideal for all types of market conditions. It will ensure that neither
-                                    will your investment ship sink, nor will the investment flight soar to scary heights.
-                                    What you will get here is a steady ride to help you meet your long-term investment
-                                    goals.</p> -->
+                                <p><%= el.discription_p2 %> </p>
                             </div>
-                            <div class="payment-section"><button class="payment-section-btn">Invest Now</button></div>
+                            <div class="payment-section"><button onclick="renderModal(<%= JSON.stringify(el) %>)" class="payment-section-btn">Invest Now</button></div>
                             <div class="payment-section-responsive">
                                 <div class="payment-info">
                                     <p>Minimum Investment Amount</p>
                                     <p>&#x20B9 <%= el.minAmount %></p>
-                                </div><button class="payment-section-btn">Invest Now</button>
+                                </div><button onclick="renderModal(<%= JSON.stringify(el) %>)" class="payment-section-btn">Invest Now</button>
                             </div>
                         </div>
                     <% }) %> 
@@ -92,6 +86,8 @@
                     <!-- footer ends -->
             </div>
     </div>
+
+    <script src="/smallcaseDetail.js"></script>
 </body>
 
 </html>
