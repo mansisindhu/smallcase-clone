@@ -470,7 +470,7 @@ footer {
   .top-boxes {
     display: flex;
     justify-content: space-between;
-    gap: 32px;
+    gap: 12px;
   }
 
   .top-box-2 {
