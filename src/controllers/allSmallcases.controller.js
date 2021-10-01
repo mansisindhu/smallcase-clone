@@ -5,8 +5,10 @@ const router = express.Router();
 
 router.get("/", async function (req, res) {
     const smallcaseData = await SmallCase.find({}).lean().exec();
+    const isUserLoggedIn = !!req.cookies.userId;
     res.render("allSmallcases", {
-        data : smallcaseData
+        data : smallcaseData,
+        isUserLoggedIn
     });
 });
 
