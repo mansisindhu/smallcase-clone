@@ -35,3 +35,10 @@ a {
     text-decoration: none;
     color: black;
 }
+
+.active-header {
+    color: #2f363f!important;
+    border-bottom: 1px solid #2f363f;
+    margin-bottom: -19px;
+    padding-bottom: 17px;
+}
