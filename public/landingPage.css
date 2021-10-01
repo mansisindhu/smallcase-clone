@@ -302,7 +302,7 @@
     /*main css  */
     /* Invest in ideas with smallcases end */
    .margin1120{
-     background-color: whitesmoke;
+     background-color: #f9fafb;
      border-bottom: 1px solid var(--lightGray);
    }
   .paragraph{
@@ -474,7 +474,7 @@
       text-align:center;
     }
     .para_h1{
-    font-size: 35px;
+    font-size: 36px;
     width: 330px;
     margin: auto;
     margin-bottom: 25px;
