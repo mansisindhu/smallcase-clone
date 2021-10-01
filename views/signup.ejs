@@ -57,7 +57,9 @@
             box-shadow: 1px 1px 4px rgb(206, 203, 203);
             width: 356px;
             margin: auto;
-
+            height: 470px;
+            display: flex;
+            flex-direction: column;
         }
 
         .details_box {
@@ -157,10 +159,9 @@
 
         .size {
             width: 276px;
-            height: 40px;
-            text-align: center;
+            height: 44px;
             border-radius: 4px;
-
+            padding-left: 12px;
             border: 0.1px solid lightgray;
             margin-bottom: 20px;
             font-size: 15px;
@@ -202,7 +203,7 @@
 
             </div>
 
-            <div class="logo"> <a href="/index.html"><img
+            <div class="logo"> <a href="/"><img
                         src="https://developers.kite.trade/static/images/app-icons/12hpqpbfwnxyvud8.png" /></a>
                 <p id="signuptext"> Sign Up here</p>
             </div>
@@ -215,9 +216,6 @@
                     <div class="details_box"><input type="email" id="email_id" class="size"
                             placeholder="Enter email id" /><br><br>
                     </div>
-                    <div class="details_box"><input id="mobile_num" type="tel" class="size"
-                            placeholder="Enter mobile number" />
-                    </div>
 
                     <div class="details_box"><input id="password_setup" type="password" class="size"
                             placeholder="Set password" />
@@ -228,14 +226,12 @@
 
                     <diV class="details_box">
                         <p class="alert">Please fill all details</p>
-                        <button id="signup" onclick="add_signup()">Sign up</button></diV>
+                        <button id="signup" onclick="addSignup()">Sign up</button>
+                    </diV>
 
                 </div>
             </div>
             <div class="footer">
-
-
-
                 <div style="display: flex; justify-content: center;">
                     <p class="footer_para">Zerodha Broking limited member of NSE, BSE & CDSL- SEBI! reg
                         No:-In12345 CDSL_SEBI refisteration number :-In zerodha pvt limited, registeration number:12345
@@ -248,50 +244,51 @@
     </div>
 
     <script>
-        let submit_details = JSON.parse(window.localStorage.getItem("signup_det")) || [];
         let signup = document.getElementById('signup');
+        const alertEl = document.querySelector(".alert");
 
 
+        const addSignup = () => {
+            const emailInputElement = document.querySelector("#email_id");
+            const passwordInputElement = document.querySelector("#password_setup");
+            const confirmPasswordElement = document.querySelector("#password_conf");
 
-        function add_signup() {
-
-            // email validation  code .
-            var regx = /^([a-zA-Z0-9\.-]+)\@([a-zA-Z0-9\-]+)\.([a-z]{2,20})$/;
-            var email_id = document.getElementById("email_id").value
-            if (regx.test(email_id)) {
-                var obj = {
-                    email: document.getElementById('email_id').value,
-                    mobile: document.getElementById('mobile_num').value,
-                    password: document.getElementById('password_setup').value,
-                    password_conf: document.getElementById('password_conf').value,
-                }
-
-                if (obj.email == "" || obj.mobile == "" || obj.password == "" || obj.password_conf == "") {
-                    const alertEl = document.querySelector(".alert");
-                    alertEl.textContent = "Please fill all the details!";
-                    alertEl.style.visibility = "unset";
-                    return false;
-                } else {
-
-                    if (obj.password != obj.password_conf) {
-                        const alertEl = document.querySelector(".alert");
-                        alertEl.textContent = "Password  not matched!";
-                        alertEl.style.visibility = "unset";
-                    } else {
-                        submit_details.push(obj);
-                        let submit_details_local = JSON.stringify(submit_details);
-                        localStorage.setItem('signup_det', submit_details_local);
-                        window.location.href = "login_page.html"
-                    }
-
-
-                }
-            }
-            else {
-                const alertEl = document.querySelector(".alert");
-                alertEl.textContent = "Enter a valid Email id";
+            if (emailInputElement.value === "" && passwordInputElement.value === "" && confirmPasswordElement.value === "") {
+                alertEl.textContent = "Please fill all the details!";
                 alertEl.style.visibility = "unset";
+                return;
             }
+
+            if (passwordInputElement.value !== confirmPasswordElement.value) {
+                alertEl.textContent = "Password is not matched";
+                alertEl.style.visibility = "unset";
+                return;
+            }
+            fetch("/api/signup", {
+                method: "post",
+                body: JSON.stringify({
+                    "email": emailInputElement.value,
+                    "password": passwordInputElement.value
+                }),
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            })
+                .then(res => res.json())
+                .then(res => {
+                    if (res.error) {
+                        if (res.message === "Invaild email address") {
+                            alertEl.textContent = "Invaild email address";
+                            alertEl.style.visibility = "unset";
+                        } else {
+                            alertEl.textContent = "User already exists";
+                            alertEl.style.visibility = "unset";
+                        }
+                    } else {
+                        window.location.pathname = "/login"
+                    }
+                })
+
         }
     </script>
 </body>
