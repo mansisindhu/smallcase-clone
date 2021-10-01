@@ -8,3 +8,13 @@ loginBtnElement.addEventListener("click", async () => {
         await fetch("/api/logout");
     }
 })
+
+const orderBtnElement = document.querySelector(".order-btn");
+
+orderBtnElement.addEventListener("click", async () => {
+    if (loginBtnElement.textContent === "Login") {
+        orderBtnElement.href = "/login";
+    } else if (loginBtnElement.textContent === "Logout") {
+        orderBtnElement.href = "/orders";
+    }
+})
