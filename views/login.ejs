@@ -314,7 +314,7 @@
                 .then(res => {
                     if (res.error) {
                         if (res.message === "Wrong password") {
-                            alertEl.textContent = "Wrong password";
+                            alertEl.textContent = "Invalid credentials";
                             alertEl.style.visibility = "unset";
                         } else {
                             alertEl.textContent = "Login failed";
