@@ -3,6 +3,9 @@ const app = express();
 
 app.use(express.json());
 
+const cookieParser = require('cookie-parser');
+app.use(cookieParser());
+
 // importing connect from config
 const connect = require("./src/config/dbconfig");
 
@@ -10,11 +13,14 @@ const connect = require("./src/config/dbconfig");
 const smallCaseController = require("./src/controllers/landingPage.controller");
 const allSmallcasesController = require("./src/controllers/allSmallcases.controller");
 const smallcaseDetailController = require("./src/controllers/smallcaseDetail.controller");
+const userController = require("./src/controllers/user.controller");
+
 const Smallcases = require("./src/models/smallcase.model");
 
 app.use("/", smallCaseController);
 app.use("/discover/all", allSmallcasesController);
 app.use("/smallcase/", smallcaseDetailController);
+app.use("/api/", userController);
 
 // public 
 app.use(express.static("public"));
@@ -24,7 +30,10 @@ app.set("view engine", "ejs");
 
 // collection page api
 app.get("/discover/explore", async (req, res) => {
-  res.render("collection");
+  const isUserLoggedIn = !!req.cookies.userId;
+  res.render("collection", {
+    isUserLoggedIn
+  });
 })
 
 // login page api
@@ -37,9 +46,18 @@ app.get("/signup", async (req, res) => {
   res.render("signup");
 })
 
+
+app.get('/api/logout', function(req, res){
+  res.clearCookie("userId");
+  res.send("clear cookie")
+})
+
 // orders page api
 app.get("/orders", async (req, res) => {
-  res.render("orders")
+  const isUserLoggedIn = !!req.cookies.userId;
+  res.render("orders", {
+    isUserLoggedIn
+  })
 })
 
 
