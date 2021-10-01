@@ -61,30 +61,49 @@ app.get('/api/logout', (req, res) => {
 app.get("/orders", async (req, res) => {
   const isUserLoggedIn = !!req.cookies.userId;
   const userData = await Users.findById(req.cookies.userId).lean().exec();
-  const ordersData = await Smallcases.find({_id: {$in: userData.orders}})
+  const ordersArray = [];
+  const dates = [];
+  userData.orders.forEach(el => {
+    ordersArray.push(el.smallcase_id);
+    dates.push(el.date);
+  })
+  
+  const ordersData = await Smallcases.find({_id: {$in: ordersArray}})
 
   res.render("orders", {
     isUserLoggedIn,
-    data: ordersData
+    data: ordersData,
+    date: dates
   })
 })
 
 // adding orders to particular user
 app.post("/api/add-orders", async (req, res) => {
+  let today = new Date();
+  const dd = String(today.getDate()).padStart(2, '0');
+  const mm = String(today.getMonth() + 1).padStart(2, '0');
+  const yyyy = today.getFullYear();
+  today = mm + '/' + dd + '/' + yyyy;
+
   let userData = await Users.findById(req.cookies.userId).lean().exec();
+
   let isPresent = false;
+
   userData.orders.forEach(el => {
-    if (req.body.id === el.toString()) {
+    if (req.body.id === el.smallcase_id.toString()) {
       isPresent = true;
     };
   })
+
   if (isPresent) {
     res.status(409).send({ message: "Already invested", error: true });
     return;
   }
+
   userData = await Users.findByIdAndUpdate(req.cookies.userId, {
-    $push: { orders: [req.body.id] }
+    $push: { orders: [{smallcase_id: (req.body.id), date: today}] }
   })
+
   res.status(201).send(userData);
 })
 
