@@ -34,14 +34,16 @@
                     </div>
 
                     <div class="orders">
-                        <% data.forEach(el => { %>
+                        <% data = data.reverse() %>
+                        <% date = date.reverse() %>  
+                        <% data.forEach((el, i) => { %>
                             <div class="order">
                                 <div class="top-section">
                                     <div class="top-left"><img
                                             src="<%= el.img %>">
                                         <div class="about-info">
                                             <p><%= el.title %></p>
-                                            <p>date</p>
+                                            <p><%= date[i] %></p>
                                         </div>
                                     </div>
                                     <div class="top-right">Track Performance</div>
@@ -53,7 +55,7 @@
                                     </div>
                                     <div class="stat-2">
                                         <p>Placed on</p>
-                                        <p>Date</p>
+                                        <p><%= date[i] %></p>
                                     </div>
                                     <div class="stat-3">
                                         <p>Status</p>
