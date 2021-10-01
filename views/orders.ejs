@@ -23,25 +23,52 @@
     <div class="root">
         <!-- header -->
         <%- include("../components/header", isUserLoggedIn) %>
-        <!-- header ends -->
+            <!-- header ends -->
 
-        <!-- App container -->
-        <div class="app-container">
-            <div class="main">
-                <div class="title">
-                    <h2>Your Orders</h2>
-                    <p>Orders for smallcases, sorted chronologically</p>
+            <!-- App container -->
+            <div class="app-container">
+                <div class="main">
+                    <div class="title">
+                        <h2>Your Orders</h2>
+                        <p>Orders for smallcases, sorted chronologically</p>
+                    </div>
+
+                    <div class="orders">
+                        <% data.forEach(el => { %>
+                            <div class="order">
+                                <div class="top-section">
+                                    <div class="top-left"><img
+                                            src="<%= el.img %>">
+                                        <div class="about-info">
+                                            <p><%= el.title %></p>
+                                            <p>date</p>
+                                        </div>
+                                    </div>
+                                    <div class="top-right">Track Performance</div>
+                                </div>
+                                <div class="stats">
+                                    <div class="stat-1">
+                                        <p>Batch</p>
+                                        <p>Invest</p>
+                                    </div>
+                                    <div class="stat-2">
+                                        <p>Placed on</p>
+                                        <p>Date</p>
+                                    </div>
+                                    <div class="stat-3">
+                                        <p>Status</p>
+                                        <p>Filled</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <% }) %> 
+                    </div>
                 </div>
 
-                <div class="orders">
-
-                </div>
+                <!-- footer -->
+                <%- include("../components/footer") %>
+                    <!-- footer ends -->
             </div>
-
-            <!-- footer -->
-            <%- include("../components/footer") %> 
-            <!-- footer ends -->
-        </div>
     </div>
     <script src="/common.js"></script>
 </body>
