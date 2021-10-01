@@ -6,6 +6,9 @@ app.use(express.json());
 const cookieParser = require('cookie-parser');
 app.use(cookieParser());
 
+const dotenv = require("dotenv");
+dotenv.config();
+
 // importing connect from config
 const connect = require("./src/config/dbconfig");
 
@@ -15,7 +18,9 @@ const allSmallcasesController = require("./src/controllers/allSmallcases.control
 const smallcaseDetailController = require("./src/controllers/smallcaseDetail.controller");
 const userController = require("./src/controllers/user.controller");
 
+//smallcase model
 const Smallcases = require("./src/models/smallcase.model");
+const Users = require("./src/models/user.model");
 
 app.use("/", smallCaseController);
 app.use("/discover/all", allSmallcasesController);
@@ -47,7 +52,7 @@ app.get("/signup", async (req, res) => {
 })
 
 
-app.get('/api/logout', function(req, res){
+app.get('/api/logout', (req, res) => {
   res.clearCookie("userId");
   res.send("clear cookie")
 })
@@ -55,9 +60,32 @@ app.get('/api/logout', function(req, res){
 // orders page api
 app.get("/orders", async (req, res) => {
   const isUserLoggedIn = !!req.cookies.userId;
+  const userData = await Users.findById(req.cookies.userId).lean().exec();
+  const ordersData = await Smallcases.find({_id: {$in: userData.orders}})
+
   res.render("orders", {
-    isUserLoggedIn
+    isUserLoggedIn,
+    data: ordersData
   })
+})
+
+// adding orders to particular user
+app.post("/api/add-orders", async (req, res) => {
+  let userData = await Users.findById(req.cookies.userId).lean().exec();
+  let isPresent = false;
+  userData.orders.forEach(el => {
+    if (req.body.id === el.toString()) {
+      isPresent = true;
+    };
+  })
+  if (isPresent) {
+    res.status(409).send({ message: "Already invested", error: true });
+    return;
+  }
+  userData = await Users.findByIdAndUpdate(req.cookies.userId, {
+    $push: { orders: [req.body.id] }
+  })
+  res.status(201).send(userData);
 })
 
 
