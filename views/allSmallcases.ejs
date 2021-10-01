@@ -22,7 +22,7 @@
 <body>
     <div class="root">
         <!-- header -->
-        <%- include("../components/header") %>
+        <%- include("../components/header", isUserLoggedIn) %>
             <!-- header ends -->
             
             <!-- App container -->
@@ -151,6 +151,7 @@
     </script>
 
     <script src="/allSmallcasesFilters.js"></script>
+    <script src="/common.js"></script>
 </body>
 
 </html>

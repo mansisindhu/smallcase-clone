@@ -22,7 +22,7 @@
 <body>
     <div class="root">
         <!-- header -->
-        <%- include("../components/header") %>
+        <%- include("../components/header", isUserLoggedIn) %>
             <!-- header ends -->
 
             <!-- App container -->
@@ -461,6 +461,8 @@
                     <!-- footer ends -->
             </div>
     </div>
+
+    <script src="/common.js"></script>
 </body>
 
 </html>

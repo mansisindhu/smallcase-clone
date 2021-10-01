@@ -23,7 +23,7 @@
 <body>
     <div class="root">
         <!-- header -->
-        <%- include("../components/header") %>
+        <%- include("../components/header", isUserLoggedIn) %>
             <!-- header ends -->
             <!-- App container -->
             <div class="app-container">
@@ -88,6 +88,7 @@
     </div>
 
     <script src="/smallcaseDetail.js"></script>
+    <script src="/common.js"></script>
 </body>
 
 </html>
