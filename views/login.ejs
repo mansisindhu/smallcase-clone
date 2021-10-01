@@ -153,29 +153,19 @@
             color: black;
         }
 
-        #userid {
+        #userid, #password {
             width: 276px;
             height: 44px;
-            text-align: center;
             font-size: 14px;
             border-color: lightgray;
+            padding-left: 12px;
         }
 
         #password {
-            width: 276px;
-            height: 44px;
             margin-bottom: 20px;
-            text-align: center;
-            border-color: lightgray;
-            /* border: 0.5px solid; */
-            /* border: none; */
-            /* border-radius: 8px; */
-            /* margin-top: 30px; */
-            font-size: 14px;
         }
 
         .zerodha img {
-            /* background-color: blue; */
             width: 70px;
             height: 11px;
         }
@@ -194,7 +184,6 @@
         .logo button {
             color: #444444;
             font: 14.8px"open sans"sans-serif;
-
         }
 
         #p-text {
@@ -206,19 +195,15 @@
         #p1 {
             color: #9b9b9b;
             font-size: 10px;
-
         }
 
         .border {
             border-radius: 4px;
-            /* border: none; */
-
             border: 1px solid lightgray;
         }
 
         .footer {
             margin-top: 10px;
-
         }
 
         .webkit-flex {
@@ -228,7 +213,6 @@
             font-size: 12px;
             color: #9b9b9b;
             margin-bottom: 25px;
-
         }
 
         .login-webkit-text {
@@ -237,8 +221,6 @@
 
         input:focus {
             outline: none;
-
-
         }
 
         div>#login:hover {
@@ -259,14 +241,11 @@
         <div id="container">
             <!-- logo div containing logo and text of login  -->
             <div class="logo">
-                <a href="/index.html"><img
+                <a href="/">
+                    <img
                         src="https://developers.kite.trade/static/images/app-icons/12hpqpbfwnxyvud8.png" /></a>
                 <p id="login_kart">Login to <span>smallcase</span></p>
-
             </div>
-
-
-
             <!-- login detals div will take inforation of login -->
 
             <div class=" login_details">
@@ -311,43 +290,40 @@
     </div>
 
     <script>
-        let loginStatus = window.localStorage.getItem("loginStatus");
-
-        const ordersData = JSON.parse(window.localStorage.getItem("userOrders")) || {};
-
-        let signup_data = JSON.parse(window.localStorage.getItem('signup_det')) || [];
-
+        const alertEl = document.querySelector(".alert");
         function login() {
-            let user_id = document.getElementById('userid').value;
-            let password = document.getElementById('password').value;
+            let user_id = document.getElementById('userid');
+            let password = document.getElementById('password');
 
-            if (signup_data.length !== 0) {
-            for (var i = 0; i < signup_data.length; i++) {
-                if (user_id == signup_data[i].email && password == signup_data[i].password) {
-                    if (!(ordersData[user_id])) {
-                        ordersData[user_id] = [];
+            if (user_id.value === "" && password.value === "") {
+                alertEl.textContent = "Please fill all the details";
+                alertEl.style.visibility = "unset";
+                return;
+            }
+            fetch("/api/login", {
+                    method: "post",
+                    body: JSON.stringify({
+                        "email": user_id.value,
+                        "password": password.value
+                    }),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                })
+                .then(res => res.json())
+                .then(res => {
+                    if (res.error) {
+                        if (res.message === "Wrong password") {
+                            alertEl.textContent = "Wrong password";
+                            alertEl.style.visibility = "unset";
+                        } else {
+                            alertEl.textContent = "Login failed";
+                            alertEl.style.visibility = "unset";
+                        }
+                    } else {
+                        window.location.pathname = "/";
                     }
-                    const jsonOrdersData = JSON.stringify(ordersData);
-
-                    window.localStorage.setItem("userOrders", jsonOrdersData);
-                    window.localStorage.setItem("loginStatus", JSON.stringify(user_id));
-                    window.location.pathname = "index.html";
-                    break;
-                } else {
-                    if (i == signup_data.length - 1) {
-                        alert("Invalid credentials");
-                        break;
-                    }
-                }
-            } 
-        } else {
-            const alertEl = document.querySelector(".alert");
-            alertEl.style.visibility = "unset";
-            //alert("Please create account first");
-            // window.location.pathname = "loginSignupPages/signup.html";
-        }
-            document.getElementById('userid').value = null;
-            document.getElementById('password').value = null;
+                })
         }
     </script>
 </body>
