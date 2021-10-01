@@ -3,8 +3,13 @@ function closeModal() {
     modalOverlay.remove();
 }
 
+loginBtnElement = document.querySelector(".login-p");
+
 const renderModal = (product) => {
-    
+    if (loginBtnElement.textContent === "Login") {
+        window.location.pathname = "/login";
+        return;
+    } 
     let totalPrice = product.minAmount;
     const rootElement = document.querySelector(".root");
 
@@ -79,6 +84,27 @@ const renderModal = (product) => {
     paymentBtnElement.textContent = "Invest Now";
     paymentBtnElement.className = "payment-section-btn-modal";
 
+    paymentBtnElement.addEventListener("click", () => {
+        console.log("clicked");
+        fetch("/api/add-orders", {
+            method: "post",
+            body: JSON.stringify({
+                "id": product._id
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        })
+        .then(res => res.json())
+        .then(res => {
+            if (res.error) {
+                alert("already invested")
+            } else {
+                alert("success");
+            }
+        })
+    })
+
     modalContainer.appendChild(topRowEl);
     modalContainer.appendChild(midRowEl);
     modalContainer.appendChild(amountBoxEl);
@@ -89,17 +115,15 @@ const renderModal = (product) => {
 
     rootElement.appendChild(modalOverlay);
 
-    
-function incrementAmount(price) {
-    return function () {
-        const amountBoxEl = document.querySelector(".amount-box");
-        const minimumAmountElement = document.querySelector(".minimum-amt");
+    function incrementAmount(price) {
+        return function () {
+            const amountBoxEl = document.querySelector(".amount-box");
+            const minimumAmountElement = document.querySelector(".minimum-amt");
 
-        totalPrice += price;
+            totalPrice += price;
 
-        amountBoxEl.textContent = `₹ ${totalPrice}`;
-        minimumAmountElement.textContent = `Min. Investment amount : ₹ ${totalPrice}`
+            amountBoxEl.textContent = `₹ ${totalPrice}`;
+            minimumAmountElement.textContent = `Min. Investment amount : ₹ ${totalPrice}`
+        }
     }
-}
-
 }
