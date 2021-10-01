@@ -9,7 +9,7 @@ const renderModal = (product) => {
     if (loginBtnElement.textContent === "Login") {
         window.location.pathname = "/login";
         return;
-    } 
+    }
     let totalPrice = product.minAmount;
     const rootElement = document.querySelector(".root");
 
@@ -95,14 +95,86 @@ const renderModal = (product) => {
                 'Content-Type': 'application/json'
             },
         })
-        .then(res => res.json())
-        .then(res => {
-            if (res.error) {
-                alert("already invested")
-            } else {
-                alert("success");
-            }
-        })
+            .then(res => res.json())
+            .then(res => {
+                if (res.error) {
+                    const modalContainer = document.querySelector(".modal-container");
+                    modalContainer.innerHTML = "";
+
+                    const topRowEl = document.createElement("div");
+                    topRowEl.className = "top-row";
+
+                    const imageEl = document.createElement("img");
+                    imageEl.src = product.img;
+
+                    const nameEl = document.createElement("p");
+                    nameEl.textContent = `Invested in ${product.title}`;
+
+                    const closeButton = document.createElement('p');
+                    closeButton.className = "close-modal";
+                    closeButton.textContent = 'X';
+
+                    closeButton.addEventListener('click', closeModal);
+
+                    topRowEl.appendChild(imageEl);
+                    topRowEl.appendChild(nameEl);
+                    topRowEl.appendChild(closeButton);
+
+                    const successfullMessage = document.createElement("h2");
+                    successfullMessage.textContent = "You have already invested in this smallcase!";
+
+
+                    const goToOrderPageBtn = document.createElement("button");
+                    goToOrderPageBtn.textContent = "Invest More";
+                    goToOrderPageBtn.className = "gotoOrders-btn";
+
+                    goToOrderPageBtn.addEventListener("click", function () {
+                        window.location.pathname = "/discover/all";
+                    })
+
+                    modalContainer.appendChild(topRowEl);
+                    modalContainer.appendChild(successfullMessage);
+                    modalContainer.appendChild(goToOrderPageBtn);
+                } else {
+                    const modalContainer = document.querySelector(".modal-container");
+                    modalContainer.innerHTML = "";
+
+                    const topRowEl = document.createElement("div");
+                    topRowEl.className = "top-row";
+
+                    const imageEl = document.createElement("img");
+                    imageEl.src = product.img;
+
+                    const nameEl = document.createElement("p");
+                    nameEl.textContent = `Invested in ${product.title}`;
+
+                    const closeButton = document.createElement('p');
+                    closeButton.className = "close-modal";
+                    closeButton.textContent = 'X';
+
+                    closeButton.addEventListener('click', closeModal);
+
+                    topRowEl.appendChild(imageEl);
+                    topRowEl.appendChild(nameEl);
+                    topRowEl.appendChild(closeButton);
+
+                    const successfullMessage = document.createElement("h2");
+                    successfullMessage.textContent = "Hey! Your order is successful. Thankyou for investing.";
+
+
+                    const goToOrderPageBtn = document.createElement("button");
+                    goToOrderPageBtn.textContent = "Go to your orders";
+                    goToOrderPageBtn.className = "gotoOrders-btn";
+
+                    goToOrderPageBtn.addEventListener("click", function () {
+                        window.location.pathname = "/orders";
+                    })
+
+                    modalContainer.appendChild(topRowEl);
+                    modalContainer.appendChild(successfullMessage);
+                    modalContainer.appendChild(goToOrderPageBtn);
+                }
+            })
     })
 
     modalContainer.appendChild(topRowEl);
