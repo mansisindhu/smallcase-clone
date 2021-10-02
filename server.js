@@ -34,7 +34,7 @@ app.use(express.static("public"));
 app.set("view engine", "ejs");
 
 // collection page api
-app.get("/discover/explore", async (req, res) => {
+app.get("/discover/explore", (req, res) => {
   const isUserLoggedIn = !!req.cookies.userId;
   res.render("collection", {
     isUserLoggedIn
@@ -42,12 +42,12 @@ app.get("/discover/explore", async (req, res) => {
 })
 
 // login page api
-app.get("/login", async (req, res) => {
+app.get("/login", (req, res) => {
   res.render("login");
 })
 
 // signup page api
-app.get("/signup", async (req, res) => {
+app.get("/signup", (req, res) => {
   res.render("signup");
 })
 
@@ -67,12 +67,20 @@ app.get("/orders", async (req, res) => {
     ordersArray.push(el.smallcase_id);
     dates.push(el.date);
   })
+
+
   
-  const ordersData = await Smallcases.find({_id: {$in: ordersArray}})
+  const ordersData = await Smallcases.find({_id: {$in: ordersArray}});
+
+  const responseData = userData.orders.map(ele => {
+    const smallcase = ordersData.find((sc) => sc._id.toString() === ele.smallcase_id.toString());
+
+    return smallcase;
+  });
 
   res.render("orders", {
     isUserLoggedIn,
-    data: ordersData,
+    data: responseData,
     date: dates
   })
 })
