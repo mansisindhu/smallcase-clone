@@ -30,53 +30,83 @@
 
                 <!-- main div -->
                 <div class="main">
-                    <% data.forEach(el => { %>
+                    <% data.forEach(el=> { %>
                         <div class="gray-box">
                             <div class="top-detail-box">
-                                <div class="product-main-info"><img
-                                        src="<%= el.img %> ">
+                                <div class="product-main-info"><img src="<%= el.img %> ">
                                     <div class="about-info">
-                                        <p class="product-name"><%= el.title %></p>
-                                        <p class="product-short-info"><%= el.shortDescription %></p>
+                                        <p class="product-name">
+                                            <%= el.title %>
+                                        </p>
+                                        <p class="product-short-info">
+                                            <%= el.shortDescription %>
+                                        </p>
                                     </div>
                                 </div>
                                 <div class="stats">
                                     <div class="stat-1">
                                         <p>Min Amount</p>
-                                        <p>&#x20B9 <%= el.minAmount %></p>
+                                        <p>&#x20B9 <%= el.minAmount %>
+                                        </p>
                                     </div>
                                     <div class="stat-2">
-                                        <p><%= el.cagYear %>Y CAGR</p>
-                                        <p style="color: rgb(25, 175, 85);"><%= el.cagRate %>%</p>
+                                        <p>
+                                            <%= el.cagYear %>Y CAGR
+                                        </p>
+                                        <p style="color: rgb(25, 175, 85);">
+                                            <%= el.cagRate %>%
+                                        </p>
                                     </div>
                                     <div class="stat-3">
-                                        <p><%= el.volatility %> Volatility</p>
+                                        <p>
+                                            <%= el.volatility %> Volatility
+                                        </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <p class="overview">Overview</p>
                         <div class="bottom-detail-box">
                             <div class="long-description">
-                                <p class="overview">Overview</p>
-                                <p class="question"><%= el.ques_title %></p>
-                                <p><%= el.discription_p1 %> </p>
-                                <ul>
-                                    <% el.discription.forEach(item => { %>
-                                        <li><%= item %> </li>
-                                    <% }) %> 
-                                </ul>
-                                <p><%= el.discription_p2 %> </p>
+                                
+                                <div class="left-desc">
+                                    <p class="question"><%= el.ques_title %></p>
+                                    <p><%= el.discription_p1 %></p>
+                                    <ul>
+                                        <% el.discription.forEach(item=> { %>
+                                            <li><%= item %></li>
+                                            <% }) %>
+                                    </ul>
+                                    <p><%= el.discription_p2 %></p>
+                                </div>
+                                <div class="right-desc">
+                                    <div class="vertical-line"></div>
+                                    <div class="right-content">
+                                        <div class="modal">
+                                            <h3>Methodology</h3>
+                                            <p>Know how this smallcase was created</p>
+                                        </div>
+                                        <div class="modal">
+                                            <a target="_blank" href="<%= el.factSheet  %> ">Factsheet</a>
+                                            <p>Download key points about this smallcase</p>
+                                        </div>
+                                        <p>Created by Windmill Capital</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="payment-section"><button onclick="renderModal(<%= JSON.stringify(el) %>)" class="payment-section-btn">Invest Now</button></div>
+                            <div class="payment-section"><button onclick="renderModal(<%= JSON.stringify(el) %>)"
+                                    class="payment-section-btn">Invest Now</button></div>
                             <div class="payment-section-responsive">
                                 <div class="payment-info">
                                     <p>Minimum Investment Amount</p>
-                                    <p>&#x20B9 <%= el.minAmount %></p>
-                                </div><button onclick="renderModal(<%= JSON.stringify(el) %>)" class="payment-section-btn">Invest Now</button>
+                                    <p>&#x20B9 <%= el.minAmount %>
+                                    </p>
+                                </div><button onclick="renderModal(<%= JSON.stringify(el) %>)"
+                                    class="payment-section-btn">Invest Now</button>
                             </div>
                         </div>
-                    <% }) %> 
-                    
+                        <% }) %>
+
                 </div>
                 <!-- main div ends -->
 
