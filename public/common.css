@@ -15,7 +15,7 @@
     animation: slideup 0.7s ease-out;
 }
 
-.modal-container {
+.modal-container, .modal-container-method {
     animation: slideup 0.7s ease-out;
 }
 
