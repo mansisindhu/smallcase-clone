@@ -10,6 +10,7 @@ const renderModal = (product) => {
         window.location.pathname = "/login";
         return;
     }
+
     let totalPrice = product.minAmount;
     const rootElement = document.querySelector(".root");
 
@@ -198,4 +199,97 @@ const renderModal = (product) => {
             minimumAmountElement.textContent = `Min. Investment amount : ₹ ${totalPrice}`
         }
     }
+}
+
+const renderMethodologyModal = () => {
+    const rootElement = document.querySelector(".root");
+
+    const modalOverlay = document.createElement('div');
+    modalOverlay.setAttribute('class', 'modal-overlay');
+
+    modalOverlay.innerHTML = `
+    <div class="modal-container-method">
+        <div id="heading">
+            <div>Methodology</div>
+            <div onclick="closeModal()" id="plus">+</div>
+        </div>
+        <div id="content_wrapper">
+            <div class="flex-inner-content">
+                <div class="img-cont">
+                    <img src="https://assets.smallcase.com/images/methodology-icons/universe.svg" />
+                </div>
+                <div class="text-cont">
+                    <h2 class="subheading">Defining the universe</h2>
+                    <div class="detail-text">All publicly traded ETFs on the National Stock Exchange of India
+                        are
+                        included in the universe</div>
+                </div>
+            </div>
+            <div class="flex-inner-content">
+                <div class="img-cont">
+                    <img src="https://assets.smallcase.com/images/methodology-icons/research.svg" />
+                </div>
+                <div class="text-cont">
+                    <h2 class="subheading">Research</h2>
+                    <div class="detail-text">Windmill Capital studies research papers and documents various
+                        asset
+                        allocation algorithms & strategies. Algorithms are further developed & adapted to suit
+                        the
+                        Indian market conditions</div>
+                </div>
+            </div>
+            <div class="flex-inner-content">
+                <div class="img-cont">
+                    <img src="https://assets.smallcase.com/images/methodology-icons/backTesting.svg" />
+                </div>
+                <div class="text-cont">
+                    <h2 class="subheading">Historical back-testing</h2>
+                    <div class="detail-text">All ETF-based asset allocation strategies are checked for
+                        historical
+                        outperformance over a minimum of 10 year period. Only consistently outperforming asset
+                        allocation models are selected</div>
+                </div>
+            </div>
+            <div class="flex-inner-content">
+                <div class="img-cont"><img
+                        src="https://assets.smallcase.com/images/methodology-icons/stockScreening.svg" /></div>
+                <div class="text-cont">
+                    <h2 class="subheading">ETF Screening</h2>
+                    <div id="list_text">
+                        <ul>
+                            <li>Proprietary liquidity filters are applied to select ETFs that are liquid</li>
+                            <li>Selected ETFs are divided into three categories : Equity, Gold, Fixed Income
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-inner-content">
+                <div class="img-cont"><img
+                        src="https://assets.smallcase.com/images/methodology-icons/weighting.svg" />
+                </div>
+                <div class="text-cont">
+                    <h2 class="subheading">Asset Allocation</h2>
+                    <div class="detail-text">The final screened ETFs are then weighted according to the selected
+                        asset
+                        allocation algorithm</div>
+                </div>
+            </div>
+            <div class="flex-inner-content">
+                <div class="img-cont"><img
+                        src="https://assets.smallcase.com/images/methodology-icons/rebalance.svg" />
+                </div>
+                <div class="text-cont">
+                    <h2 class="subheading">Rebalance</h2>
+                    <div class="detail-text">This smallcase has a quarterly rebalance schedule. Once every
+                        quarter, the
+                        research team reviews this smallcase and realign the weights with the selected asset
+                        allocation
+                        strategy for the next quarter.</div>
+                </div>
+            </div>
+        </div>
+    </div>`
+
+    rootElement.appendChild(modalOverlay)
 }
