@@ -68,7 +68,6 @@
                         <p class="overview">Overview</p>
                         <div class="bottom-detail-box">
                             <div class="long-description">
-                                
                                 <div class="left-desc">
                                     <p class="question"><%= el.ques_title %></p>
                                     <p><%= el.discription_p1 %></p>
@@ -83,7 +82,7 @@
                                     <div class="vertical-line"></div>
                                     <div class="right-content">
                                         <div class="modal">
-                                            <h3>Methodology</h3>
+                                            <h3 onclick="renderMethodologyModal()">Methodology</h3>
                                             <p>Know how this smallcase was created</p>
                                         </div>
                                         <div class="modal">
@@ -106,11 +105,8 @@
                             </div>
                         </div>
                         <% }) %>
-
                 </div>
                 <!-- main div ends -->
-
-
                 <!-- footer -->
                 <%- include("../components/footer") %>
                     <!-- footer ends -->
