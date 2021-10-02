@@ -1181,3 +1181,95 @@
     transform: translateY(-1px);
     box-shadow: 0 3px 10px 0 rgb(0 0 0 / 7%);
   }
+
+
+
+  .carousel-parent {
+    overflow: hidden;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 22px;
+}
+
+.carousel-container {
+    display: flex;
+    height: 300px;
+    transform: translateX(0);
+    transition: transform 1s ease-out;
+}
+
+.carousel-item {
+    flex-shrink: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tweet_div {
+    background-color: white;
+    border-radius: 4px;
+    padding: 32px;
+    width: 68%;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 9%);
+    border: 1px solid #dde0e4;
+    background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOTUiIGhlaWdodD0iMjY4IiB2aWV3Qm94PSIwIDAgMjk1IDI2OCI+CiAgICA8cGF0aCBmaWxsPSIjRjdGOEZBIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yOTUgMzEuNzI1Yy0xMi4xMDUgNS4zODItMjUuMTEzIDkuMDE4LTM4Ljc2NiAxMC42NTMgMTMuOTM0LTguMzczIDI0LjYzOC0yMS42MzEgMjkuNjc3LTM3LjQzMWExMzQuOTQ3IDEzNC45NDcgMCAwIDEtNDIuODYzIDE2LjQxOEMyMzAuNzM2IDguMjE1IDIxMy4xOTQgMCAxOTMuNzggMGMtMzcuMjc2IDAtNjcuNSAzMC4yOTItNjcuNSA2Ny42NTUgMCA1LjMwMy41OTcgMTAuNDY2IDEuNzQ5IDE1LjQxOC01Ni4wOTctMi44MjItMTA1LjgzNC0yOS43NTYtMTM5LjEyNC03MC42OS01LjgxIDkuOTkzLTkuMTQgMjEuNjE0LTkuMTQgMzQuMDE0IDAgMjMuNDcyIDExLjkxNiA0NC4xOCAzMC4wMjggNTYuMzE0YTY3LjEwMyA2Ny4xMDMgMCAwIDEtMzAuNTczLTguNDYzYy0uMDA2LjI4My0uMDA2LjU2NS0uMDA2Ljg1MiAwIDMyLjc4IDIzLjI2NyA2MC4xMjMgNTQuMTQ1IDY2LjM0YTY3LjQ1NyA2Ny40NTcgMCAwIDEtMzAuNDgyIDEuMTZjOC41OSAyNi44NzggMzMuNTE2IDQ2LjQ0IDYzLjA1NCA0Ni45ODUtMjMuMTAxIDE4LjE0OC01Mi4yMDUgMjguOTYyLTgzLjgzIDI4Ljk2Mi01LjQ0OCAwLTEwLjgyLS4zMi0xNi4xMDEtLjk0NkMtNC4xMjkgMjU2Ljc5OCAzMS4zNTEgMjY4IDY5LjQ2OCAyNjhjMTI0LjE1NCAwIDE5Mi4wNDctMTAzLjA5NCAxOTIuMDQ3LTE5Mi41IDAtMi45MzQtLjA2Ni01Ljg1MS0uMTk1LTguNzUzIDEzLjE4OS05LjUzOSAyNC42MzItMjEuNDU1IDMzLjY4LTM1LjAyMnoiLz4KPC9zdmc+Cg==) no-repeat;
+    
+}
+
+.tweet_div::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.tweet_div img {
+    float: left;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+@media (max-width: 960px) {
+    .tweet_div {
+        width: 380px
+    }
+
+    .tweet_div img {
+        display: block;
+    }
+}
+
+.text-light {
+    color: #81878c;
+    text-decoration: none
+}
+
+.mb8 {
+    margin-bottom: 8px;
+}
+
+.text-16 {
+    font-size: 16px;
+}
+
+.tweet_div > h2 {
+    color: #2f363f;
+    margin-bottom: 32px;
+    font-size: 18px;
+}
+
+.c-heading {
+  margin-top: 32px;
+  text-align: center;
+}
+.c-heading > p {
+  color: #535b62;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.line {
+  height: 0.5px;
+  width: 100%;
+  background-color: var(--lightGray);
+}
