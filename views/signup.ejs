@@ -57,14 +57,14 @@
             box-shadow: 1px 1px 4px rgb(206, 203, 203);
             width: 356px;
             margin: auto;
-            height: 470px;
+            /* height: 470px; */
             display: flex;
             flex-direction: column;
         }
 
         .details_box {
-            margin-left: 15px;
-            margin-right: 20px;
+            margin-left: 13px;
+            /* margin-right: 20px; */
             height: 30px;
             margin-top: 10px;
             margin-bottom: 35px;
@@ -84,6 +84,7 @@
 
         .log>img {
             align-items: center;
+
         }
 
         .log {
@@ -127,7 +128,7 @@
         }
 
         .box1 img {
-            height: 30px;
+            height: 38px;
         }
 
         .footer_para {
@@ -243,54 +244,7 @@
         </div>
     </div>
 
-    <script>
-        let signup = document.getElementById('signup');
-        const alertEl = document.querySelector(".alert");
-
-
-        const addSignup = () => {
-            const emailInputElement = document.querySelector("#email_id");
-            const passwordInputElement = document.querySelector("#password_setup");
-            const confirmPasswordElement = document.querySelector("#password_conf");
-
-            if (emailInputElement.value === "" && passwordInputElement.value === "" && confirmPasswordElement.value === "") {
-                alertEl.textContent = "Please fill all the details!";
-                alertEl.style.visibility = "unset";
-                return;
-            }
-
-            if (passwordInputElement.value !== confirmPasswordElement.value) {
-                alertEl.textContent = "Password is not matched";
-                alertEl.style.visibility = "unset";
-                return;
-            }
-            fetch("/api/signup", {
-                method: "post",
-                body: JSON.stringify({
-                    "email": emailInputElement.value,
-                    "password": passwordInputElement.value
-                }),
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-            })
-                .then(res => res.json())
-                .then(res => {
-                    if (res.error) {
-                        if (res.message === "Invaild email address") {
-                            alertEl.textContent = "Invaild email address";
-                            alertEl.style.visibility = "unset";
-                        } else {
-                            alertEl.textContent = "User already exists";
-                            alertEl.style.visibility = "unset";
-                        }
-                    } else {
-                        window.location.pathname = "/login"
-                    }
-                })
-
-        }
-    </script>
+    <script src="/signup.js"></script>
 </body>
 
 </html>
