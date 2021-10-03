@@ -12,9 +12,9 @@
 # Technology
 
 
-- **Client:** HTML5 and CSS
+- **Client:** HTML5, CSS, Node Js and Express
 
-- **Server:** Javascript and Local Storage
+- **Server:** MongoDb
 
 
 
@@ -23,7 +23,7 @@
 ## Features
 
 -  User can see variety of smallcases and can select which smallcase to invest in
--  Storing the users data in local storage
+-  Storing the users data on Mongo Server
 -  Used keyframes for sliding effect
 -  Responsive design
 -  User can filter the smallcases by minimimum amount, highest returns, etc.
@@ -107,3 +107,9 @@
 > Github: [ashwanikpankaj](https://github.com/SantoshKonappanavar)
 > 
 > LinkedIn: [Ashwani Kumar Pankaj](https://www.linkedin.com/in/ashnit8294)
+
+> #### Shivam Vishvakarma
+> Github: [shivamfw10](https://github.com/shivamfw10)
+> 
+> LinkedIn: [Shivam Vishvakarma](www.linkedin.com/in/shivam-vishvakarma-3322a41a5
+)
