@@ -138,8 +138,9 @@ app.get('/api/data', async (req, res) => {
   res.send(filteredData);
 })
 
+const PORT = process.env.PORT || 2930;
 // server
-app.listen(process.env.PORT || 2930, async () => {
+app.listen(PORT, async () => {
   await connect();
-  console.log("listening to port 2930");
+  console.log("listening to port", PORT);
 })
