@@ -98,7 +98,7 @@
   
 ## Demo
 
->Link - [smallcase clone](https://smallcase.netlify.app/)
+>Link - [smallcase clone](https://smallcase-clone.herokuapp.com)
 
 
   
