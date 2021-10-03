@@ -6,6 +6,7 @@ loginBtnElement.addEventListener("click", async () => {
     } else if (loginBtnElement.textContent === "Logout") {
         loginBtnElement.textContent = "Login";
         await fetch("/api/logout");
+        window.location.href = "/"
     }
 })
 

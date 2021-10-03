@@ -57,6 +57,14 @@ app.get('/api/logout', (req, res) => {
   res.send("clear cookie")
 })
 
+app.use("/orders", (req, res, next) => {
+  const isUserLoggedIn = !!req.cookies.userId;
+  if (isUserLoggedIn) {
+    next();
+  } else {
+    res.redirect("/login")
+  }
+})
 // orders page api
 app.get("/orders", async (req, res) => {
   const isUserLoggedIn = !!req.cookies.userId;
