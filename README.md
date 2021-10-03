@@ -12,9 +12,9 @@
 # Technology
 
 
-- **Client:** HTML5, CSS, Node Js and Express
+- **Client:** EJs, CSS
 
-- **Server:** MongoDb
+- **Server:** MongoDb, Node,js and Express.js
 
 
 
@@ -114,8 +114,7 @@
 > 
 > LinkedIn: [Ashwani Kumar Pankaj](https://www.linkedin.com/in/ashnit8294)
 
-> #### Shivam Vishvakarma
+#### Shivam Vishvakarma
 > Github: [shivamfw10](https://github.com/shivamfw10)
 > 
-> LinkedIn: [Shivam Vishvakarma](www.linkedin.com/in/shivam-vishvakarma-3322a41a5
-)
+> LinkedIn: [Shivam Vishvakarma](www.linkedin.com/in/shivam-vishvakarma-3322a41a5)
