@@ -702,6 +702,7 @@ ul {
   justify-content: center;
   align-items: center;
   height: 60px;
+  font-weight: 500;
 }
 
 .modal-container-method {
