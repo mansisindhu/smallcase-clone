@@ -139,7 +139,7 @@ app.get('/api/data', async (req, res) => {
 })
 
 // server
-app.listen(2930, async () => {
+app.listen(process.env.PORT || 2930, async () => {
   await connect();
   console.log("listening to port 2930");
 })
