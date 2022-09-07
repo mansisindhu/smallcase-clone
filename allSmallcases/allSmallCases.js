@@ -1,4 +1,3 @@
-
 const smallcasesData = [
     {
         name: "All Weather Investing",
